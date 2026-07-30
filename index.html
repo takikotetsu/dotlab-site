@@ -114,15 +114,31 @@
         <div class="proof-label">業界標準ツールとの並走検証で<br>全ファイルのハッシュが完全一致</div>
       </div>
       <div class="proof-card">
-        <div class="proof-num">17:02</div>
-        <div class="proof-label">209GBカードのフル検証オフロード<br>(業界標準ツール: 17:00 — 同着)</div>
+        <div class="proof-num">405MB/s</div>
+        <div class="proof-label">カードリーダーの物理限界に張り付く<br>実測速度(209GBをフル検証込み17分)</div>
       </div>
       <div class="proof-card">
-        <div class="proof-num">4パス</div>
-        <div class="proof-label">読み・書き・読み戻し・ソース再読<br>すべてを並走させて物理限界速度</div>
+        <div class="proof-num">2回</div>
+        <div class="proof-label">全データを物理的に2度読んで照合<br>(コピー時+ソース再読・標準ON)</div>
       </div>
     </div>
     <p class="proof-note">検証条件: 同一カード・リーダー・SSD・Macで業界標準オフロードツールと並走。xxHash64による全数照合。検証データは請求に応じて開示します。</p>
+  </div>
+</section>
+
+<section id="unique">
+  <div class="wrap">
+    <h2>.Labが<span class="accent">言い切れる</span>こと</h2>
+    <div class="features">
+      <div class="feature"><h3><span class="dot">●</span> カードを抜いても、事故らない</h3>
+        <p>コピー中の切断・無応答(OSにマウントだけ残る「ステイルマウント」)を秒で検知して安全に停止。挿し直せば検証済みをスキップして続きから。同名の別カードへのすり替えはボリュームUUID照合で拒否します。実際にカードを引き抜くテストを重ねて作られた挙動です。</p></div>
+      <div class="feature"><h3><span class="dot">●</span> 無料版でも、検証は同品質</h3>
+        <p>ハッシュ検証・読み戻し・ソース再読・切断検知 — データの安全に関わる機能は、無料版でも一切制限しません。課金の壁は多重バックアップと自動化にだけあります。</p></div>
+      <div class="feature"><h3><span class="dot">●</span> 疑い深さが標準設定</h3>
+        <p>コピー後にソースをもう一度物理読みして照合するソース再読ベリファイが標準ON。読み戻しはOSキャッシュを迂回(F_NOCACHE)し、「読んだつもり」の検証を許しません。リーダーやケーブルの一過性エラーまで捕まえます。</p></div>
+      <div class="feature"><h3><span class="dot">●</span> 日本の現場と同じ時間で動く</h3>
+        <p>国産・日本語UI・日本語サポート。現場からのフィードバックがその日のうちにアップデートになる距離感で開発しています。もちろん英語UIも標準搭載。</p></div>
+    </div>
   </div>
 </section>
 
