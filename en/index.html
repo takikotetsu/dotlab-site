@@ -294,8 +294,8 @@
   <div class="wrap faq">
     <h2>FAQ</h2>
     <dl>
-      <dt>Does it really never touch my originals?</dt>
-      <dd>Yes. Source media is opened read-only in exactly one place in the code, and no write or delete path exists. It&rsquo;s a design principle, continuously enforced by the test suite.</dd>
+      <dt>Can .Lab damage or delete my original files?</dt>
+      <dd>No. Source media is opened strictly read-only, and no code path exists that writes to or deletes from it. It&rsquo;s a design principle, continuously enforced by the test suite.</dd>
       <dt>What if power dies mid-copy?</dt>
       <dd>All state is committed to an SQLite journal as it happens. On relaunch, .Lab detects the interrupted job and resumes, skipping verified files. Partially written files never end up under their final name (atomic commits).</dd>
       <dt>Which cameras and formats are supported?</dt>
