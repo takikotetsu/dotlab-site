@@ -46,8 +46,30 @@
   .anim-dash { animation: dashflow 1.4s linear infinite; }
   .anim-packet { stroke-dasharray: 26 198; animation: packet 2.6s linear infinite; }
   .anim-fill { transform-origin: left; transform-box: fill-box; animation: fillbar 6s ease-in-out infinite; }
+  /* クリップ行のステータス遷移: 12秒で1本撮り(全行待機→順にコピー→検証→完了、
+     全行完了で静止、まとめてリセット)。行ごとの位相ずらしではなく同期タイムライン。 */
+  .badge { opacity: 0; animation-duration: 12s; animation-timing-function: linear; animation-iteration-count: infinite; }
+  .row1 .b-copy { animation-name: r1c; } .row1 .b-verify { animation-name: r1v; }
+  .row1 .b-done { animation-name: r1d; } .row1 .b-wait { animation-name: rw1; }
+  .row2 .b-copy { animation-name: r2c; } .row2 .b-verify { animation-name: r2v; }
+  .row2 .b-done { animation-name: r2d; } .row2 .b-wait { animation-name: rw2; }
+  .row3 .b-copy { animation-name: r3c; } .row3 .b-verify { animation-name: r3v; }
+  .row3 .b-done { animation-name: r3d; } .row3 .b-wait { animation-name: rw3; }
+  @keyframes r1c { 3% { opacity: 0; } 4.5% { opacity: 1; } 20% { opacity: 1; } 21.5% { opacity: 0; } }
+  @keyframes r1v { 20% { opacity: 0; } 21.5% { opacity: 1; } 36.5% { opacity: 1; } 38% { opacity: 0; } }
+  @keyframes r1d { 36.5% { opacity: 0; } 38% { opacity: 1; } 94.5% { opacity: 1; } 96% { opacity: 0; } }
+  @keyframes rw1 { 0% { opacity: 1; } 3% { opacity: 1; } 4.5% { opacity: 0; } 94.5% { opacity: 0; } 96% { opacity: 1; } 100% { opacity: 1; } }
+  @keyframes r2c { 20% { opacity: 0; } 21.5% { opacity: 1; } 36.5% { opacity: 1; } 38% { opacity: 0; } }
+  @keyframes r2v { 36.5% { opacity: 0; } 38% { opacity: 1; } 53% { opacity: 1; } 54.5% { opacity: 0; } }
+  @keyframes r2d { 53% { opacity: 0; } 54.5% { opacity: 1; } 94.5% { opacity: 1; } 96% { opacity: 0; } }
+  @keyframes rw2 { 0% { opacity: 1; } 20% { opacity: 1; } 21.5% { opacity: 0; } 94.5% { opacity: 0; } 96% { opacity: 1; } 100% { opacity: 1; } }
+  @keyframes r3c { 36.5% { opacity: 0; } 38% { opacity: 1; } 53% { opacity: 1; } 54.5% { opacity: 0; } }
+  @keyframes r3v { 53% { opacity: 0; } 54.5% { opacity: 1; } 69.5% { opacity: 1; } 71% { opacity: 0; } }
+  @keyframes r3d { 69.5% { opacity: 0; } 71% { opacity: 1; } 94.5% { opacity: 1; } 96% { opacity: 0; } }
+  @keyframes rw3 { 0% { opacity: 1; } 36.5% { opacity: 1; } 38% { opacity: 0; } 94.5% { opacity: 0; } 96% { opacity: 1; } 100% { opacity: 1; } }
   @media (prefers-reduced-motion: reduce) {
-    .anim-dash, .anim-packet, .anim-fill { animation: none; }
+    .anim-dash, .anim-packet, .anim-fill, .badge { animation: none; }
+    .badge.static-show { opacity: 1; }
   }
   h1 { font-size: 44px; font-weight: 800; letter-spacing: -1px; }
   .tagline { font-size: 20px; color: var(--sub); margin-top: 12px; }
@@ -159,11 +181,26 @@
   <g font-size="11">
     <rect x="204" y="292" width="640" height="88" rx="12" fill="#14141a" stroke="#26262e"/>
     <text x="222" y="316" fill="#9a9aa5" font-family="monospace">A001C001.mxf</text>
-    <rect x="740" y="304" width="60" height="18" rx="9" fill="#153726"/><text x="770" y="317" font-size="9.5" fill="#34c77b" text-anchor="middle">完了</text>
+    <g class="row1">
+      <g class="badge b-copy"><rect x="740" y="304" width="60" height="18" rx="9" fill="#142a44"/><text x="770" y="317" font-size="9.5" fill="#4a9df8" text-anchor="middle">コピー中</text></g>
+      <g class="badge b-verify"><rect x="740" y="304" width="60" height="18" rx="9" fill="#2a2438"/><text x="770" y="317" font-size="9.5" fill="#f5a623" text-anchor="middle">検証中</text></g>
+      <g class="badge b-done static-show"><rect x="740" y="304" width="60" height="18" rx="9" fill="#153726"/><text x="770" y="317" font-size="9.5" fill="#34c77b" text-anchor="middle">完了</text></g>
+      <g class="badge b-wait"><rect x="740" y="304" width="60" height="18" rx="9" fill="#1d1d24"/><text x="770" y="317" font-size="9.5" fill="#62626e" text-anchor="middle">待機</text></g>
+    </g>
     <text x="222" y="344" fill="#9a9aa5" font-family="monospace">A001C002.mxf</text>
-    <rect x="740" y="332" width="60" height="18" rx="9" fill="#153726"/><text x="770" y="345" font-size="9.5" fill="#34c77b" text-anchor="middle">完了</text>
+    <g class="row2">
+      <g class="badge b-copy"><rect x="740" y="332" width="60" height="18" rx="9" fill="#142a44"/><text x="770" y="345" font-size="9.5" fill="#4a9df8" text-anchor="middle">コピー中</text></g>
+      <g class="badge b-verify"><rect x="740" y="332" width="60" height="18" rx="9" fill="#2a2438"/><text x="770" y="345" font-size="9.5" fill="#f5a623" text-anchor="middle">検証中</text></g>
+      <g class="badge b-done static-show"><rect x="740" y="332" width="60" height="18" rx="9" fill="#153726"/><text x="770" y="345" font-size="9.5" fill="#34c77b" text-anchor="middle">完了</text></g>
+      <g class="badge b-wait"><rect x="740" y="332" width="60" height="18" rx="9" fill="#1d1d24"/><text x="770" y="345" font-size="9.5" fill="#62626e" text-anchor="middle">待機</text></g>
+    </g>
     <text x="222" y="372" fill="#9a9aa5" font-family="monospace">A001C003.mxf</text>
-    <rect x="740" y="360" width="60" height="18" rx="9" fill="#2a2438"/><text x="770" y="373" font-size="9.5" fill="#f5a623" text-anchor="middle">検証中</text>
+    <g class="row3">
+      <g class="badge b-copy"><rect x="740" y="360" width="60" height="18" rx="9" fill="#142a44"/><text x="770" y="373" font-size="9.5" fill="#4a9df8" text-anchor="middle">コピー中</text></g>
+      <g class="badge b-verify static-show"><rect x="740" y="360" width="60" height="18" rx="9" fill="#2a2438"/><text x="770" y="373" font-size="9.5" fill="#f5a623" text-anchor="middle">検証中</text></g>
+      <g class="badge b-done"><rect x="740" y="360" width="60" height="18" rx="9" fill="#153726"/><text x="770" y="373" font-size="9.5" fill="#34c77b" text-anchor="middle">完了</text></g>
+      <g class="badge b-wait"><rect x="740" y="360" width="60" height="18" rx="9" fill="#1d1d24"/><text x="770" y="373" font-size="9.5" fill="#62626e" text-anchor="middle">待機</text></g>
+    </g>
   </g>
 </svg></div>
 </header>
