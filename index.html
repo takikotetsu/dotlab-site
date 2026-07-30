@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>.Lab — 安全&最速のメディアオフロード for macOS</title>
+<meta name="description" content=".Lab は撮影メディアの安全なオフロードツール。4パス検証・ASC MHL・業界標準ツールと同速度を実測で証明。">
+<style>
+  :root {
+    --violet: #7C5CE8;
+    --bg: #0e0e12;
+    --card: #17171d;
+    --border: #26262e;
+    --text: #f2f2f5;
+    --sub: #9a9aa5;
+    --faint: #62626e;
+    --done: #34c77b;
+    --copy: #4a9df8;
+    --verify: #f5a623;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: -apple-system, "SF Pro Display", "Hiragino Sans", sans-serif;
+    line-height: 1.7;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+  a { color: var(--violet); text-decoration: none; }
+
+  header { padding: 96px 0 72px; text-align: center; }
+  .logo {
+    width: 96px; height: 96px; border-radius: 24px; background: var(--violet);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 30px; font-weight: 800; color: #fff; letter-spacing: -0.5px;
+    margin-bottom: 24px; box-shadow: 0 12px 48px rgba(124, 92, 232, 0.35);
+  }
+  h1 { font-size: 44px; font-weight: 800; letter-spacing: -1px; }
+  .tagline { font-size: 20px; color: var(--sub); margin-top: 12px; }
+  .cta { margin-top: 36px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 14px 28px; border-radius: 12px;
+    font-weight: 700; font-size: 15px;
+  }
+  .btn-primary { background: var(--violet); color: #fff; }
+  .btn-ghost { border: 1.5px solid var(--border); color: var(--text); }
+  .note { color: var(--faint); font-size: 12px; margin-top: 14px; }
+
+  section { padding: 56px 0; border-top: 1px solid var(--border); }
+  h2 { font-size: 26px; font-weight: 800; margin-bottom: 28px; letter-spacing: -0.5px; }
+  h2 .accent { color: var(--violet); }
+
+  .proof { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .proof-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+    padding: 24px; text-align: center;
+  }
+  .proof-num { font-size: 34px; font-weight: 800; color: var(--done); }
+  .proof-label { color: var(--sub); font-size: 13px; margin-top: 6px; }
+  .proof-note { color: var(--faint); font-size: 12px; margin-top: 24px; }
+
+  .features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .feature {
+    background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 22px;
+  }
+  .feature h3 { font-size: 16px; margin-bottom: 8px; }
+  .feature h3 .dot { color: var(--violet); }
+  .feature p { color: var(--sub); font-size: 13.5px; }
+
+  .pricing { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 720px; margin: 0 auto; }
+  .price-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 28px;
+  }
+  .price-card.pro { border-color: var(--violet); box-shadow: 0 0 40px rgba(124, 92, 232, 0.15); }
+  .price-name { font-weight: 800; font-size: 18px; }
+  .price-num { font-size: 34px; font-weight: 800; margin: 10px 0 2px; }
+  .price-sub { color: var(--faint); font-size: 12px; }
+  .price-card ul { list-style: none; margin-top: 18px; }
+  .price-card li { color: var(--sub); font-size: 13.5px; padding: 4px 0; }
+  .price-card li::before { content: "✓ "; color: var(--done); font-weight: 700; }
+  .price-card li.na { color: var(--faint); }
+  .price-card li.na::before { content: "— "; color: var(--faint); }
+
+  .faq dt { font-weight: 700; margin-top: 22px; }
+  .faq dd { color: var(--sub); font-size: 14px; margin-top: 6px; }
+
+  footer { padding: 48px 0 64px; border-top: 1px solid var(--border); color: var(--faint); font-size: 12.5px; text-align: center; }
+  footer a { color: var(--sub); margin: 0 10px; }
+
+  @media (max-width: 720px) {
+    .proof, .features, .pricing { grid-template-columns: 1fr; }
+    h1 { font-size: 34px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <div class="logo">.Lab</div>
+  <h1>安全 &amp; 最速のメディアオフロード</h1>
+  <p class="tagline">替えの効かない撮影素材を、検証つきで確実にバックアップする macOS アプリ</p>
+  <div class="cta">
+    <a class="btn btn-primary" href="dotLab-latest.dmg">無料で30日試す</a>
+    <a class="btn btn-ghost" href="#buy">Pro を購入</a>
+  </div>
+  <p class="note">macOS 14 Sonoma 以降 / Apple Silicon &amp; Intel / 公証済み</p>
+</header>
+
+<section id="proof">
+  <div class="wrap">
+    <h2>実測で証明された<span class="accent">「安全&最速」</span></h2>
+    <div class="proof">
+      <div class="proof-card">
+        <div class="proof-num">100%</div>
+        <div class="proof-label">業界標準ツールとの並走検証で<br>全ファイルのハッシュが完全一致</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-num">17:02</div>
+        <div class="proof-label">209GBカードのフル検証オフロード<br>(業界標準ツール: 17:00 — 同着)</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-num">4パス</div>
+        <div class="proof-label">読み・書き・読み戻し・ソース再読<br>すべてを並走させて物理限界速度</div>
+      </div>
+    </div>
+    <p class="proof-note">検証条件: 同一カード・リーダー・SSD・Macで業界標準オフロードツールと並走。xxHash64による全数照合。検証データは請求に応じて開示します。</p>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <h2>機能</h2>
+    <div class="features">
+      <div class="feature"><h3><span class="dot">●</span> 4パス検証</h3>
+        <p>xxHash64でコピー中にハッシュ化し、宛先から読み戻して照合。さらにソースをもう一度読み直して一過性の読みエラーまで検出(パラノイアモード・既定ON)。キャッシュに騙されない物理読み戻し(F_NOCACHE)。</p></div>
+      <div class="feature"><h3><span class="dot">●</span> 事故を前提にした設計</h3>
+        <p>ソースは読み取り専用でしか開かない設計。上書き・マージは構造的に不可能。電源断・強制終了してもジャーナルから続きを再開。メディアの切断は即検知し、別カードの誤続行もボリュームUUID照合でブロック。</p></div>
+      <div class="feature"><h3><span class="dot">●</span> 1ソース → 複数宛先 + チェーン</h3>
+        <p>1回の読みで複数SSDへ同時コピー。宛先からさらに別ドライブへのカスケードコピー、完了待ちのキュー、Watch Folder(差分/同期)にも対応。</p></div>
+      <div class="feature"><h3><span class="dot">●</span> ASC MHL v2 / レポートPDF</h3>
+        <p>完了時に業界標準のASC MHL v2を自動出力。サムネイル・メタデータつきのダークテーマPDFレポートで、検証済みであることを納品先に証明できます。</p></div>
+      <div class="feature"><h3><span class="dot">●</span> 主要カメラのカードを自動認識</h3>
+        <p>Sony(M4ROOT/XDROOT・XAVC・X-OCN)、Canon、RED、ARRI、Blackmagic RAW、DCIM。挿入検知でソース自動セット、リール名も自動提案。</p></div>
+      <div class="feature"><h3><span class="dot">●</span> 現場のための細部</h3>
+        <p>クリップブラウザ(サムネ・再生・メタ表示)、完了通知・サウンド・メール通知、ETA表示、日本語/英語UI、オフラインで完結するライセンス(猶予30日)。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="buy">
+  <div class="wrap">
+    <h2>価格</h2>
+    <div class="pricing">
+      <div class="price-card">
+        <div class="price-name">Free</div>
+        <div class="price-num">¥0</div>
+        <div class="price-sub">30日間の全機能トライアル後</div>
+        <ul>
+          <li>コピー&amp;4パス検証(無制限・Pro同等)</li>
+          <li>resume・ジャーナル・カード自動認識</li>
+          <li class="na">宛先は1つまで</li>
+          <li class="na">キュー・チェーン・Watch Folder</li>
+          <li class="na">ASC MHL・レポートPDF・メール通知</li>
+        </ul>
+      </div>
+      <div class="price-card pro">
+        <div class="price-name" style="color: var(--violet)">Pro</div>
+        <div class="price-num">¥19,800</div>
+        <div class="price-sub">買い切り・1年間のアップデート込み<br>以降は年 ¥9,800 で任意更新(更新しなくても使えます)</div>
+        <ul>
+          <li>全機能</li>
+          <li>2台まで(メイン+バックアップ機)</li>
+          <li>いつでもライセンス移行(デアクティベート)</li>
+          <li>メールサポート</li>
+        </ul>
+        <div class="cta" style="margin-top: 20px">
+          <a class="btn btn-primary" href="#">購入(準備中)</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap faq">
+    <h2>FAQ</h2>
+    <dl>
+      <dt>本当に元データに触れないの?</dt>
+      <dd>はい。ソースを開くコードは読み取り専用(O_RDONLY)の1箇所だけで、書き込み・削除のコードパスが存在しません。これは設計原則であり、テストスイートで常時検証されています。</dd>
+      <dt>コピー中に電源が落ちたら?</dt>
+      <dd>すべての状態はSQLiteジャーナルにコミット済みです。再起動すると未完了ジョブを検知し、検証済みファイルをスキップして続きから再開します。書きかけのファイルが正式な名前で残ることはありません(アトミック確定)。</dd>
+      <dt>オフラインの現場でも使える?</dt>
+      <dd>使えます。ライセンスは30日間のオフライン猶予つきで、コピー・検証機能は完全にローカルで動作します。</dd>
+      <dt>適格請求書(インボイス)は発行されますか?</dt>
+      <dd>販売は海外の決済代行事業者(Merchant of Record)経由のため、適格請求書の発行には対応していません。あらかじめご了承ください。法人でのまとまった台数の導入をご検討の場合は、請求書払いについて個別にご相談ください。</dd>
+      <dt>対応フォーマットは?</dt>
+      <dd>コピーと検証はフォーマット非依存(すべてのファイルで動作)。カード自動認識とメタデータはSony XAVC/X-OCN・Canon・RED・ARRI・Blackmagic RAW・静止画カードに対応しています。</dd>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>.Lab — Media Offload for macOS</div>
+    <div style="margin-top: 8px">
+      <a href="#">使用許諾契約</a><a href="#">特定商取引法に基づく表記</a><a href="mailto:support@kotetsu.work">サポート</a>
+    </div>
+    <div style="margin-top: 12px">© 2026 株式会社虎徹 / KOTETSU, Corp.</div>
+  </div>
+</footer>
+
+</body>
+</html>
