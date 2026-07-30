@@ -32,9 +32,7 @@
   header { padding: 96px 0 72px; text-align: center; position: relative; }
   .lang { position: absolute; top: 28px; right: 24px; font-size: 13px; font-weight: 700; color: var(--sub); border: 1px solid var(--border); padding: 6px 14px; border-radius: 999px; }
   .logo {
-    width: 96px; height: 96px; border-radius: 24px; background: var(--violet);
-    display: inline-flex; align-items: center; justify-content: center;
-    font-size: 30px; font-weight: 800; color: #fff; letter-spacing: -0.5px;
+    width: 108px; height: 108px; border-radius: 24%;
     margin-bottom: 24px; box-shadow: 0 12px 48px rgba(124, 92, 232, 0.35);
   }
   h1 { font-size: 44px; font-weight: 800; letter-spacing: -1px; }
@@ -49,7 +47,7 @@
   .note { color: var(--faint); font-size: 12px; margin-top: 14px; }
 
   section { padding: 56px 0; border-top: 1px solid var(--border); }
-  h2 { font-size: 26px; font-weight: 800; margin-bottom: 28px; letter-spacing: -0.5px; }
+  h2 { font-size: 26px; font-weight: 800; margin-bottom: 28px; letter-spacing: -0.5px; text-align: center; }
   h2 .accent { color: var(--violet); }
 
   .proof { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
@@ -99,16 +97,23 @@
 
 <header class="wrap">
   <a class="lang" href="/en/">EN</a>
-  <div class="logo">.Lab</div>
+  <img class="logo" src="/icon.png" alt=".Lab">
   <h1>撮ったデータを、確かめながら守る</h1>
   <p class="tagline">SDカードやSSDの写真・動画を、1ファイルずつ壊れていないか検証しながらコピーするmacOSアプリ。<br>撮り直せないデータのバックアップは、「コピーできたはず」で終わらせない。</p>
   <p class="note" style="margin-top: 6px">.Lab(ドットラボ)</p>
   <div class="cta">
-    <a class="btn btn-primary" href="dotLab-latest.dmg">無料でダウンロード</a>
+    <a class="btn btn-primary" href="https://github.com/takikotetsu/dotlab-site/releases/latest/download/dotLab-latest.dmg">無料でダウンロード</a>
     <a class="btn btn-ghost" href="#buy">Pro を購入</a>
   </div>
   <p class="note">macOS 14 Sonoma 以降 / Apple Silicon &amp; Intel / 公証済み</p>
 </header>
+
+<section id="mission">
+  <div class="wrap" style="max-width: 720px; text-align: center;">
+    <h2>すべての映像・写真制作者のために</h2>
+    <p style="color: var(--sub); font-size: 15.5px;">.Labは、撮る人のためのバックアップツールです。プロの撮影現場でも、初めてのカメラでも、守りたいデータの重さは変わりません。<br><br><strong style="color: var(--text);">データの事故で悲しい思いをする人を、ひとりでも減らしたい。</strong><br>このアプリは、その思いだけで作られています。</p>
+  </div>
+</section>
 
 <section id="proof">
   <div class="wrap">
@@ -135,7 +140,7 @@
   <div class="wrap">
     <h2>.Labが<span class="accent">言い切れる</span>こと</h2>
     <div class="features">
-      <div class="feature"><h3><span class="dot">●</span> カードを抜いても、事故らない</h3>
+      <div class="feature"><h3><span class="dot">●</span> カードを抜いても、データは守られる</h3>
         <p>コピー中にカードが抜けても、リーダーが固まっても、数秒で気づいて安全に停止します。挿し直せば確認済みのファイルを飛ばして続きから。よく似た別のカードを間違って挿しても、ちゃんと見分けて止まります。実際にカードを引き抜くテストを重ねて作りました。</p></div>
       <div class="feature"><h3><span class="dot">●</span> 無料版でも、検証は同品質</h3>
         <p>データが無事かどうかを確かめる機能は、無料版でも一切手加減しません。有料版との違いは「2箇所同時バックアップ」や「自動化・証明書」だけ。安全を課金の壁にしない、が設計方針です。</p></div>
