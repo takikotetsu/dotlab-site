@@ -29,7 +29,7 @@
   .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
   a { color: var(--violet); text-decoration: none; }
 
-  header { padding: 150px 0 80px; text-align: center; position: relative; }
+  header.wrap { padding: 150px 24px 80px; text-align: center; position: relative; }
   .lang { position: absolute; top: 28px; right: 24px; font-size: 13px; font-weight: 700; color: var(--sub); border: 1px solid var(--border); padding: 6px 14px; border-radius: 999px; }
   .logo {
     width: 108px; height: 108px;
@@ -226,7 +226,7 @@
         <div class="proof-label">Every byte is read twice and compared —<br>even transient read errors get caught</div>
       </div>
     </div>
-    <p class="proof-note">Method: same card, reader, SSD and Mac, run alongside an industry-standard offload tool; full xxHash64 comparison. Speed depends on your card, reader and destination (figures are measured examples). For reference: in about the time Finder does a plain copy, .Lab finishes the copy <em>and</em> the read-back and re-read verification — Finder checks nothing.</p>
+    <p class="proof-note">Method: same card, reader, SSD and Mac, run alongside an industry-standard offload tool; full xxHash64 comparison. Speed depends on your card, reader and destination (figures are measured examples). For reference: Finder never checks whether what it wrote is actually correct (no read-back, no checksums). .Lab completes that verification in roughly the time of a plain Finder copy.</p>
   </div>
 </section>
 

@@ -29,7 +29,7 @@
   .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
   a { color: var(--violet); text-decoration: none; }
 
-  header { padding: 150px 0 80px; text-align: center; position: relative; }
+  header.wrap { padding: 150px 24px 80px; text-align: center; position: relative; }
   .lang { position: absolute; top: 28px; right: 24px; font-size: 13px; font-weight: 700; color: var(--sub); border: 1px solid var(--border); padding: 6px 14px; border-radius: 999px; }
   .logo {
     width: 108px; height: 108px;
@@ -226,7 +226,7 @@
         <div class="proof-label">すべてのデータを2度読みして確認<br>「読み間違い」も見逃さない</div>
       </div>
     </div>
-    <p class="proof-note">検証条件: 同一カード・リーダー・SSD・Macで業界標準オフロードツールと並走、xxHash64による全数照合。速度はカード・リーダー・保存先の性能で決まります(記載は実測例)。参考: Finderの「コピーだけ」とほぼ同じ時間感覚で、.Labは読み戻し・再読の検証まで終えます — Finderは何も確かめません。</p>
+    <p class="proof-note">検証条件: 同一カード・リーダー・SSD・Macで業界標準オフロードツールと並走、xxHash64による全数照合。速度はカード・リーダー・保存先の性能で決まります(記載は実測例)。参考: Finderのコピーは、書き込んだ結果が正しいかを一切確認しません(読み戻しもハッシュ照合もなし)。.Labはその確認までを、Finderの単純コピーとほぼ同じ時間感覚で終えます。</p>
   </div>
 </section>
 
