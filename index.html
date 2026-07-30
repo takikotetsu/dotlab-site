@@ -3,8 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>.Lab — 安全&最速のメディアオフロード for macOS</title>
-<meta name="description" content=".Lab は撮影メディアの安全なオフロードツール。4パス検証・ASC MHL・業界標準ツールと同速度を実測で証明。">
+<title>.Lab(ドットラボ)— 撮ったデータを、確かめながら守る | macOS</title>
+<link rel="alternate" hreflang="en" href="https://dotlab.kotetsu.work/en/">
+<link rel="alternate" hreflang="ja" href="https://dotlab.kotetsu.work/">
+<meta name="description" content=".Lab は写真・動画データを検証しながらバックアップするmacOSアプリ。全ファイルをハッシュ照合し、壊れていないことを確かめてから完了。プロの現場品質を、すべての撮る人に。">
 <style>
   :root {
     --violet: #7C5CE8;
@@ -27,7 +29,8 @@
   .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
   a { color: var(--violet); text-decoration: none; }
 
-  header { padding: 96px 0 72px; text-align: center; }
+  header { padding: 96px 0 72px; text-align: center; position: relative; }
+  .lang { position: absolute; top: 28px; right: 24px; font-size: 13px; font-weight: 700; color: var(--sub); border: 1px solid var(--border); padding: 6px 14px; border-radius: 999px; }
   .logo {
     width: 96px; height: 96px; border-radius: 24px; background: var(--violet);
     display: inline-flex; align-items: center; justify-content: center;
@@ -95,11 +98,13 @@
 <body>
 
 <header class="wrap">
+  <a class="lang" href="/en/">EN</a>
   <div class="logo">.Lab</div>
-  <h1>安全 &amp; 最速のメディアオフロード</h1>
-  <p class="tagline">替えの効かない撮影素材を、検証つきで確実にバックアップする macOS アプリ</p>
+  <h1>撮ったデータを、確かめながら守る</h1>
+  <p class="tagline">SDカードやSSDの写真・動画を、1ファイルずつ壊れていないか検証しながらコピーするmacOSアプリ。<br>撮り直せないデータのバックアップは、「コピーできたはず」で終わらせない。</p>
+  <p class="note" style="margin-top: 6px">.Lab(ドットラボ)</p>
   <div class="cta">
-    <a class="btn btn-primary" href="dotLab-latest.dmg">無料で30日試す</a>
+    <a class="btn btn-primary" href="dotLab-latest.dmg">無料でダウンロード</a>
     <a class="btn btn-ghost" href="#buy">Pro を購入</a>
   </div>
   <p class="note">macOS 14 Sonoma 以降 / Apple Silicon &amp; Intel / 公証済み</p>
@@ -107,22 +112,22 @@
 
 <section id="proof">
   <div class="wrap">
-    <h2>実測で証明された<span class="accent">「安全&最速」</span></h2>
+    <h2>数字で確かめられる<span class="accent">「安全&最速」</span></h2>
     <div class="proof">
       <div class="proof-card">
         <div class="proof-num">100%</div>
-        <div class="proof-label">業界標準ツールとの並走検証で<br>全ファイルのハッシュが完全一致</div>
+        <div class="proof-label">映画の現場で使われる定番ツールと<br>同じデータを別々にコピーして全ファイル一致</div>
       </div>
       <div class="proof-card">
-        <div class="proof-num">405MB/s</div>
-        <div class="proof-label">カードリーダーの物理限界に張り付く<br>実測速度(209GBをフル検証込み17分)</div>
+        <div class="proof-num">上限速度</div>
+        <div class="proof-label">検証しながらでも、コピーはお使いの<br>ハードの限界速度のまま(実測例: 209GB/17分)</div>
       </div>
       <div class="proof-card">
         <div class="proof-num">2回</div>
-        <div class="proof-label">全データを物理的に2度読んで照合<br>(コピー時+ソース再読・標準ON)</div>
+        <div class="proof-label">すべてのデータを2度読みして確認<br>「読み間違い」も見逃さない(標準ON)</div>
       </div>
     </div>
-    <p class="proof-note">検証条件: 同一カード・リーダー・SSD・Macで業界標準オフロードツールと並走。xxHash64による全数照合。検証データは請求に応じて開示します。</p>
+    <p class="proof-note">検証条件: 同一カード・リーダー・SSD・Macで業界標準オフロードツールと並走、xxHash64による全数照合。速度はカード・リーダー・保存先の性能で決まります(記載は実測例)。参考: Finderの「コピーだけ」とほぼ同じ時間感覚で、.Labは読み戻し・再読の検証まで終えます — Finderは何も確かめません。</p>
   </div>
 </section>
 
@@ -131,11 +136,11 @@
     <h2>.Labが<span class="accent">言い切れる</span>こと</h2>
     <div class="features">
       <div class="feature"><h3><span class="dot">●</span> カードを抜いても、事故らない</h3>
-        <p>コピー中の切断・無応答(OSにマウントだけ残る「ステイルマウント」)を秒で検知して安全に停止。挿し直せば検証済みをスキップして続きから。同名の別カードへのすり替えはボリュームUUID照合で拒否します。実際にカードを引き抜くテストを重ねて作られた挙動です。</p></div>
+        <p>コピー中にカードが抜けても、リーダーが固まっても、数秒で気づいて安全に停止します。挿し直せば確認済みのファイルを飛ばして続きから。よく似た別のカードを間違って挿しても、ちゃんと見分けて止まります。実際にカードを引き抜くテストを重ねて作りました。</p></div>
       <div class="feature"><h3><span class="dot">●</span> 無料版でも、検証は同品質</h3>
-        <p>ハッシュ検証・読み戻し・ソース再読・切断検知 — データの安全に関わる機能は、無料版でも一切制限しません。課金の壁は多重バックアップと自動化にだけあります。</p></div>
-      <div class="feature"><h3><span class="dot">●</span> 疑い深さが標準設定</h3>
-        <p>コピー後にソースをもう一度物理読みして照合するソース再読ベリファイが標準ON。読み戻しはOSキャッシュを迂回(F_NOCACHE)し、「読んだつもり」の検証を許しません。リーダーやケーブルの一過性エラーまで捕まえます。</p></div>
+        <p>データが無事かどうかを確かめる機能は、無料版でも一切手加減しません。有料版との違いは「2箇所同時バックアップ」や「自動化・証明書」だけ。安全を課金の壁にしない、が設計方針です。</p></div>
+      <div class="feature"><h3><span class="dot">●</span> 「コピーできたはず」を許さない</h3>
+        <p>書き込んだファイルを読み戻して照合し、さらに元のカードをもう一度読み直して二重に確認してから「完了」と言います。リーダーやケーブルの一瞬の不調によるデータ化けまで捕まえる、疑い深さが標準設定です。</p></div>
       <div class="feature"><h3><span class="dot">●</span> 日本の現場と同じ時間で動く</h3>
         <p>国産・日本語UI・日本語サポート。現場からのフィードバックがその日のうちにアップデートになる距離感で開発しています。もちろん英語UIも標準搭載。</p></div>
     </div>
@@ -146,18 +151,18 @@
   <div class="wrap">
     <h2>機能</h2>
     <div class="features">
-      <div class="feature"><h3><span class="dot">●</span> 4パス検証</h3>
-        <p>xxHash64でコピー中にハッシュ化し、宛先から読み戻して照合。さらにソースをもう一度読み直して一過性の読みエラーまで検出(パラノイアモード・既定ON)。キャッシュに騙されない物理読み戻し(F_NOCACHE)。</p></div>
-      <div class="feature"><h3><span class="dot">●</span> 事故を前提にした設計</h3>
-        <p>ソースは読み取り専用でしか開かない設計。上書き・マージは構造的に不可能。電源断・強制終了してもジャーナルから続きを再開。メディアの切断は即検知し、別カードの誤続行もボリュームUUID照合でブロック。</p></div>
-      <div class="feature"><h3><span class="dot">●</span> 1ソース → 複数宛先 + チェーン</h3>
-        <p>1回の読みで複数SSDへ同時コピー。宛先からさらに別ドライブへのカスケードコピー、完了待ちのキュー、Watch Folder(差分/同期)にも対応。</p></div>
-      <div class="feature"><h3><span class="dot">●</span> ASC MHL v2 / レポートPDF</h3>
-        <p>完了時に業界標準のASC MHL v2を自動出力。サムネイル・メタデータつきのダークテーマPDFレポートで、検証済みであることを納品先に証明できます。</p></div>
-      <div class="feature"><h3><span class="dot">●</span> 主要カメラのカードを自動認識</h3>
-        <p>Sony(M4ROOT/XDROOT・XAVC・X-OCN)、Canon、RED、ARRI、Blackmagic RAW、DCIM。挿入検知でソース自動セット、リール名も自動提案。</p></div>
-      <div class="feature"><h3><span class="dot">●</span> 現場のための細部</h3>
-        <p>クリップブラウザ(サムネ・再生・メタ表示)、完了通知・サウンド・メール通知、ETA表示、日本語/英語UI、オフラインで完結するライセンス(猶予30日)。</p></div>
+      <div class="feature"><h3><span class="dot">●</span> 元データには指一本ふれない</h3>
+        <p>カード側は「読み取り専用」でしか開かない設計。上書きも削除も、仕組みの上で起こりえません。バックアップが終わって確認できるまで、元データは無傷のままです。</p></div>
+      <div class="feature"><h3><span class="dot">●</span> 途中で止まっても、続きから</h3>
+        <p>Macがスリープしても、電源が落ちても、進み具合はすべて記録済み。次に開いたとき、確認済みのファイルを飛ばして続きから再開します。書きかけの中途半端なファイルが残ることはありません。</p></div>
+      <div class="feature"><h3><span class="dot">●</span> 1回で2箇所へ同時バックアップ</h3>
+        <p>1回の読み取りで複数のSSDへ同時にコピー(Pro)。バックアップのバックアップを作るチェーンコピーや、フォルダを見張って増えたぶんだけコピーするフォルダ監視も。</p></div>
+      <div class="feature"><h3><span class="dot">●</span> 「確認済み」の証明書を出せる</h3>
+        <p>全ファイルの検証結果を、サムネイル付きのPDFレポートや業界標準のASC MHL形式で出力(Pro)。クライアントへの納品や、後日の「本当にコピーできてた?」に証拠で答えられます。</p></div>
+      <div class="feature"><h3><span class="dot">●</span> カードを挿すだけで準備完了</h3>
+        <p>Sony・Canon・RED・ARRI・Blackmagicのカードや一般のSDカード(DCIM)を自動認識。挿すとコピー元に自動セットされ、フォルダ名も自動で提案されます。</p></div>
+      <div class="feature"><h3><span class="dot">●</span> コピーしたその場で中身を確認</h3>
+        <p>コピー済みのフォルダをダブルクリックすれば、サムネイル一覧と再生・撮影情報の確認ができるブラウザが開きます。完了はベルとmacOS通知、外出先へのメール通知でも受け取れます。</p></div>
     </div>
   </div>
 </section>
@@ -169,10 +174,10 @@
       <div class="price-card">
         <div class="price-name">Free</div>
         <div class="price-num">¥0</div>
-        <div class="price-sub">30日間の全機能トライアル後</div>
+        <div class="price-sub">ずっと無料・容量無制限</div>
         <ul>
-          <li>コピー&amp;4パス検証(無制限・Pro同等)</li>
-          <li>resume・ジャーナル・カード自動認識</li>
+          <li>コピー&amp;検証(容量無制限・Pro同等品質)</li>
+          <li>続きから再開・カード自動認識</li>
           <li class="na">宛先は1つまで</li>
           <li class="na">キュー・チェーン・Watch Folder</li>
           <li class="na">ASC MHL・レポートPDF・メール通知</li>

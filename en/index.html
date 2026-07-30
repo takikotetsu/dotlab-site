@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>.Lab — Verified backups for everything you shoot | macOS</title>
+<link rel="alternate" hreflang="en" href="https://dotlab.kotetsu.work/en/">
+<link rel="alternate" hreflang="ja" href="https://dotlab.kotetsu.work/">
+<meta name="description" content=".Lab is a macOS app that backs up photos and footage while verifying every file with checksums. Film-set data integrity for everyone who shoots.">
+<style>
+  :root {
+    --violet: #7C5CE8;
+    --bg: #0e0e12;
+    --card: #17171d;
+    --border: #26262e;
+    --text: #f2f2f5;
+    --sub: #9a9aa5;
+    --faint: #62626e;
+    --done: #34c77b;
+    --copy: #4a9df8;
+    --verify: #f5a623;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: -apple-system, "SF Pro Display", "Hiragino Sans", sans-serif;
+    line-height: 1.7;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+  a { color: var(--violet); text-decoration: none; }
+
+  header { padding: 96px 0 72px; text-align: center; position: relative; }
+  .lang { position: absolute; top: 28px; right: 24px; font-size: 13px; font-weight: 700; color: var(--sub); border: 1px solid var(--border); padding: 6px 14px; border-radius: 999px; }
+  .logo {
+    width: 96px; height: 96px; border-radius: 24px; background: var(--violet);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 30px; font-weight: 800; color: #fff; letter-spacing: -0.5px;
+    margin-bottom: 24px; box-shadow: 0 12px 48px rgba(124, 92, 232, 0.35);
+  }
+  h1 { font-size: 44px; font-weight: 800; letter-spacing: -1px; }
+  .tagline { font-size: 20px; color: var(--sub); margin-top: 12px; }
+  .cta { margin-top: 36px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 14px 28px; border-radius: 12px;
+    font-weight: 700; font-size: 15px;
+  }
+  .btn-primary { background: var(--violet); color: #fff; }
+  .btn-ghost { border: 1.5px solid var(--border); color: var(--text); }
+  .note { color: var(--faint); font-size: 12px; margin-top: 14px; }
+
+  section { padding: 56px 0; border-top: 1px solid var(--border); }
+  h2 { font-size: 26px; font-weight: 800; margin-bottom: 28px; letter-spacing: -0.5px; }
+  h2 .accent { color: var(--violet); }
+
+  .proof { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .proof-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+    padding: 24px; text-align: center;
+  }
+  .proof-num { font-size: 34px; font-weight: 800; color: var(--done); }
+  .proof-label { color: var(--sub); font-size: 13px; margin-top: 6px; }
+  .proof-note { color: var(--faint); font-size: 12px; margin-top: 24px; }
+
+  .features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .feature {
+    background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 22px;
+  }
+  .feature h3 { font-size: 16px; margin-bottom: 8px; }
+  .feature h3 .dot { color: var(--violet); }
+  .feature p { color: var(--sub); font-size: 13.5px; }
+
+  .pricing { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 720px; margin: 0 auto; }
+  .price-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 28px;
+  }
+  .price-card.pro { border-color: var(--violet); box-shadow: 0 0 40px rgba(124, 92, 232, 0.15); }
+  .price-name { font-weight: 800; font-size: 18px; }
+  .price-num { font-size: 34px; font-weight: 800; margin: 10px 0 2px; }
+  .price-sub { color: var(--faint); font-size: 12px; }
+  .price-card ul { list-style: none; margin-top: 18px; }
+  .price-card li { color: var(--sub); font-size: 13.5px; padding: 4px 0; }
+  .price-card li::before { content: "✓ "; color: var(--done); font-weight: 700; }
+  .price-card li.na { color: var(--faint); }
+  .price-card li.na::before { content: "— "; color: var(--faint); }
+
+  .faq dt { font-weight: 700; margin-top: 22px; }
+  .faq dd { color: var(--sub); font-size: 14px; margin-top: 6px; }
+
+  footer { padding: 48px 0 64px; border-top: 1px solid var(--border); color: var(--faint); font-size: 12.5px; text-align: center; }
+  footer a { color: var(--sub); margin: 0 10px; }
+
+  @media (max-width: 720px) {
+    .proof, .features, .pricing { grid-template-columns: 1fr; }
+    h1 { font-size: 34px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <a class="lang" href="/">日本語</a>
+  <div class="logo">.Lab</div>
+  <h1>Back up your footage.<br>Prove it&rsquo;s intact.</h1>
+  <p class="tagline">A macOS app that copies photos and video from cards and SSDs while verifying every single file.<br>Irreplaceable data deserves more than &ldquo;it probably copied fine.&rdquo;</p>
+  <p class="note" style="margin-top: 6px">.Lab — pronounced &ldquo;dot-Lab&rdquo;</p>
+  <div class="cta">
+    <a class="btn btn-primary" href="dotLab-latest.dmg">Download Free</a>
+    <a class="btn btn-ghost" href="#buy">Buy Pro</a>
+  </div>
+  <p class="note">macOS 14 Sonoma or later / Apple Silicon &amp; Intel / Notarized</p>
+</header>
+
+<section id="proof">
+  <div class="wrap">
+    <h2>Safe <span class="accent">and</span> fast — with numbers to prove it</h2>
+    <div class="proof">
+      <div class="proof-card">
+        <div class="proof-num">100%</div>
+        <div class="proof-label">Hash match on every file against an<br>industry-standard offload tool, run side by side</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-num">Full speed</div>
+        <div class="proof-label">Verification doesn&rsquo;t slow you below your<br>hardware&rsquo;s limit (measured: 209GB in 17 min)</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-num">2 reads</div>
+        <div class="proof-label">Every byte is read twice and compared —<br>even transient read errors get caught (default ON)</div>
+      </div>
+    </div>
+    <p class="proof-note">Method: same card, reader, SSD and Mac, run alongside an industry-standard offload tool; full xxHash64 comparison. Speed depends on your card, reader and destination (figures are measured examples). For reference: in about the time Finder does a plain copy, .Lab finishes the copy <em>and</em> the read-back and re-read verification — Finder checks nothing.</p>
+  </div>
+</section>
+
+<section id="unique">
+  <div class="wrap">
+    <h2>What .Lab can <span class="accent">promise</span></h2>
+    <div class="features">
+      <div class="feature"><h3><span class="dot">●</span> Pull the card — nothing breaks</h3>
+        <p>If a card gets yanked or a reader freezes mid-copy, .Lab notices within seconds and stops safely. Plug it back in and it resumes, skipping everything already verified. Insert a similar-looking wrong card and it refuses. Built by literally ripping cards out, over and over.</p></div>
+      <div class="feature"><h3><span class="dot">●</span> The free tier verifies like Pro</h3>
+        <p>Everything that keeps your data safe works identically in the free tier — no compromises. Pro adds multi-destination backups, automation and reports. Safety is never behind a paywall. That&rsquo;s policy.</p></div>
+      <div class="feature"><h3><span class="dot">●</span> &ldquo;Probably copied&rdquo; isn&rsquo;t in the vocabulary</h3>
+        <p>.Lab reads written files back and compares them, then reads the source card once more to double-check — only then does it say &ldquo;done.&rdquo; Paranoia is the default setting, catching even one-off glitches from readers and cables.</p></div>
+      <div class="feature"><h3><span class="dot">●</span> Built on set, updated at set speed</h3>
+        <p>Developed hand-in-hand with working camera crews — field feedback often ships as an update the same day. English and Japanese UI included.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <h2>Features</h2>
+    <div class="features">
+      <div class="feature"><h3><span class="dot">●</span> Your originals are untouchable</h3>
+        <p>Source media is opened read-only, by design. Overwriting or deleting originals is structurally impossible. Until your backup is verified, your originals stay exactly as they were.</p></div>
+      <div class="feature"><h3><span class="dot">●</span> Power loss? Resume where you left off</h3>
+        <p>Every step is journaled as it happens. After a crash or power cut, .Lab picks up where it stopped, skipping verified files. Half-written files never masquerade as finished ones.</p></div>
+      <div class="feature"><h3><span class="dot">●</span> Two backups in one pass</h3>
+        <p>Read the card once, write to multiple SSDs simultaneously (Pro). Chain copies for backups-of-backups, plus a watch-folder mode that copies new files as they appear.</p></div>
+      <div class="feature"><h3><span class="dot">●</span> Proof, not promises</h3>
+        <p>Export verification results as a thumbnail PDF report or industry-standard ASC MHL (Pro). Hand clients evidence — and answer &ldquo;did it really copy?&rdquo; with receipts.</p></div>
+      <div class="feature"><h3><span class="dot">●</span> Insert card, ready to go</h3>
+        <p>Auto-detects Sony, Canon, RED, ARRI and Blackmagic cards as well as regular SD cards (DCIM). Insert a card and it&rsquo;s set as the source, reel name suggested automatically.</p></div>
+      <div class="feature"><h3><span class="dot">●</span> Check your footage on the spot</h3>
+        <p>Double-click a finished reel to browse thumbnails, play clips and inspect metadata. Get completion alerts by chime, macOS notification — or email when you&rsquo;re away from the cart.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="buy">
+  <div class="wrap">
+    <h2>Pricing</h2>
+    <div class="pricing">
+      <div class="price-card">
+        <div class="price-name">Free</div>
+        <div class="price-num">¥0</div>
+        <div class="price-sub">Free forever, unlimited data</div>
+        <ul>
+          <li>Copy &amp; verify (unlimited, Pro-grade quality)</li>
+          <li>Resume, card auto-detection</li>
+          <li class="na">One destination only</li>
+          <li class="na">Queue, chains, watch folder</li>
+          <li class="na">ASC MHL, PDF reports, email alerts</li>
+        </ul>
+      </div>
+      <div class="price-card pro">
+        <div class="price-name" style="color: var(--violet)">Pro</div>
+        <div class="price-num">¥19,800 <span style="font-size:15px;color:var(--faint)">≈ US$129</span></div>
+        <div class="price-sub">One-time purchase, 1 year of updates included.<br>Optional renewal ¥9,800/yr — the app keeps working either way.</div>
+        <ul>
+          <li>Everything</li>
+          <li>2 Macs (main + backup machine)</li>
+          <li>Move your license anytime (deactivate)</li>
+          <li>Email support</li>
+        </ul>
+        <div class="cta" style="margin-top: 20px">
+          <a class="btn btn-primary" href="https://kotetsu.lemonsqueezy.com/checkout/buy/1ebde20b-6757-4091-9882-d558cbe583b3">Buy .Lab Pro</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap faq">
+    <h2>FAQ</h2>
+    <dl>
+      <dt>Does it really never touch my originals?</dt>
+      <dd>Yes. Source media is opened read-only in exactly one place in the code, and no write or delete path exists. It&rsquo;s a design principle, continuously enforced by the test suite.</dd>
+      <dt>What if power dies mid-copy?</dt>
+      <dd>All state is committed to an SQLite journal as it happens. On relaunch, .Lab detects the interrupted job and resumes, skipping verified files. Partially written files never end up under their final name (atomic commits).</dd>
+      <dt>Which cameras and formats are supported?</dt>
+      <dd>Copying and verification are format-agnostic — every file type works. Card auto-detection and metadata cover Sony XAVC/X-OCN, Canon, RED, ARRI, Blackmagic RAW and still-photo cards.</dd>
+      <dt>Can I use it offline on location?</dt>
+      <dd>Yes. Copying and verification are fully local, and your license has a 30-day offline grace period.</dd>
+
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>.Lab — Media Offload for macOS</div>
+    <div style="margin-top: 8px">
+      <a href="#">EULA</a><a href="mailto:support@kotetsu.work">Support</a>
+    </div>
+    <div style="margin-top: 12px">© 2026 株式会社虎徹 / KOTETSU, Corp.</div>
+  </div>
+</footer>
+
+</body>
+</html>
