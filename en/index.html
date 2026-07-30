@@ -32,9 +32,15 @@
   header { padding: 96px 0 72px; text-align: center; position: relative; }
   .lang { position: absolute; top: 28px; right: 24px; font-size: 13px; font-weight: 700; color: var(--sub); border: 1px solid var(--border); padding: 6px 14px; border-radius: 999px; }
   .logo {
-    width: 108px; height: 108px; border-radius: 24%;
+    width: 108px; height: 108px; border-radius: 25px; background: var(--violet);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 34px; font-weight: 800; color: #fff; letter-spacing: -0.5px;
     margin-bottom: 24px; box-shadow: 0 12px 48px rgba(124, 92, 232, 0.35);
   }
+  .hero-shot { max-width: 860px; margin: 64px auto 0; }
+  .hero-shot svg { width: 100%; height: auto; display: block; border-radius: 14px; box-shadow: 0 28px 90px rgba(0, 0, 0, 0.55); }
+  .flow { max-width: 760px; margin: 8px auto 0; }
+  .flow svg { width: 100%; height: auto; display: block; }
   h1 { font-size: 44px; font-weight: 800; letter-spacing: -1px; }
   .tagline { font-size: 20px; color: var(--sub); margin-top: 12px; }
   .cta { margin-top: 36px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
@@ -97,7 +103,7 @@
 
 <header class="wrap">
   <a class="lang" href="/">日本語</a>
-  <img class="logo" src="/icon.png" alt=".Lab">
+  <div class="logo">.Lab</div>
   <h1>For every filmmaker<br>and photographer</h1>
   <p class="tagline">A macOS app that copies photos and video from cards and SSDs while verifying every single file.</p>
   <p class="tagline" style="font-size: 17px; color: var(--text); font-weight: 600; margin-top: 14px;">Irreplaceable data deserves more than &ldquo;it probably copied fine.&rdquo;</p>
@@ -106,6 +112,51 @@
     <a class="btn btn-ghost" href="#buy">Buy Pro</a>
   </div>
   <p class="note">macOS 14 Sonoma or later / Apple Silicon &amp; Intel / Notarized</p>
+<div class="hero-shot" aria-hidden="true"><svg viewBox="0 0 880 400" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Hiragino Sans', sans-serif">
+  <rect width="880" height="400" rx="14" fill="#17171d" stroke="#26262e"/>
+  <circle cx="24" cy="22" r="6" fill="#ff5f57"/><circle cx="44" cy="22" r="6" fill="#febc2e"/><circle cx="64" cy="22" r="6" fill="#28c840"/>
+  <rect x="0" y="44" width="180" height="356" fill="#121218"/>
+  <rect x="16" y="64" width="34" height="34" rx="9" fill="#7C5CE8"/>
+  <text x="33" y="86" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">.Lab</text>
+  <rect x="16" y="120" width="120" height="8" rx="4" fill="#26262e"/>
+  <rect x="16" y="140" width="90" height="8" rx="4" fill="#26262e"/>
+  <rect x="16" y="160" width="105" height="8" rx="4" fill="#26262e"/>
+  <rect x="204" y="70" width="200" height="110" rx="12" fill="#1d1d24" stroke="#3a3247"/>
+  <text x="220" y="94" font-size="10" fill="#62626e" letter-spacing="1">SOURCE</text>
+  <text x="220" y="118" font-size="15" font-weight="700" fill="#f2f2f5">A001</text>
+  <text x="220" y="140" font-size="11" fill="#9a9aa5">43 clips / 209 GB</text>
+  <rect x="220" y="152" width="52" height="16" rx="8" fill="#2a2438"/>
+  <text x="246" y="163" font-size="8.5" fill="#b0a3e8" text-anchor="middle">Sony</text>
+  <path d="M 416 125 L 448 125" stroke="#62626e" stroke-width="2" marker-end="url(#ah)"/>
+  <defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#62626e"/></marker></defs>
+  <g>
+    <rect x="460" y="52" width="240" height="104" rx="12" fill="#1d1d24" stroke="#26262e"/>
+    <text x="476" y="76" font-size="10" fill="#62626e" letter-spacing="1">MASTER</text>
+    <text x="476" y="97" font-size="12" font-weight="600" fill="#f2f2f5">SSD_A</text>
+    <text x="476" y="118" font-size="9" fill="#4a9df8">COPY</text>
+    <rect x="476" y="124" width="208" height="6" rx="3" fill="#26262e"/><rect x="476" y="124" width="208" height="6" rx="3" fill="#4a9df8"/>
+    <text x="476" y="142" font-size="9" fill="#f5a623">VERIFY</text>
+    <rect x="476" y="146" width="208" height="6" rx="3" fill="#26262e"/><rect x="476" y="146" width="150" height="6" rx="3" fill="#f5a623"/>
+  </g>
+  <g>
+    <rect x="460" y="168" width="240" height="104" rx="12" fill="#1d1d24" stroke="#26262e"/>
+    <text x="476" y="192" font-size="10" fill="#62626e" letter-spacing="1">BACKUP</text>
+    <text x="476" y="213" font-size="12" font-weight="600" fill="#f2f2f5">SSD_B</text>
+    <text x="476" y="234" font-size="9" fill="#4a9df8">COPY</text>
+    <rect x="476" y="240" width="208" height="6" rx="3" fill="#26262e"/><rect x="476" y="240" width="208" height="6" rx="3" fill="#4a9df8"/>
+    <text x="476" y="258" font-size="9" fill="#f5a623">VERIFY</text>
+    <rect x="476" y="262" width="208" height="6" rx="3" fill="#26262e"/><rect x="476" y="262" width="128" height="6" rx="3" fill="#f5a623"/>
+  </g>
+  <g font-size="11">
+    <rect x="204" y="292" width="640" height="88" rx="12" fill="#14141a" stroke="#26262e"/>
+    <text x="222" y="316" fill="#9a9aa5" font-family="monospace">A001C001.mxf</text>
+    <rect x="740" y="304" width="60" height="18" rx="9" fill="#153726"/><text x="770" y="317" font-size="9.5" fill="#34c77b" text-anchor="middle">Done</text>
+    <text x="222" y="344" fill="#9a9aa5" font-family="monospace">A001C002.mxf</text>
+    <rect x="740" y="332" width="60" height="18" rx="9" fill="#153726"/><text x="770" y="345" font-size="9.5" fill="#34c77b" text-anchor="middle">Done</text>
+    <text x="222" y="372" fill="#9a9aa5" font-family="monospace">A001C003.mxf</text>
+    <rect x="740" y="360" width="60" height="18" rx="9" fill="#2a2438"/><text x="770" y="373" font-size="9.5" fill="#f5a623" text-anchor="middle">Verifying</text>
+  </g>
+</svg></div>
 </header>
 
 <section id="mission">
@@ -113,6 +164,27 @@
     <p style="color: var(--sub); font-size: 16px; line-height: 2;">.Lab (&ldquo;dot-Lab&rdquo;) is a backup tool for filmmakers and photographers.<br>Film set or first camera — it copies the footage that matters, safely and at full speed.</p>
     <p style="font-size: 18px; font-weight: 700; color: var(--text); margin-top: 28px; line-height: 2;">One less person losing footage that mattered.<br><span style="font-weight: 500; color: var(--sub); font-size: 15px;">That&rsquo;s why this app exists.</span></p>
   </div>
+<div class="flow" aria-hidden="true"><svg viewBox="0 0 880 240" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Hiragino Sans', sans-serif">
+  <defs><marker id="fa" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#62626e"/></marker>
+  <marker id="fb" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f5a623"/></marker></defs>
+  <rect x="40" y="80" width="120" height="90" rx="12" fill="#1d1d24" stroke="#3a3247"/>
+  <rect x="122" y="80" width="38" height="26" rx="6" fill="#2a2438"/>
+  <text x="100" y="122" font-size="12" font-weight="700" fill="#f2f2f5" text-anchor="middle">Card</text>
+  <text x="100" y="142" font-size="10" fill="#9a9aa5" text-anchor="middle">read-only</text>
+  <path d="M 168 125 L 240 125" stroke="#62626e" stroke-width="2" marker-end="url(#fa)"/>
+  <rect x="252" y="90" width="72" height="72" rx="18" fill="#7C5CE8"/>
+  <text x="288" y="132" font-size="16" font-weight="800" fill="#fff" text-anchor="middle">.Lab</text>
+  <path d="M 332 110 C 400 70, 460 70, 520 88" stroke="#4a9df8" stroke-width="2.5" fill="none" marker-end="url(#fa)"/>
+  <path d="M 332 142 C 400 182, 460 182, 520 164" stroke="#4a9df8" stroke-width="2.5" fill="none" marker-end="url(#fa)"/>
+  <rect x="532" y="50" width="150" height="66" rx="12" fill="#1d1d24" stroke="#26262e"/>
+  <text x="607" y="79" font-size="12" font-weight="700" fill="#f2f2f5" text-anchor="middle">SSD 1</text>
+  <text x="607" y="99" font-size="10" fill="#34c77b" text-anchor="middle">✓ verified</text>
+  <rect x="532" y="136" width="150" height="66" rx="12" fill="#1d1d24" stroke="#26262e"/>
+  <text x="607" y="165" font-size="12" font-weight="700" fill="#f2f2f5" text-anchor="middle">SSD 2</text>
+  <text x="607" y="185" font-size="10" fill="#34c77b" text-anchor="middle">✓ verified</text>
+  <path d="M 692 83 C 780 83, 800 125, 780 150 C 760 180, 700 210, 400 214 C 340 214, 300 200, 292 172" stroke="#f5a623" stroke-width="1.8" stroke-dasharray="5 5" fill="none" marker-end="url(#fb)"/>
+  <text x="560" y="230" font-size="11" fill="#f5a623">Read back &amp; compare → then re-read the source once more</text>
+</svg></div>
 </section>
 
 <section id="proof">
