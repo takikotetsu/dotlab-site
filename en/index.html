@@ -239,7 +239,7 @@
       <div class="feature"><h3><span class="dot">●</span> Insert card, ready to go</h3>
         <p>Auto-detects Sony, Canon, RED, ARRI and Blackmagic cards as well as regular SD cards (DCIM). Insert a card and it&rsquo;s set as the source, reel name suggested automatically.</p></div>
       <div class="feature"><h3><span class="dot">●</span> Check your footage on the spot</h3>
-        <p>Double-click a finished reel to browse thumbnails, play clips and inspect metadata. Get completion alerts by chime, macOS notification — or email when you&rsquo;re away from the cart.</p></div>
+        <p>Double-click a finished reel to browse thumbnails, play clips and inspect metadata (for formats macOS can play). Get completion alerts by chime, macOS notification — or email when you&rsquo;re away from the cart.</p></div>
     </div>
   </div>
 </section>
@@ -288,7 +288,7 @@
       <dt>What if power dies mid-copy?</dt>
       <dd>All state is committed to an SQLite journal as it happens. On relaunch, .Lab detects the interrupted job and resumes, skipping verified files. Partially written files never end up under their final name (atomic commits).</dd>
       <dt>Which cameras and formats are supported?</dt>
-      <dd>Copying and verification are format-agnostic — every file type works. Card auto-detection and metadata cover Sony XAVC/X-OCN, Canon, RED, ARRI, Blackmagic RAW and still-photo cards.</dd>
+      <dd>Copying and verification are format-agnostic — every file type works. Card auto-detection covers Sony, Canon, RED, ARRI, Blackmagic and still-photo cards (DCIM). Shooting metadata is read from Sony sidecar files (XAVC/X-OCN); RAW formats (REDCODE/ARRIRAW/BRAW) show the format name only. Thumbnails and playback are available for formats macOS can natively play (MP4/MOV/ProRes, JPEG/HEIF, etc.).</dd>
       <dt>Can I use it offline on location?</dt>
       <dd>Yes. Copying and verification are fully local, and your license has a 30-day offline grace period.</dd>
 
