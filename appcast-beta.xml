@@ -3,6 +3,25 @@
     <channel>
         <title>dotLab</title>
         <item>
+            <title>1.0.9</title>
+            <pubDate>Sat, 01 Aug 2026 19:21:25 +0900</pubDate>
+            <sparkle:version>116</sparkle:version>
+            <sparkle:shortVersionString>1.0.9</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description><![CDATA[<h2>.Lab 1.0.9(社内ベータ)</h2>
+<ul>
+  <li>日本語環境では初回起動から日本語UIになりました(設定 → 一般 でいつでも切替可能)</li>
+</ul>
+]]></description>
+            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.0.9/dotLab-1.0.9.dmg" length="2460572" type="application/octet-stream" sparkle:edSignature="jc+fywI6l1yUSqaYArmO8X2dYHnmjuq2CZAoDfQx2jGujjglXK/h3BY4s895fJ5ABuu4vH6k/w5rixlod8VABQ=="/>
+            <sparkle:deltas>
+                <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.0.9/dotLab116-112.delta" sparkle:deltaFrom="112" length="81886" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="zhDKjDOXTi3OYs9fQ1Kx3hEP2fXctTeXjxWwOlpWAi5XFzYgtvFmwi4dv8hh1/w5XNt+iwKFZdCujXsqOjqiDQ=="/>
+                <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.0.9/dotLab116-110.delta" sparkle:deltaFrom="110" length="156318" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="cIiegMv++Mhbwo2lKR87W3+bbDDXgRHdpClb0JqQBIxH/enqKHcCM/FsbKWI7NVQyMFj+QdlnYNl0OG/b05NCg=="/>
+                <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.0.9/dotLab116-108.delta" sparkle:deltaFrom="108" length="156238" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="oNtB8kGOMFi5/VPyjIjcfOx66+83oOqtmC2wZBJetczjtQzA2q/aWQMMJGBePeDc7Aj5Km2PfxqJbgkqyEsmCg=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>1.0.8</title>
             <pubDate>Sat, 01 Aug 2026 19:04:06 +0900</pubDate>
             <sparkle:version>112</sparkle:version>
@@ -17,7 +36,7 @@
   <li>更新ダイアログ等の日本語化</li>
 </ul>
 ]]></description>
-            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.0.8/dotLab-1.0.8.dmg" length="2460425" type="application/octet-stream" sparkle:edSignature="JnoFHKkXby5Wj+hlP7TeQ5+lGVVc+IzDf9Rd6yXxlWL8u6rugFckz4A+S9EK1Reey/ZqXrMD2SxI5/yKbRoKBA=="/>
+            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.0.9/dotLab-1.0.8.dmg" length="2460425" type="application/octet-stream" sparkle:edSignature="JnoFHKkXby5Wj+hlP7TeQ5+lGVVc+IzDf9Rd6yXxlWL8u6rugFckz4A+S9EK1Reey/ZqXrMD2SxI5/yKbRoKBA=="/>
             <sparkle:deltas>
                 <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.0.8/dotLab112-110.delta" sparkle:deltaFrom="110" length="154194" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="2BkKxyqe4HGWsmS/w3UeGOmOqGkCPgLwVWWjpXUy7VLklg372ijcsF2Rwlba3v166MKlF8wcQI5IwD3gpAC6DA=="/>
                 <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.0.8/dotLab112-108.delta" sparkle:deltaFrom="108" length="153934" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="hYxG+RxENfTd3N50Rdor774UNAW7cgyJZ6IhJ1fx3LCmVo9YfV/jJHLm0RWYaIE+Mlz1KzhWrTps1m5fHSQwAg=="/>
@@ -36,30 +55,10 @@
   <li>更新ダイアログなどシステム表示の日本語化(対応言語の宣言を追加)</li>
 </ul>
 ]]></description>
-            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.0.8/dotLab-1.0.7.dmg" length="2436861" type="application/octet-stream" sparkle:edSignature="64mgOTY1dvx6wPg7ViPMX4YPlmHnCQN8dWlRLzkRTjlI0jXRAaER5ND2riKrapLm2NQkFKInozE+VtV1eLGXDg=="/>
+            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.0.9/dotLab-1.0.7.dmg" length="2436861" type="application/octet-stream" sparkle:edSignature="64mgOTY1dvx6wPg7ViPMX4YPlmHnCQN8dWlRLzkRTjlI0jXRAaER5ND2riKrapLm2NQkFKInozE+VtV1eLGXDg=="/>
             <sparkle:deltas>
                 <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.0.7/dotLab110-108.delta" sparkle:deltaFrom="108" length="10414" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="bf/bHT3EXElnQfAAKUoaXZzkzkODQ33C2Rjc3wmaXBQ44Izh3xXBUHP4pkRvaADtVhrYNKzJiXWQR38p7D2fDg=="/>
             </sparkle:deltas>
-        </item>
-        <item>
-            <title>1.0.6</title>
-            <pubDate>Sat, 01 Aug 2026 13:56:56 +0900</pubDate>
-            <sparkle:version>108</sparkle:version>
-            <sparkle:shortVersionString>1.0.6</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-            <description><![CDATA[<h2>.Lab 1.0.6(社内ベータ)</h2>
-<ul>
-  <li><b>自動アップデート開始</b>: 今後はこの通知からワンクリックで更新できます(DMGの入れ直し不要)</li>
-  <li><b>FX6などのMXFにサムネイル表示</b>: OSが描けないクリップも、カード同梱のサムネイルJPGを使ってクリップブラウザ・レポートPDFに表示</li>
-  <li><b>読み出し停滞の警告</b>: コピー中に15秒以上進捗が止まると黄色い警告を表示(不調なカード/リーダーの早期発見)</li>
-  <li><b>プロジェクト全体レポートPDF</b>: プロジェクト名を右クリック → 書き出し(サマリページ+全リール)</li>
-  <li>ALEXA 35の新命名規則に対応(リール名の自動候補)</li>
-  <li>レポートPDFでサムネイル・撮影情報が出ないことがある問題を修正</li>
-  <li>ライセンスキー入力時の改行・空白を自動除去</li>
-</ul>
-]]></description>
-            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.0.8/dotLab-1.0.6.dmg" length="2436789" type="application/octet-stream" sparkle:edSignature="nqpZcwI9narPfP5laW1A4tV9csSknYQ+DKWZfW12U7s4FnkhvJZfgKvyc6rZ3tYlGWjgNAJ2Nxj5sMIGbwWFAw=="/>
         </item>
     </channel>
 </rss>
