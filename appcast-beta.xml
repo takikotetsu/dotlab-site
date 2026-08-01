@@ -1,0 +1,26 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>dotLab</title>
+        <item>
+            <title>1.0.6</title>
+            <pubDate>Sat, 01 Aug 2026 13:56:56 +0900</pubDate>
+            <sparkle:version>108</sparkle:version>
+            <sparkle:shortVersionString>1.0.6</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description><![CDATA[<h2>.Lab 1.0.6(社内ベータ)</h2>
+<ul>
+  <li><b>自動アップデート開始</b>: 今後はこの通知からワンクリックで更新できます(DMGの入れ直し不要)</li>
+  <li><b>FX6などのMXFにサムネイル表示</b>: OSが描けないクリップも、カード同梱のサムネイルJPGを使ってクリップブラウザ・レポートPDFに表示</li>
+  <li><b>読み出し停滞の警告</b>: コピー中に15秒以上進捗が止まると黄色い警告を表示(不調なカード/リーダーの早期発見)</li>
+  <li><b>プロジェクト全体レポートPDF</b>: プロジェクト名を右クリック → 書き出し(サマリページ+全リール)</li>
+  <li>ALEXA 35の新命名規則に対応(リール名の自動候補)</li>
+  <li>レポートPDFでサムネイル・撮影情報が出ないことがある問題を修正</li>
+  <li>ライセンスキー入力時の改行・空白を自動除去</li>
+</ul>
+]]></description>
+            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.0.6/dotLab-1.0.6.dmg" length="2436789" type="application/octet-stream" sparkle:edSignature="nqpZcwI9narPfP5laW1A4tV9csSknYQ+DKWZfW12U7s4FnkhvJZfgKvyc6rZ3tYlGWjgNAJ2Nxj5sMIGbwWFAw=="/>
+        </item>
+    </channel>
+</rss>
