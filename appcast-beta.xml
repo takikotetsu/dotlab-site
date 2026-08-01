@@ -3,6 +3,24 @@
     <channel>
         <title>dotLab</title>
         <item>
+            <title>1.0.7</title>
+            <pubDate>Sat, 01 Aug 2026 14:21:09 +0900</pubDate>
+            <sparkle:version>110</sparkle:version>
+            <sparkle:shortVersionString>1.0.7</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description><![CDATA[<h2>.Lab 1.0.7(社内ベータ)</h2>
+<p>この画面が自動アップデートの通知です。「インストール」を押すだけで最新版に更新され、設定・ライセンス・履歴はそのまま引き継がれます。</p>
+<ul>
+  <li>更新ダイアログなどシステム表示の日本語化(対応言語の宣言を追加)</li>
+</ul>
+]]></description>
+            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.0.7/dotLab-1.0.7.dmg" length="2436861" type="application/octet-stream" sparkle:edSignature="64mgOTY1dvx6wPg7ViPMX4YPlmHnCQN8dWlRLzkRTjlI0jXRAaER5ND2riKrapLm2NQkFKInozE+VtV1eLGXDg=="/>
+            <sparkle:deltas>
+                <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.0.7/dotLab110-108.delta" sparkle:deltaFrom="108" length="10414" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="bf/bHT3EXElnQfAAKUoaXZzkzkODQ33C2Rjc3wmaXBQ44Izh3xXBUHP4pkRvaADtVhrYNKzJiXWQR38p7D2fDg=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>1.0.6</title>
             <pubDate>Sat, 01 Aug 2026 13:56:56 +0900</pubDate>
             <sparkle:version>108</sparkle:version>
@@ -20,7 +38,7 @@
   <li>ライセンスキー入力時の改行・空白を自動除去</li>
 </ul>
 ]]></description>
-            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.0.6/dotLab-1.0.6.dmg" length="2436789" type="application/octet-stream" sparkle:edSignature="nqpZcwI9narPfP5laW1A4tV9csSknYQ+DKWZfW12U7s4FnkhvJZfgKvyc6rZ3tYlGWjgNAJ2Nxj5sMIGbwWFAw=="/>
+            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.0.7/dotLab-1.0.6.dmg" length="2436789" type="application/octet-stream" sparkle:edSignature="nqpZcwI9narPfP5laW1A4tV9csSknYQ+DKWZfW12U7s4FnkhvJZfgKvyc6rZ3tYlGWjgNAJ2Nxj5sMIGbwWFAw=="/>
         </item>
     </channel>
 </rss>
