@@ -3,6 +3,27 @@
     <channel>
         <title>dotLab</title>
         <item>
+            <title>1.0.8</title>
+            <pubDate>Sat, 01 Aug 2026 19:04:06 +0900</pubDate>
+            <sparkle:version>112</sparkle:version>
+            <sparkle:shortVersionString>1.0.8</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description><![CDATA[<h2>.Lab 1.0.8(社内ベータ)</h2>
+<ul>
+  <li><b>Bin(リールの分類)</b>: サイドバーのリールを右クリック → 「Binへ移動」で撮影日やカメラごとにグループ分けできます</li>
+  <li><b>BinごとのレポートPDF</b>: Bin見出しを右クリック → 「このBinのレポートPDFを書き出す」</li>
+  <li><b>リール名の変更</b>: 完了したリールを右クリック → 「リール名を変更」。接続中のコピー先フォルダ名も一緒に変更されます(上書きは絶対にしません)</li>
+  <li>更新ダイアログ等の日本語化</li>
+</ul>
+]]></description>
+            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.0.8/dotLab-1.0.8.dmg" length="2460425" type="application/octet-stream" sparkle:edSignature="JnoFHKkXby5Wj+hlP7TeQ5+lGVVc+IzDf9Rd6yXxlWL8u6rugFckz4A+S9EK1Reey/ZqXrMD2SxI5/yKbRoKBA=="/>
+            <sparkle:deltas>
+                <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.0.8/dotLab112-110.delta" sparkle:deltaFrom="110" length="154194" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="2BkKxyqe4HGWsmS/w3UeGOmOqGkCPgLwVWWjpXUy7VLklg372ijcsF2Rwlba3v166MKlF8wcQI5IwD3gpAC6DA=="/>
+                <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.0.8/dotLab112-108.delta" sparkle:deltaFrom="108" length="153934" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="hYxG+RxENfTd3N50Rdor774UNAW7cgyJZ6IhJ1fx3LCmVo9YfV/jJHLm0RWYaIE+Mlz1KzhWrTps1m5fHSQwAg=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>1.0.7</title>
             <pubDate>Sat, 01 Aug 2026 14:21:09 +0900</pubDate>
             <sparkle:version>110</sparkle:version>
@@ -15,7 +36,7 @@
   <li>更新ダイアログなどシステム表示の日本語化(対応言語の宣言を追加)</li>
 </ul>
 ]]></description>
-            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.0.7/dotLab-1.0.7.dmg" length="2436861" type="application/octet-stream" sparkle:edSignature="64mgOTY1dvx6wPg7ViPMX4YPlmHnCQN8dWlRLzkRTjlI0jXRAaER5ND2riKrapLm2NQkFKInozE+VtV1eLGXDg=="/>
+            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.0.8/dotLab-1.0.7.dmg" length="2436861" type="application/octet-stream" sparkle:edSignature="64mgOTY1dvx6wPg7ViPMX4YPlmHnCQN8dWlRLzkRTjlI0jXRAaER5ND2riKrapLm2NQkFKInozE+VtV1eLGXDg=="/>
             <sparkle:deltas>
                 <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.0.7/dotLab110-108.delta" sparkle:deltaFrom="108" length="10414" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="bf/bHT3EXElnQfAAKUoaXZzkzkODQ33C2Rjc3wmaXBQ44Izh3xXBUHP4pkRvaADtVhrYNKzJiXWQR38p7D2fDg=="/>
             </sparkle:deltas>
@@ -38,7 +59,7 @@
   <li>ライセンスキー入力時の改行・空白を自動除去</li>
 </ul>
 ]]></description>
-            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.0.7/dotLab-1.0.6.dmg" length="2436789" type="application/octet-stream" sparkle:edSignature="nqpZcwI9narPfP5laW1A4tV9csSknYQ+DKWZfW12U7s4FnkhvJZfgKvyc6rZ3tYlGWjgNAJ2Nxj5sMIGbwWFAw=="/>
+            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.0.8/dotLab-1.0.6.dmg" length="2436789" type="application/octet-stream" sparkle:edSignature="nqpZcwI9narPfP5laW1A4tV9csSknYQ+DKWZfW12U7s4FnkhvJZfgKvyc6rZ3tYlGWjgNAJ2Nxj5sMIGbwWFAw=="/>
         </item>
     </channel>
 </rss>
