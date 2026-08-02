@@ -4,6 +4,28 @@
         <title>dotLab</title>
         <item>
             <title>1.1.1</title>
+            <pubDate>Sun, 02 Aug 2026 09:04:36 +0900</pubDate>
+            <sparkle:version>128</sparkle:version>
+            <sparkle:shortVersionString>1.1.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description><![CDATA[<h2>.Lab 1.1.1(社内ベータ)</h2>
+<ul>
+  <li><b>完了ポップアップ</b>: コピーが無事終わると、アプリ中央にお知らせが出るようになりました(クリックで閉じます)</li>
+  <li><b>Binへのドラッグ&amp;ドロップ</b>: リールをつまんでBin見出しに落とすだけで移動できます</li>
+</ul>
+]]></description>
+            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.1.1/dotLab-1.1.1.dmg" length="2494305" type="application/octet-stream" sparkle:edSignature="HJiY62cs41yGkd9jCsH5bsdt3NPy2pxgs3LLzkwSERta1L8jOi/ZQXvz9+ZfxB/CvcuVZ5a87p2RKjDP8H1iAw=="/>
+            <sparkle:deltas>
+                <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.1.1/dotLab128-120.delta" sparkle:deltaFrom="120" length="161646" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="ZGfb7raFfb103gv+l1QCcbWa+wAWRW1ECTXGBTOTHdKhIh+vQBC+5KOko7+MT61y87+nyb4783yGuqvjyg8uBA=="/>
+                <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.1.1/dotLab128-116.delta" sparkle:deltaFrom="116" length="208674" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="oGQyrzbCM6AqlTHQbjHWJ+qCNTJd0DFKqP7r2fkJgc5xJdOcaorKgZ5jS7yU9wJxjb4kYy9epSEW8Dpy42IbCw=="/>
+                <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.1.1/dotLab128-112.delta" sparkle:deltaFrom="112" length="209286" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="LvM7uyVQLpuaUbrLGHtYPrrOndYHcoGkOciUuZuIF9U2rb1S95WLNOhurx0Vvby6/iqT3+mVxDwlFFUcwPB2CQ=="/>
+                <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.1.1/dotLab128-110.delta" sparkle:deltaFrom="110" length="232030" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="6wkzDob37rf18Nsv4uZ4iBiBgrmEF+4EQKMgvaxoBGp9yECtRsAUDGk1BVG7dPdiRNSLFdPSHz/ZnrFkfrnACw=="/>
+                <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.1.1/dotLab128-108.delta" sparkle:deltaFrom="108" length="232178" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="sC3HSRM8HkGi08ljzbzE7pEgKVkN5s7AxQBLtNjV8KcQIusHr7bPo+Mi0P7KXALSqeYJaM7WAa0C5yd/uvhwCA=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
+            <title>1.1.1</title>
             <pubDate>Sun, 02 Aug 2026 09:03:18 +0900</pubDate>
             <sparkle:version>127</sparkle:version>
             <sparkle:shortVersionString>1.1.1</sparkle:shortVersionString>
@@ -44,28 +66,6 @@
                 <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.1.1/dotLab125-112.delta" sparkle:deltaFrom="112" length="205070" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="KFTMDNWWOwwVW8aAAQm/ln/StKlZ+MYK1FirBVbVmbPqZzcqNX4b2AcjggxI+AzrlBEF0LFYATJd4OSVF5vxCA=="/>
                 <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.1.1/dotLab125-110.delta" sparkle:deltaFrom="110" length="230482" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="wADiRcpli8LvaGIoOUbAKeb/6Q8LDj1bSaBbw0NedZm5a8HG9h/vZDZ+T5Of5AawcuuTWVxwo8of2NKfo380BA=="/>
                 <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.1.1/dotLab125-108.delta" sparkle:deltaFrom="108" length="230422" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="G2ebhrALGSiqcmgNSBlNsHbeWCw41TPK4DCPRiv4f6kUB6D7kos6G3Qec8jC6HuBeTR7yrXd8+7V7EvpAFRMBQ=="/>
-            </sparkle:deltas>
-        </item>
-        <item>
-            <title>1.1.1</title>
-            <pubDate>Sun, 02 Aug 2026 07:33:12 +0900</pubDate>
-            <sparkle:version>123</sparkle:version>
-            <sparkle:shortVersionString>1.1.1</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-            <description><![CDATA[<h2>.Lab 1.1.1(社内ベータ)</h2>
-<ul>
-  <li><b>完了ポップアップ</b>: コピーが無事終わると、アプリ中央にお知らせが出るようになりました(クリックで閉じます)</li>
-  <li><b>Binへのドラッグ&amp;ドロップ</b>: リールをつまんでBin見出しに落とすだけで移動できます</li>
-</ul>
-]]></description>
-            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.1.1/dotLab-1.1.1.dmg" length="2490651" type="application/octet-stream" sparkle:edSignature="5wF2mWcwLKxb7w5DwxBWNgnSgyMPi9kD+J9h5q1kX7iSPKYWQS2B17w+hmxzx8A6BLEw49PZW1fT4tetYVa0Dg=="/>
-            <sparkle:deltas>
-                <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.1.1/dotLab123-120.delta" sparkle:deltaFrom="120" length="153602" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="fVgG1RoquLGtSzL+8i+w4fQjznLyLxDWPlU5VX0x2wIrs5QI+FLYdo5TD/OMnaouL4Z+pW7wyJchwE5aDI5LDQ=="/>
-                <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.1.1/dotLab123-116.delta" sparkle:deltaFrom="116" length="201266" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="GcmTMVlLj2wNBMRbvQFQXPIRzyAVvlI4JBmvKGWNVOi9EqmuwuUfe79DIgo1QNWMY15E6BAWy7Y9VO5MKzq6BQ=="/>
-                <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.1.1/dotLab123-112.delta" sparkle:deltaFrom="112" length="201214" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="cD0yC34aX5VYhHjricWJ7g7OqoDdoD957ILb1k+BhiV/KpJ0Tj92cfbeTjiWAzCeDcYlCUo33/w508rYqShTAg=="/>
-                <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.1.1/dotLab123-110.delta" sparkle:deltaFrom="110" length="224874" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="24sSsd+MQXEMF2fQ8oLrpaXnMr8UWFA4wRFu7PffxRNvnk4S6vioWjwvOrRNn3AOzUjr0q79Aa8un1+gYwPMDA=="/>
-                <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.1.1/dotLab123-108.delta" sparkle:deltaFrom="108" length="225850" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="scrwxOPRCzn+EBlmIbdsVD1NOsChhJxEVsk+6ae1r2zTAmQGBlrGpeIkhsusFDB6uTgG5boIbz2QQCj4q4uGBA=="/>
             </sparkle:deltas>
         </item>
     </channel>
