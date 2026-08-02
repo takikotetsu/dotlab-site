@@ -325,6 +325,27 @@
       <dd>No. Source media is opened strictly read-only, and no code path exists that writes to or deletes from it. It&rsquo;s a design principle, continuously enforced by the test suite.</dd>
       <dt>What if power dies mid-copy?</dt>
       <dd>All state is committed to an SQLite journal as it happens. On relaunch, .Lab detects the interrupted job and resumes, skipping verified files. Partially written files never end up under their final name (atomic commits).</dd>
+      <dt>How do I use it?</dt>
+      <dd>Drag a card or folder onto SOURCE (inserted cards are detected automatically), pick a destination, press Start Offload. That's it — a confirmation appears when everything is verified. Full usage notes and FAQ are built into the app (⌘?) and work offline.</dd>
+
+      <dt>What does the destination structure look like?</dt>
+      <dd>destination / reel / media name / (card contents as-is), preserving the card's own hierarchy the way sets expect. Leave the reel name empty to copy straight into the destination.</dd>
+
+      <dt>If I stop a copy, do I start over?</dt>
+      <dd>No. Verified files are recorded, so resuming continues where it left off. Partially written files never take their final name.</dd>
+
+      <dt>I have a half-finished Finder copy. Can .Lab finish it?</dt>
+      <dd>Yes — turn on Repair Copy. Existing files are verified against the source one by one, good ones are kept, and only what's missing is copied. Corrupted files are reported in red, never deleted or overwritten.</dd>
+
+      <dt>What if a sequence has missing frames?</dt>
+      <dd>You're warned before copying, and the report records that those frames were already absent on the card — proof it wasn't lost in transfer.</dd>
+
+      <dt>Two Macs?</dt>
+      <dd>One license covers two Macs at a time. Deactivate in Settings to move it to another machine.</dd>
+
+      <dt>Does the free version verify too?</dt>
+      <dd>Yes — copy and verification are identical to Pro in quality and speed. Free is limited to one destination, one job at a time and one project; queue, watch folder, report PDFs and more are Pro.</dd>
+
       <dt>Which cameras and formats are supported?</dt>
       <dd>Copying and verification are format-agnostic — every file type works. Card auto-detection covers Sony, Canon, RED, ARRI, Blackmagic and still-photo cards (DCIM). Shooting metadata is read from Sony sidecar files (XAVC/X-OCN); RAW formats (REDCODE/ARRIRAW/BRAW) show the format name only. Thumbnails and playback are available for formats macOS can natively play (MP4/MOV/ProRes, JPEG/HEIF, etc.).</dd>
       <dt>Can I use it offline on location?</dt>
