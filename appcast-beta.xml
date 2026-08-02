@@ -3,6 +3,29 @@
     <channel>
         <title>dotLab</title>
         <item>
+            <title>1.1.5</title>
+            <pubDate>Sun, 02 Aug 2026 17:05:45 +0900</pubDate>
+            <sparkle:version>155</sparkle:version>
+            <sparkle:shortVersionString>1.1.5</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description><![CDATA[<h2>.Lab 1.1.5(社内ベータ)</h2>
+<ul>
+  <li><b>ジョブの優先実行</b>: ジョブタブを右クリック →「このジョブを優先」で、混み合ったときに先に処理されます(他のジョブの速度は制限しません)。待機中のジョブなら次に開始されます</li>
+  <li><b>連番の進捗表示を統一</b>: 連番の集約行も、通常のファイルと同じ位置・同じ大きさのバーで進み具合が見えるようになりました</li>
+  <li>コピーを開始した時点で、左のリール一覧に青(実行中)で表示されるようになりました</li>
+</ul>
+]]></description>
+            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.1.5/dotLab-1.1.5.dmg" length="2545150" type="application/octet-stream" sparkle:edSignature="okVfT+qBtulnPlpxR8HTJJW32If0D5XxD1o2U1UhJFrxNKfhnKd1EcPjEar8ub/yjW3mT+jSdSDC+rD+T8H7Bw=="/>
+            <sparkle:deltas>
+                <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.1.5/dotLab155-148.delta" sparkle:deltaFrom="148" length="150954" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="LO14pdB0RN77fRFjg+7n82syHXUFJEoN1gSemOWhcluycZ2TVnRijNL/pvfXkVcWMhtAPbd029EJumIjyUrMBQ=="/>
+                <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.1.5/dotLab155-138.delta" sparkle:deltaFrom="138" length="186190" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="370j7F77CGp5f+YxQGAyFH/zWWVL5BC4aBA7q78OKiIcsywqfl+2+2xtRQZxgiwCcO3vRdbqQ97kYSQ3wQXCBg=="/>
+                <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.1.5/dotLab155-132.delta" sparkle:deltaFrom="132" length="231314" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="3QPsIDSdLJ0iW6eX6+RSAxnHZZX2wIcHS/ff/kqxwJW3q668fcrzZQcppxUh4gISfb6vBaRg0dcqVwd/nEUDDg=="/>
+                <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.1.5/dotLab155-128.delta" sparkle:deltaFrom="128" length="247650" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="AX9Adf4TS13uTbZzlh6Xu8+y7ApChFJEQOvi8c+JpeWRtcfu+RSsWMfPriujcHORQqR3WlGvsY5SGUPn/6U6Dw=="/>
+                <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.1.5/dotLab155-120.delta" sparkle:deltaFrom="120" length="279382" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="jjmtbk5Oh/zfJA1VFa3iI5b0nM0BSEQjU0/c8xLGUEl5tp3d82hnGLwZiZojmLotvsk8WeJ27k9NBHfkkMiCBg=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>1.1.4</title>
             <pubDate>Sun, 02 Aug 2026 11:32:08 +0900</pubDate>
             <sparkle:version>148</sparkle:version>
@@ -16,7 +39,7 @@
   <li>連番に欠番があるときは、完了のお知らせにも「⚠連番に欠番があります(カード時点)」と表示されます</li>
 </ul>
 ]]></description>
-            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.1.4/dotLab-1.1.4.dmg" length="2540392" type="application/octet-stream" sparkle:edSignature="P0wXWhb06zI5ZKBVUG4+o+VsKE4j2jIGh8mR49FzXh4X7kBweq8WmpLS+EvCcMpTxF8d7En9Ra7MoZixDO3DBQ=="/>
+            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.1.5/dotLab-1.1.4.dmg" length="2540392" type="application/octet-stream" sparkle:edSignature="P0wXWhb06zI5ZKBVUG4+o+VsKE4j2jIGh8mR49FzXh4X7kBweq8WmpLS+EvCcMpTxF8d7En9Ra7MoZixDO3DBQ=="/>
             <sparkle:deltas>
                 <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.1.4/dotLab148-138.delta" sparkle:deltaFrom="138" length="165738" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="0L5l12QVpumUiuW+DuHo1sxf/vN/i9GIkXLaVJM/PUdKUj50GiqdTZBF+/O/D4/6w86qA364s6oG/iWoEb7SBQ=="/>
                 <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.1.4/dotLab148-132.delta" sparkle:deltaFrom="132" length="214614" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="ZhRUmE2DdfRm8DRoG9u5ZF/vcTqXUvINPxsp8nghthymyRY9q0Qd9r6jdanwVAK5EC7kPNEOZtAYBfFcE0gwAg=="/>
@@ -46,29 +69,6 @@
                 <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.1.4/dotLab147-128.delta" sparkle:deltaFrom="128" length="233922" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="YK08dNRnzgtCKOczCCwINd5sLJSU/lNtMklfxQwhBHsfr/X1KgDGfgZOk9ANMMxayIQ4r9/QeMkCagyArwbnAg=="/>
                 <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.1.4/dotLab147-120.delta" sparkle:deltaFrom="120" length="267762" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="qRCnSZiLn3thn5yN8E/Ym5EVBA40bfdO7q0EsihydjlgPyDVSCpewuTR8/iiZY/aUm2DNG8OQlj1BzmxF6NbDA=="/>
                 <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.1.4/dotLab147-116.delta" sparkle:deltaFrom="116" length="291362" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="yHzoeT/mrHKntOmW0J7AWAGiJpQYmdmf4g6dVGQKg1XwmLaCmmGev8SwfBzqyfTBOv8zDRLYuGH0wmBbobFfAg=="/>
-            </sparkle:deltas>
-        </item>
-        <item>
-            <title>1.1.3</title>
-            <pubDate>Sun, 02 Aug 2026 10:00:13 +0900</pubDate>
-            <sparkle:version>138</sparkle:version>
-            <sparkle:shortVersionString>1.1.3</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-            <description><![CDATA[<h2>.Lab 1.1.3(社内ベータ)</h2>
-<ul>
-  <li><b>修復コピー</b>: コピー先に途中まで終わっているデータがあるとき(Finderコピーの中断など)、無事なファイルは照合して使い、足りない分だけコピーします。壊れたファイルは赤で報告(Watch Folderの隣の絆創膏アイコン)</li>
-  <li><b>連番の集約表示</b>: CinemaDNGやARRIRAWなどの連番は、リストで1行にまとまりフレーム数で進捗表示。欠番があれば⚠チップで常時表示されます。レポートPDFも同様に集約され、生成も速くなりました</li>
-  <li>監視・修復・パラノイアの各モードに、マウスオンで表示されるやさしい説明を追加</li>
-</ul>
-]]></description>
-            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.1.4/dotLab-1.1.3.dmg" length="2536468" type="application/octet-stream" sparkle:edSignature="I1K24aT0BWtB4DzhcCGs8kNsxtyNlTMULldEPX7aQBw0Q2MJeT2YvLa7EdGrmYs0KoNy/2mugsvcj0496JH5BA=="/>
-            <sparkle:deltas>
-                <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.1.3/dotLab138-132.delta" sparkle:deltaFrom="132" length="185698" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="Psrdywuv1Rhu5a2h+6jY8//4e2+aHo9hf4wrHRfAqDf4eeVEXtyJnB0U+2S/M/EICKs8p7cS8PtIy85XHFO/CA=="/>
-                <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.1.3/dotLab138-128.delta" sparkle:deltaFrom="128" length="209002" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="aEToGcF5WDoATbeRoV/Up7zD5bQne7RIJcW5gpr9g22hwKJZmiGbfPGtEwZ/77WjPKzUSa8QAOUQIf5jn7oaCg=="/>
-                <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.1.3/dotLab138-120.delta" sparkle:deltaFrom="120" length="246134" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="unmyoCDKfSzToy6ApG1NDovrevO/VGJthfigYLzav0bLkCQG6LAoAGCY6mCWnHAYZtaowpbntxHRFCFaDTCbDQ=="/>
-                <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.1.3/dotLab138-116.delta" sparkle:deltaFrom="116" length="276402" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="XDMJLx1mZss01eVHqvglgN57fv2vBE0LULGhhDCMKkurCm7WDE1E6rovgvxsAtAzQnkZ5lGG408hEWQXWphQCA=="/>
-                <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/beta-v1.1.3/dotLab138-112.delta" sparkle:deltaFrom="112" length="276058" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="980432" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="e1LlGq5+wxcnOGSw6wzl2QNvwoA4dDqNwuAZbVSnVsT3hlK28lusliJ6ideycg59htzNtYZi9lppyvXM8oqCAQ=="/>
             </sparkle:deltas>
         </item>
     </channel>
