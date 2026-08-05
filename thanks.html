@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ご購入ありがとうございます | .Lab</title>
+<meta name="robots" content="noindex">
+<style>
+:root { --violet:#7C5CE8; --bg:#0e0e12; --card:#17171d; --text:#f2f2f5; --sub:#9a9aa5; --faint:#62626e; --border:#26262e; --done:#34c77b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--text); font-family:-apple-system,"SF Pro Display","Hiragino Sans",sans-serif; line-height:1.8; }
+.wrap { max-width:680px; margin:0 auto; padding:80px 24px 96px; }
+.logo { width:84px; height:84px; margin:0 auto 22px; display:block; filter:drop-shadow(0 12px 40px rgba(124,92,232,.4)); }
+h1 { font-size:30px; font-weight:800; text-align:center; letter-spacing:-.5px; }
+.lead { color:var(--sub); text-align:center; margin-top:12px; font-size:15px; }
+.steps { margin-top:40px; display:grid; gap:14px; }
+.step { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:22px 24px; }
+.step h2 { font-size:16px; margin-bottom:6px; }
+.step h2 .num { color:var(--violet); margin-right:8px; }
+.step p { color:var(--sub); font-size:14px; }
+.cta { margin-top:34px; text-align:center; }
+.btn { display:inline-block; padding:14px 28px; border-radius:12px; font-weight:700; font-size:15px; text-decoration:none; }
+.btn-primary { background:var(--violet); color:#fff; }
+.btn-ghost { border:1.5px solid var(--border); color:var(--text); margin-left:10px; }
+.note { color:var(--faint); font-size:12.5px; text-align:center; margin-top:26px; }
+.en { color:var(--faint); font-size:12.5px; border-top:1px solid var(--border); margin-top:40px; padding-top:22px; }
+a { color:var(--violet); text-decoration:none; }
+</style></head><body>
+<div class="wrap">
+  <img class="logo" src="/logo.png" alt=".Lab" width="84" height="84">
+  <h1>ご購入ありがとうございます</h1>
+  <p class="lead">ライセンスキーをメールでお送りしました。<br>数分待っても届かない場合は、迷惑メールフォルダをご確認ください。</p>
+
+  <div class="steps">
+    <div class="step">
+      <h2><span class="num">1</span>アプリをダウンロード</h2>
+      <p>まだの場合は、下のボタンから .Lab を入手してアプリケーションフォルダへ入れてください(Apple公証済み)。</p>
+    </div>
+    <div class="step">
+      <h2><span class="num">2</span>ライセンスキーを入力</h2>
+      <p>.Lab を起動し、<strong>設定 → ライセンス</strong> にメールで届いたキーを貼り付けて「アクティベート」を押してください。1ライセンスで2台までお使いいただけます。</p>
+    </div>
+    <div class="step">
+      <h2><span class="num">3</span>そのまま使えます</h2>
+      <p>Pro機能(複数の宛先・キュー・フォルダ監視・クリップブラウザ・レポートPDF・MHL・メール通知)がすべて有効になります。使い方はアプリ内のヘルプ(⌘?)にまとめてあります。</p>
+    </div>
+  </div>
+
+  <div class="cta">
+    <a class="btn btn-primary" href="https://github.com/takikotetsu/dotlab-site/releases/latest/download/dotLab-latest.dmg">アプリをダウンロード</a>
+    <a class="btn btn-ghost" href="/">.Lab について</a>
+  </div>
+
+  <p class="note">ご不明な点は <a href="mailto:staff@kotetsu.work">staff@kotetsu.work</a> までお気軽にどうぞ。<br>
+  領収書は決済事業者(Polar)から自動で送信されます。</p>
+
+  <div class="en">
+    <strong>Thank you for your purchase.</strong> Your license key has been emailed to you (check spam if it doesn't arrive within a few minutes).
+    Download .Lab from the button above, then enter the key in <strong>Settings → License</strong> and press Activate. One license covers two Macs.
+    Questions: <a href="mailto:staff@kotetsu.work">staff@kotetsu.work</a>
+  </div>
+</div>
+</body></html>
