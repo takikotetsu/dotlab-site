@@ -474,6 +474,11 @@
     });
   }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
   for (var j = 0; j < els.length; j++) io.observe(els[j]);
+  // 保険: 何らかの理由でObserverが発火しない環境でも、内容が消えたままにはしない
+  setTimeout(function () {
+    if (document.querySelector('.reveal.in')) return;
+    for (var k = 0; k < els.length; k++) els[k].classList.remove('reveal');
+  }, 1500);
 })();
 </script>
 </body>
