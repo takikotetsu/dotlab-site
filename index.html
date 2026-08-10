@@ -188,6 +188,32 @@
     .btn-primary { animation: none; }
     .btn:hover { transform: none; }
   }
+
+  /* ── スクロールで浮かび上がる ────────────────────────────────
+     animation-timeline: view() はCSSだけでスクロール連動を実現する。
+     対応していないブラウザでは @supports を通らないので、
+     何も起きない=最初から見えている、という安全な劣化になる。 */
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      section > h2,
+      section > p,
+      section > dl,
+      .feature,
+      .price-card,
+      .proof-card,
+      .biz {
+        animation: riseIn linear both;
+        animation-timeline: view();
+        /* 画面に入り始めてから、少し上がるまでの間で完了させる */
+        animation-range: entry 8% cover 26%;
+      }
+      /* 並んでいるものは、左から順に少しずつ遅れて出す */
+      /* 横に並ぶものは、右へ行くほど少し遅らせる */
+      .feature:nth-child(2), .price-card:nth-child(2),
+      .proof-card:nth-child(2) { animation-range: entry 4% cover 28%; }
+      .feature:nth-child(3), .proof-card:nth-child(3) { animation-range: entry 2% cover 30%; }
+    }
+  }
 </style>
 </head>
 <body>
@@ -418,7 +444,7 @@
       <dt>コピー中に電源が落ちたら?</dt>
       <dd>すべての状態はSQLiteジャーナルにコミット済みです。再起動すると未完了ジョブを検知し、検証済みファイルをスキップして続きから再開します。書きかけのファイルが正式な名前で残ることはありません(アトミック確定)。</dd>
       <dt>オフラインの現場でも使える?</dt>
-      <dd>使えます。ライセンスは30日間のオフライン猶予つきで、コピー・検証機能は完全にローカルで動作します。</dd>
+      <dd>使えます。コピーと検証は完全にローカルで動作し、<strong style="color: var(--text)">ライセンスが期限切れになることはありません</strong>。ネットに繋がらない期間がどれだけ続いても使い続けられます(無効化されるのは、払い戻しや解除でサーバが明示的に拒否した場合だけです)。</dd>
       <dt>表示価格とカードの請求額が数円違うのはなぜ?</dt>
       <dd>決済は海外事業者(Polar)が処理するため、カード会社の為替換算により明細の金額が表示価格から数円前後することがあります。あらかじめご了承ください。</dd>
       <dt>適格請求書(インボイス)は発行されますか?</dt>

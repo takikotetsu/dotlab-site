@@ -165,6 +165,32 @@
     .btn-primary { animation: none; }
     .btn:hover { transform: none; }
   }
+
+  /* ── スクロールで浮かび上がる ────────────────────────────────
+     animation-timeline: view() はCSSだけでスクロール連動を実現する。
+     対応していないブラウザでは @supports を通らないので、
+     何も起きない=最初から見えている、という安全な劣化になる。 */
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      section > h2,
+      section > p,
+      section > dl,
+      .feature,
+      .price-card,
+      .proof-card,
+      .biz {
+        animation: riseIn linear both;
+        animation-timeline: view();
+        /* 画面に入り始めてから、少し上がるまでの間で完了させる */
+        animation-range: entry 8% cover 26%;
+      }
+      /* 並んでいるものは、左から順に少しずつ遅れて出す */
+      /* 横に並ぶものは、右へ行くほど少し遅らせる */
+      .feature:nth-child(2), .price-card:nth-child(2),
+      .proof-card:nth-child(2) { animation-range: entry 4% cover 28%; }
+      .feature:nth-child(3), .proof-card:nth-child(3) { animation-range: entry 2% cover 30%; }
+    }
+  }
 </style>
 </head>
 <body>
@@ -402,7 +428,7 @@
       <dt>Which cameras and formats are supported?</dt>
       <dd>Copying and verification are format-agnostic — every file type works. Card auto-detection covers Sony, Canon, RED, ARRI, Blackmagic and still-photo cards (DCIM). Shooting metadata is read from Sony sidecar files (XAVC/X-OCN); RAW formats (REDCODE/ARRIRAW/BRAW) show the format name only. Thumbnails and playback are available for formats macOS can natively play (MP4/MOV/ProRes, JPEG/HEIF, etc.).</dd>
       <dt>Can I use it offline on location?</dt>
-      <dd>Yes. Copying and verification are fully local, and your license has a 30-day offline grace period.</dd>
+      <dd>Yes. Copying and verification are fully local, and <strong style="color: var(--text)">your license never expires from being offline</strong> — no matter how long. It is only deactivated if the server explicitly refuses it, such as after a refund.</dd>
 
     </dl>
   </div>
