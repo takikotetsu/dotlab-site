@@ -1,0 +1,29 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>dotLab</title>
+        <item>
+            <title>1.2.1</title>
+            <pubDate>Mon, 10 Aug 2026 13:45:59 +0900</pubDate>
+            <sparkle:version>217</sparkle:version>
+            <sparkle:shortVersionString>1.2.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[<h2>.Lab 1.2.1</h2>
+<p>画面を全面的に作り直しました。あわせて、コピー先を取り違えないための表示と、オフラインでの動作を改善しています。</p>
+<ul>
+  <li><b>コピー先の表示</b>: すべての宛先カードに<b>実際に書き込まれる場所</b>が出ます。チェーン(孫)のカードにもパスと空き容量を表示するようにしました。指定した場所とデータが入る場所が違って見える問題を解消しています</li>
+  <li><b>オフラインでも止まりません</b>: ライセンスが期限で切れることはなくなりました。無効化されるのは、払い戻しや解除でサーバが明示的に拒否したときだけです。ネットのない現場が続いても使い続けられます</li>
+  <li><b>ジョブを一覧で管理</b>: タブをやめて、進行中・待機中のジョブを行で並べるようにしました。本数が増えても横に溢れません</li>
+  <li><b>作業行が常に上にあります</b>: ジョブを走らせたまま、次のカードの準備ができます</li>
+  <li><b>未完了のリールを見逃さない</b>: アプリが落ちた・停止した・カードが抜けた場合、画面上部で知らせて、その場で再開できます</li>
+  <li><b>Browse</b>: クリップの閲覧が同じウィンドウ内で開き、リールをその場で切り替えられます</li>
+  <li><b>初回起動時の案内</b>: 使い方を4ステップで案内します。ヘルプメニューからいつでも見直せます</li>
+  <li><b>Binを折りたためます</b>: リールが増えてもサイドバーが伸び続けません</li>
+  <li><b>速度グラフ</b>: 設定で表示を切り替えられます(既定は非表示)</li>
+  <li>配色・アイコン・接続線・余白を刷新しました</li>
+</ul>
+]]></description>
+            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/v1.2.1/dotLab-1.2.1.dmg" length="3683682" type="application/octet-stream" sparkle:edSignature="Jev7iSYFCajpF891jxDrtELo44Ofr/A7+5/huEwKEO/ck+MIFHn1YtL6lFBUUK1nqNdTFFwcOH1SVY7S4gCQDA=="/>
+        </item>
+    </channel>
+</rss>
