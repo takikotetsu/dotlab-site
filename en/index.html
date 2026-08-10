@@ -112,6 +112,59 @@
     .proof, .features, .pricing { grid-template-columns: 1fr; }
     h1 { font-size: 34px; }
   }
+
+  /* ── ヒーローの登場アニメーション ─────────────────────────────
+     読む順に少しずつ遅らせて出す。JSは使わず、CSSだけで完結させる。
+     動きを減らす設定にしている人には、いきなり最終状態を見せる。 */
+  @keyframes riseIn {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: none; }
+  }
+  @keyframes markIn {
+    0%   { opacity: 0; transform: scale(0.86) translateY(10px); }
+    60%  { opacity: 1; transform: scale(1.04) translateY(0); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+  header .logo,
+  header h1,
+  header .tagline,
+  header .cta,
+  header .note,
+  header .hero-shot {
+    opacity: 0;
+    animation: riseIn .62s cubic-bezier(.16,.84,.32,1) forwards;
+  }
+  header .logo      { animation-name: markIn; animation-duration: .72s; }
+  header h1         { animation-delay: .10s; }
+  header .tagline:nth-of-type(1) { animation-delay: .20s; }
+  header .tagline:nth-of-type(2) { animation-delay: .28s; }
+  header .cta       { animation-delay: .38s; }
+  header .note      { animation-delay: .46s; }
+  header .hero-shot { animation-delay: .54s; animation-duration: .8s; }
+
+  /* 見出しは文節ごとに、わずかにずらして出す */
+  h1 .w { display: inline-block; opacity: 0;
+          animation: riseIn .6s cubic-bezier(.16,.84,.32,1) forwards; }
+  h1 .w:nth-child(1) { animation-delay: .10s; }
+  h1 .w:nth-child(2) { animation-delay: .20s; }
+
+  /* 主要ボタンは、出たあとに一度だけ静かに光る */
+  @keyframes ctaGlow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(124,92,232,0); }
+    50%      { box-shadow: 0 0 0 14px rgba(124,92,232,.18); }
+  }
+  .btn-primary { animation: ctaGlow 2.4s ease-out 1.5s 1; }
+  .btn { transition: transform .18s ease, box-shadow .18s ease; }
+  .btn:hover { transform: translateY(-2px); }
+
+  @media (prefers-reduced-motion: reduce) {
+    header .logo, header h1, header .tagline, header .cta,
+    header .note, header .hero-shot, h1 .w {
+      opacity: 1; animation: none;
+    }
+    .btn-primary { animation: none; }
+    .btn:hover { transform: none; }
+  }
 </style>
 </head>
 <body>
@@ -119,7 +172,7 @@
 <header class="wrap">
   <a class="lang" href="/">日本語</a>
   <img class="logo" src="/logo.png" alt=".Lab" width="108" height="108">
-  <h1>For every filmmaker<br>and photographer</h1>
+  <h1><span class="w">For every filmmaker</span><br><span class="w">and photographer</span></h1>
   <p class="tagline">A macOS app that copies photos and video from cards and SSDs while verifying every single file.</p>
   <p class="tagline" style="font-size: 17px; color: var(--text); font-weight: 600; margin-top: 14px;">Irreplaceable data deserves more than &ldquo;it probably copied fine.&rdquo;</p>
   <div class="cta">
