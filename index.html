@@ -214,7 +214,20 @@
       .feature:nth-child(3), .proof-card:nth-child(3) { animation-range: entry 2% cover 30%; }
     }
   }
-</style>
+
+    /* view() 非対応ブラウザ(Safari 26 未満など)向けのフォールバック。
+       .reveal はJSが付ける。JSが動かない環境では最初から普通に表示される。 */
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal { opacity: 0; transform: translateY(14px); }
+      .reveal.in {
+        opacity: 1; transform: none;
+        transition: opacity .55s ease-out, transform .55s cubic-bezier(.2,.7,.3,1);
+      }
+      .feature.reveal.in:nth-child(2), .proof-card.reveal.in:nth-child(2),
+      .price-card.reveal.in:nth-child(2) { transition-delay: .08s; }
+      .feature.reveal.in:nth-child(3), .proof-card.reveal.in:nth-child(3) { transition-delay: .16s; }
+    }
+  </style>
 </head>
 <body>
 
@@ -492,5 +505,21 @@
   </div>
 </footer>
 
+<script>
+(function () {
+  // CSSのスクロール駆動アニメが使える環境では何もしない
+  if (window.CSS && CSS.supports && CSS.supports('animation-timeline', 'view()')) return;
+  if (!('IntersectionObserver' in window)) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var els = document.querySelectorAll('section > .wrap > h2, section > .wrap > p:not(.tagline):not(.note), section > .wrap > dl, .feature, .price-card, .proof-card, .biz');
+  for (var i = 0; i < els.length; i++) els[i].classList.add('reveal');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
+  for (var j = 0; j < els.length; j++) io.observe(els[j]);
+})();
+</script>
 </body>
 </html>
