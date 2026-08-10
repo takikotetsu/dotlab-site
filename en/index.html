@@ -172,9 +172,9 @@
      何も起きない=最初から見えている、という安全な劣化になる。 */
   @supports (animation-timeline: view()) {
     @media (prefers-reduced-motion: no-preference) {
-      section > h2,
-      section > p,
-      section > dl,
+      section > .wrap > h2,
+      section > .wrap > p:not(.tagline):not(.note),
+      section > .wrap > dl,
       .feature,
       .price-card,
       .proof-card,
