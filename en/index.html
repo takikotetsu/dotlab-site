@@ -683,7 +683,8 @@
 
     var t0 = null, raf = null;
     function tick(ts) { if (t0 === null) t0 = ts; render((ts - t0) % TOTAL); raf = requestAnimationFrame(tick); }
-    if (reduce) { render(12800); }
+    render(12800);   // 先に「完了した画面」を描いておく。動かない環境でも空欄にならない
+    if (reduce) { /* そのまま静止 */ }
     else if ('IntersectionObserver' in window) {
       new IntersectionObserver(function (es) {
         es.forEach(function (e) {
