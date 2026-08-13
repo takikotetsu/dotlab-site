@@ -3,24 +3,32 @@
     <channel>
         <title>dotLab</title>
         <item>
-            <title>1.3.0</title>
-            <pubDate>Mon, 10 Aug 2026 15:04:34 +0900</pubDate>
-            <sparkle:version>219</sparkle:version>
-            <sparkle:shortVersionString>1.3.0</sparkle:shortVersionString>
+            <title>1.4.0</title>
+            <pubDate>Thu, 13 Aug 2026 12:12:38 +0900</pubDate>
+            <sparkle:phasedRolloutInterval>172800</sparkle:phasedRolloutInterval>
+            <sparkle:version>283</sparkle:version>
+            <sparkle:shortVersionString>1.4.0</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <description><![CDATA[<h2>.Lab 1.3.0</h2>
-<p>一般公開版です。無料版はどなたでもお使いいただけます。</p>
+            <description><![CDATA[<h2>.Lab 1.4.0</h2>
+<p><b>Sync(同期)</b>を追加しました。作業中のプロジェクトを、もう1台のドライブへ複製し続ける機能です(Pro)。</p>
 <ul>
-  <li><b>Apple Silicon と Intel の両方に対応</b>しました(ユニバーサル)</li>
-  <li><b>オフラインでも止まりません</b>: ライセンスが期限で切れることはなくなりました。無効化されるのは、払い戻しや解除でサーバが明示的に拒否したときだけです</li>
-  <li><b>コピー先の表示</b>: すべての宛先カードに実際に書き込まれる場所が出ます。チェーン(孫)にもパスと空き容量を表示します</li>
-  <li><b>レポートPDFに拡張子別のファイル数</b>を追加しました</li>
-  <li><b>サポート用の記録を強化</b>: 検証が一致しなかった場合、どのファイルのどのハッシュが食い違ったか、宛先ドライブの素性まで記録します</li>
-  <li>ネットに繋がらない環境での初回起動時に、警告が出ないよう配布方法を改善しました</li>
-  <li>使用許諾契約を更新しました(2026年8月10日版)。初回起動時にご確認いただきます</li>
+  <li><b>変更を自動で検知します</b>: OSからの通知を受け取り、書き込みが止まって10秒後に同期します。フォルダ全体を数え直し続ける必要がないので、負荷はほとんどありません</li>
+  <li><b>2回目以降は一瞬で始まります</b>: 確認済みのファイルを記録しているので、変わっていないものは読まずに飛ばします</li>
+  <li><b>組み合わせは何組でも</b>: 社内SSD_A → 社外SSD_A、社内SSD_B → 社外SSD_B のような複数のペアを、1枚のウィンドウで見られます</li>
+  <li><b>ベリファイは選べます</b>: 既定はオフ(サイズと更新日時で判断)。入れると、コピーしたファイルを読み直してハッシュ照合します。オフのときも、コピーしたファイルのサイズは必ず確認します</li>
+  <li><b>元から消えたファイルの扱いも選べます</b>: コピー先に残すか、一緒に消すか。消す設定のときは、開始する前にそう表示します</li>
+  <li><b>勝手には始まりません</b>: ウィンドウを開いても、開始は必ずご自身で押していただきます</li>
+</ul>
+<p>Sync は<b>作業中のデータのバックアップ用</b>です。カードからの取り込み(オフロード)は、これまでどおりメインウィンドウで行ってください。取り込みにはリール名・レポート・MHL・重複検出があり、ベリファイも必ず行われます。</p>
+
+<h3>そのほかの改善</h3>
+<ul>
+  <li><b>ベリファイなしのコピーでも、書けたサイズを必ず確認</b>するようになりました。合わなければ書きかけを破棄して報告します(チェーンコピーにも適用されます)</li>
+  <li>書き込み途中のファイルを掴んだ場合の扱いを整理しました。取り込みではこれまでどおりエラー、同期では次の巡回に回します</li>
+  <li>検証用ビルドが公開版と違うバージョンを名乗るようにしました。サポートのご連絡をいただいたときの取り違えを防ぐためです</li>
 </ul>
 ]]></description>
-            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/v1.3.0/dotLab-1.3.0.dmg" length="3687323" type="application/octet-stream" sparkle:edSignature="+OaWDAAMQYe4OSItNS+R7rjWbbkOxiqWdBdf472ftgpBN26HVCoewn9565NldY7gUirzZBPbhbM0A/4PPCyPBQ=="/>
+            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/v1.4.0/dotLab-1.4.0.dmg" length="3971215" type="application/octet-stream" sparkle:edSignature="ip8GkV0oyZHB40Ke9eX0NSjael7/x0dotXw7vreL0MTUbA1QGqINljKYERJBf7vOCg5+j4R8jR7Q4j5OjZI7Aw=="/>
         </item>
     </channel>
 </rss>
