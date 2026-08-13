@@ -28,7 +28,7 @@
   <li>検証用ビルドが公開版と違うバージョンを名乗るようにしました。サポートのご連絡をいただいたときの取り違えを防ぐためです</li>
 </ul>
 ]]></description>
-            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/v1.4.0/dotLab-1.4.0.dmg" length="3971215" type="application/octet-stream" sparkle:edSignature="ip8GkV0oyZHB40Ke9eX0NSjael7/x0dotXw7vreL0MTUbA1QGqINljKYERJBf7vOCg5+j4R8jR7Q4j5OjZI7Aw=="/>
+            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/v1.4.0/dotLab-1.4.0.dmg" length="3971228" type="application/octet-stream" sparkle:edSignature="8VXQukGHboUeUTYde/HHJcx1tAdQjjqolIPumKRosrbPWDq1m5wWg0IaFZTdrM1sUAVPv6kpMmneOVEL8bR8BA=="/>
         </item>
     </channel>
 </rss>
