@@ -180,8 +180,10 @@
   header .cta,
   header .note,
   header .hero-shot {
-    opacity: 0;
-    animation: riseIn .62s cubic-bezier(.16,.84,.32,1) forwards;
+    /* opacity は 1 のまま。動きは backwards で「開始前だけ」透明にする。
+       0 から始めて forwards で戻す作りだと、アニメーションが走らない環境で
+       文字が永久に出てこない(スプラッシュで実際に起きた事故と同じ形) */
+    animation: riseIn .62s cubic-bezier(.16,.84,.32,1) backwards;
   }
   header .logo      { animation-name: markIn; animation-duration: .72s; }
   header h1         { animation-delay: .10s; }
@@ -192,8 +194,8 @@
   header .hero-shot { animation-delay: .54s; animation-duration: .8s; }
 
   /* 見出しは文節ごとに、わずかにずらして出す */
-  h1 .w { display: inline-block; opacity: 0;
-          animation: riseIn .6s cubic-bezier(.16,.84,.32,1) forwards; }
+  h1 .w { display: inline-block;
+          animation: riseIn .6s cubic-bezier(.16,.84,.32,1) backwards; }
   h1 .w:nth-child(1) { animation-delay: .10s; }
   h1 .w:nth-child(2) { animation-delay: .20s; }
 
@@ -252,36 +254,6 @@
       .feature.reveal.in:nth-child(2), .proof-card.reveal.in:nth-child(2),
       .price-card.reveal.in:nth-child(2) { transition-delay: .08s; }
       .feature.reveal.in:nth-child(3), .proof-card.reveal.in:nth-child(3) { transition-delay: .16s; }
-    }
-  
-    /* ── オープニング(初回訪問時のみ・JSが動く時だけ表示) ── */
-    #splash {
-      position: fixed; inset: 0; z-index: 90; background: var(--bg);
-      display: grid; place-items: center; gap: 22px; align-content: center;
-    }
-    /* ID指定の display:grid はブラウザ標準の [hidden]{display:none} に勝ってしまう。
-       これを書き忘れていたため、2回目以降の訪問(=スクリプトが早期returnする経路)で
-       スプラッシュが消えずにページ全体を覆い続けていた */
-    #splash[hidden] { display: none !important; }
-    #splash .s-mark {
-      width: 92px; height: 92px; border-radius: 21px; display: block;
-      filter: drop-shadow(0 14px 44px rgba(124, 92, 232, .45));
-      animation: sMark .75s cubic-bezier(.2,.8,.25,1) both;
-    }
-    #splash .s-line { width: 132px; height: 2px; background: rgba(255,255,255,.10); border-radius: 2px; overflow: hidden; }
-    #splash .s-line i { display: block; height: 100%; width: 100%; background: var(--accent);
-      transform-origin: left; transform: scaleX(0); animation: sLine 1.0s cubic-bezier(.4,0,.2,1) .12s both; }
-    /* 解除をJSのタイマーだけに頼らない。裏のタブではChromeがタイマーを凍らせるため、
-       戻ってくるまでスプラッシュが残り、スクロールも止まったままになっていた */
-    #splash:not([hidden]) { animation: sAuto .5s cubic-bezier(.4,0,.2,1) 1.7s both; }
-    #splash.out { animation: sOut .55s cubic-bezier(.4,0,.2,1) forwards; pointer-events: none; }
-    @keyframes sAuto { to { opacity: 0; visibility: hidden; pointer-events: none; } }
-    @keyframes sMark { 0% { opacity: 0; transform: scale(.84); } 100% { opacity: 1; transform: scale(1); } }
-    @keyframes sLine { to { transform: scaleX(1); } }
-    @keyframes sOut  { to { opacity: 0; visibility: hidden; } }
-
-    @media (prefers-reduced-motion: reduce) {
-      #splash .s-mark, #splash .s-line i { animation: none; }
     }
   
     /* ── 動くアプリ画面(ヒーロー) ── */
@@ -401,31 +373,6 @@
   </style>
 </head>
 <body>
-<div id="splash" hidden aria-hidden="true">
-  <img class="s-mark" src="/logo.png" width="92" height="92" alt="">
-  <span class="s-line"><i></i></span>
-</div>
-<script>
-(function () {
-  var s = document.getElementById('splash');
-  if (!s) return;
-  var remove = function () { if (s.parentNode) s.parentNode.removeChild(s); };
-  try {
-    if (sessionStorage.getItem('splashSeen')) return;      // 2回目以降は出さない
-    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    sessionStorage.setItem('splashSeen', '1');
-  } catch (e) { return; }
-  s.hidden = false;
-  var out = function () { s.classList.add('out'); setTimeout(remove, 600); };
-  setTimeout(out, 1250);
-  setTimeout(remove, 3000);   // 保険: 何があっても3秒でページを返す
-  s.addEventListener('click', out);
-  document.addEventListener('visibilitychange', function () { if (!document.hidden) out(); });
-  window.addEventListener('keydown', out, { once: true });
-  window.addEventListener('wheel', out, { once: true, passive: true });
-})();
-</script>
-
 <header class="wrap">
   <a class="lang" href="/en/">EN</a>
   <img class="logo" src="/logo.png" alt=".Lab" width="108" height="108">
