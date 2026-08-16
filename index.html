@@ -267,7 +267,11 @@
     #splash .s-line { width: 132px; height: 2px; background: rgba(255,255,255,.10); border-radius: 2px; overflow: hidden; }
     #splash .s-line i { display: block; height: 100%; width: 100%; background: var(--accent);
       transform-origin: left; transform: scaleX(0); animation: sLine 1.0s cubic-bezier(.4,0,.2,1) .12s both; }
+    /* 解除をJSのタイマーだけに頼らない。裏のタブではChromeがタイマーを凍らせるため、
+       戻ってくるまでスプラッシュが残り、スクロールも止まったままになっていた */
+    #splash:not([hidden]) { animation: sAuto .5s cubic-bezier(.4,0,.2,1) 1.7s both; }
     #splash.out { animation: sOut .55s cubic-bezier(.4,0,.2,1) forwards; pointer-events: none; }
+    @keyframes sAuto { to { opacity: 0; visibility: hidden; pointer-events: none; } }
     @keyframes sMark { 0% { opacity: 0; transform: scale(.84); } 100% { opacity: 1; transform: scale(1); } }
     @keyframes sLine { to { transform: scaleX(1); } }
     @keyframes sOut  { to { opacity: 0; visibility: hidden; } }
@@ -401,21 +405,20 @@
 (function () {
   var s = document.getElementById('splash');
   if (!s) return;
-  var remove = function () {
-    if (s.parentNode) s.parentNode.removeChild(s);
-    document.documentElement.style.overflow = '';
-  };
+  var remove = function () { if (s.parentNode) s.parentNode.removeChild(s); };
   try {
     if (sessionStorage.getItem('splashSeen')) return;      // 2回目以降は出さない
     if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     sessionStorage.setItem('splashSeen', '1');
   } catch (e) { return; }
   s.hidden = false;
-  document.documentElement.style.overflow = 'hidden';
-  var out = function () { s.classList.add('out'); document.documentElement.style.overflow = ''; setTimeout(remove, 600); };
+  var out = function () { s.classList.add('out'); setTimeout(remove, 600); };
   setTimeout(out, 1250);
   setTimeout(remove, 3000);   // 保険: 何があっても3秒でページを返す
   s.addEventListener('click', out);
+  document.addEventListener('visibilitychange', function () { if (!document.hidden) out(); });
+  window.addEventListener('keydown', out, { once: true });
+  window.addEventListener('wheel', out, { once: true, passive: true });
 })();
 </script>
 
