@@ -73,6 +73,32 @@
   .proof-label { color: var(--sub); font-size: 13px; margin-top: 6px; }
   .proof-note { color: var(--faint); font-size: 12px; margin-top: 24px; }
 
+  .sync-viz { margin-top: 26px; background: #131319; border: 1px solid var(--border);
+    border-radius: 14px; padding: 18px 20px; }
+  .sync-pair { display: grid; grid-template-columns: 1fr 96px 1fr; align-items: center; gap: 12px; }
+  .sync-pair + .sync-pair { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); }
+  .sync-node { background: #1b1b22; border: 1px solid var(--border); border-radius: 10px; padding: 9px 12px; }
+  .sync-node b { display: block; font-size: 12.5px; font-weight: 700; }
+  .sync-node span { display: block; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 9.5px; color: var(--faint); margin-top: 2px; }
+  .sync-wire { position: relative; height: 3px; background: #26262e; border-radius: 2px; }
+  .sync-wire i { position: absolute; top: 0; bottom: 0; width: 22px; border-radius: 2px;
+    background: var(--violet); animation: syncRun 2.6s linear infinite; }
+  .sync-pair:nth-child(2) .sync-wire i { animation-delay: 1.3s; }
+  .sync-state { font-size: 10.5px; margin-top: 5px; text-align: center; color: var(--sub); }
+  .sync-state.ok { color: var(--done); }
+  @keyframes syncRun { 0% { left: -22px; opacity: 0 } 12% { opacity: 1 }
+    88% { opacity: 1 } 100% { left: 100%; opacity: 0 } }
+  @media (prefers-reduced-motion: reduce) { .sync-wire i { animation: none; left: 38%; } }
+  @media (max-width: 760px) { .sync-pair { grid-template-columns: 1fr; } }
+  .sync-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 26px; }
+  .sync-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+  .sync-card h3 { font-size: 15px; margin: 0 0 8px; }
+  .sync-card p { color: var(--sub); font-size: 13.5px; line-height: 1.75; margin: 0; }
+  .sync-scope { margin-top: 26px; border-left: 2px solid var(--violet); padding: 4px 0 4px 18px; }
+  .sync-scope p { color: var(--sub); font-size: 13.5px; line-height: 1.85; margin: 0 0 8px; }
+  .sync-scope p:last-child { margin-bottom: 0; }
+  @media (max-width: 760px) { .sync-grid { grid-template-columns: 1fr; } }
   .features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .feature {
     background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 22px;
@@ -242,36 +268,62 @@
     .tl { width: 11px; height: 11px; border-radius: 50%; }
     .tl.r { background: #ff5f57; } .tl.y { background: #febc2e; } .tl.g { background: #28c840; }
     .app-bar b { margin-left: 10px; font-size: 11.5px; color: var(--faint); font-weight: 600; letter-spacing: .4px; }
-    .app-body { display: grid; grid-template-columns: 148px 1fr; }
-    .app-side { background: #121218; border-right: 1px solid var(--border); padding: 14px 10px; }
-    .side-h { font-size: 9.5px; letter-spacing: 1.2px; color: var(--faint); padding: 0 8px 9px; }
-    .side-item { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--sub);
-      padding: 7px 8px; border-radius: 7px; margin-bottom: 2px; }
+    .app-body { display: grid; grid-template-columns: 176px 1fr; }
+    .app-side { background: #121218; border-right: 1px solid var(--border); padding: 13px 9px; }
+    .side-h { font-size: 9px; letter-spacing: 1.2px; color: var(--faint); padding: 0 8px 8px; }
+    .side-h + .side-h, .side-row + .side-h, .side-item + .side-h { padding-top: 15px; }
+    .side-item { display: flex; align-items: center; gap: 8px; font-size: 11.5px; color: var(--sub);
+      padding: 6px 8px; border-radius: 7px; }
     .side-item.on { background: rgba(124, 92, 232, .16); color: var(--text); }
     .side-item i { width: 6px; height: 6px; border-radius: 50%; background: var(--faint); flex: none; }
     .side-item.on i { background: var(--violet); box-shadow: 0 0 0 3px rgba(124, 92, 232, .2); }
-    .app-main { padding: 15px 18px 4px; }
-    .chain { display: grid; grid-template-columns: 148px 30px 1fr; align-items: center; margin-bottom: 12px; }
-    .node { background: #1b1b22; border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; }
-    .node .k { display: block; font-size: 9px; letter-spacing: 1px; color: var(--faint); }
-    .node .v { display: block; font-size: 15px; font-weight: 700; margin-top: 3px; }
-    .node .s { display: block; font-size: 10.5px; color: var(--sub); margin-top: 1px; }
-    .src { border-color: #3a3247; }
-    .link { width: 30px; height: 86px; display: block; }
-    .dests { display: grid; gap: 8px; }
-    .dst { display: grid; grid-template-columns: 1fr auto; gap: 5px 10px; align-items: center; padding: 9px 12px; }
-    .dst .v { font-size: 12px; font-weight: 600; margin: 0; }
-    .dst .pct { font-size: 11px; color: var(--sub); font-variant-numeric: tabular-nums; }
-    .track { grid-column: 1 / -1; height: 5px; border-radius: 3px; background: #26262e; position: relative; overflow: hidden; }
-    .track i, .track u { position: absolute; inset: 0; border-radius: 3px;
-      transform-origin: left; transform: scaleX(0); transition: transform .16s linear; }
-    .track i { background: var(--copy); } .track u { background: var(--done); }
+    .side-row { display: grid; grid-template-columns: 1fr auto auto; gap: 7px; align-items: center;
+      padding: 5px 8px; font-size: 11px; color: var(--sub); }
+    .side-row b { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-weight: 500; color: var(--text); }
+    .side-row s { text-decoration: none; color: var(--faint); font-variant-numeric: tabular-nums; font-size: 10px; }
+    .side-cap { padding: 5px 8px 9px; font-size: 10.5px; color: var(--sub); }
+    .side-cap u { display: block; text-decoration: none; color: var(--faint); font-size: 9.5px; }
+    .side-cap span { display: block; height: 3px; border-radius: 2px; background: #26262e; margin-top: 5px; }
+    .side-cap span i { display: block; height: 100%; width: 22%; border-radius: 2px; background: var(--faint); }
+    .app-main { padding: 13px 16px 4px; }
+    .zh { display: flex; align-items: center; gap: 8px; font-size: 9px; letter-spacing: 1.3px; margin-bottom: 7px; }
+    .zh b { font-weight: 600; }
+    .zh em { flex: 1; height: 1px; background: currentColor; opacity: .22; font-style: normal; }
+    .zh.in { color: var(--violet); } .zh.pg { color: var(--copy); }
+    .inbar { border-left: 2px solid var(--violet); background: #141420; padding: 9px 12px;
+      display: flex; align-items: center; gap: 9px; flex-wrap: wrap; margin-bottom: 16px; }
+    .inbar .lbl { font-size: 12px; color: var(--text); font-weight: 600; }
+    .inbar .reel { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11.5px;
+      color: var(--text); border: 1px solid var(--violet); border-radius: 5px; padding: 2px 9px; }
+    .inbar .arw { color: var(--faint); font-size: 11px; }
+    .inbar .chip { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px;
+      color: var(--sub); background: #1c1c24; border-radius: 20px; padding: 3px 9px; }
+    .jobrow { display: grid; grid-template-columns: 62px 1fr auto; gap: 10px; align-items: center;
+      font-size: 11.5px; padding: 6px 2px; }
+    .jobrow b { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-weight: 600; color: var(--text); }
+    .jobrow .st2 { color: var(--copy); font-size: 10.5px; }
+    .bigbar { height: 6px; border-radius: 3px; background: #26262e; overflow: hidden; margin: 9px 0 7px; }
+    .bigbar i { display: block; height: 100%; width: 0; background: var(--done); transition: width .16s linear; }
+    .meta { display: flex; align-items: baseline; gap: 14px; font-size: 10.5px; color: var(--faint); margin-bottom: 10px; }
+    .meta .n { font-variant-numeric: tabular-nums; color: var(--sub); }
+    .meta .v { color: var(--done); }
+    .meta .pct2 { margin-left: auto; font-size: 19px; font-weight: 700; color: var(--text); }
+    .meta .spd { color: var(--copy); font-variant-numeric: tabular-nums; }
+    .rowhead { display: grid; grid-template-columns: 1fr 60px 124px 74px 76px; gap: 10px;
+      font-size: 8.5px; letter-spacing: 1px; color: var(--faint); padding: 6px 2px; }
+    .doneline { display: flex; align-items: center; gap: 8px; font-size: 11px; color: var(--sub);
+      background: #141418; border-radius: 9px; padding: 8px 11px; margin: 12px 0 4px; }
+    .doneline .ok2 { color: var(--done); font-weight: 600; }
     .rows { list-style: none; border-top: 1px solid var(--border); }
-    .rows li { display: grid; grid-template-columns: 1fr 60px 88px 76px; align-items: center; gap: 10px;
+    .rows li { display: grid; grid-template-columns: 1fr 60px 124px 74px 76px; align-items: center; gap: 10px;
       padding: 7px 2px; border-bottom: 1px solid rgba(38, 38, 46, .55); font-size: 11.5px; }
     .rows .fn { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--faint); transition: color .3s ease; }
     .rows li.act .fn { color: var(--text); }
     .rows .sz { color: var(--faint); text-align: right; font-variant-numeric: tabular-nums; }
+    .rows .hs { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px;
+      color: #3f3f4b; letter-spacing: .2px; transition: color .3s ease; }
+    .rows li.hasHash .hs { color: var(--sub); }
+    .rows li.okHash .hs { color: var(--done); }
     .rows .mini { height: 4px; border-radius: 2px; background: #26262e; position: relative; overflow: hidden; }
     .rows .mini i { position: absolute; inset: 0; transform-origin: left; transform: scaleX(0);
       background: var(--copy); transition: transform .2s linear, background .3s ease; }
@@ -286,8 +338,7 @@
       .app-wrap { margin-top: 44px; }
       .app-body { grid-template-columns: 1fr; }
       .app-side { display: none; }
-      .chain { grid-template-columns: 1fr; }
-      .link { display: none; }
+      .inbar { flex-direction: column; align-items: flex-start; }
       .dests { margin-top: 8px; }
       .rows li { grid-template-columns: 1fr 66px 62px; }
       .rows .mini { display: none; }
@@ -361,32 +412,44 @@
     <div class="app-bar"><span class="tl r"></span><span class="tl y"></span><span class="tl g"></span><b>.Lab</b></div>
     <div class="app-body">
       <aside class="app-side">
+        <div class="side-h">PROJECTS</div>
+        <div class="side-item on"><i></i>260816_CM</div>
+        <div class="side-item"><i></i>260812_MV</div>
+        <div class="side-item"><i></i>260801_DOC</div>
         <div class="side-h">REELS</div>
-        <div class="side-item on"><i></i>A001</div>
-        <div class="side-item"><i></i>A002</div>
-        <div class="side-item"><i></i>B001</div>
+        <div class="side-row"><b>A003</b><s>121</s><s>31.1 GB</s></div>
+        <div class="side-row"><b>A002</b><s>118</s><s>28.4 GB</s></div>
+        <div class="side-row"><b>A001</b><s>37</s><s>9.6 GB</s></div>
+        <div class="side-h">DESTINATIONS</div>
+        <div class="side-cap">SSD_A <u>Master · 112 GB free</u><span><i></i></span></div>
+        <div class="side-cap">SSD_B <u>Backup · 112 GB free</u><span><i></i></span></div>
       </aside>
       <div class="app-main">
-        <div class="chain">
-          <div class="node src"><span class="k">SOURCE</span><span class="v">A001</span><span class="s">43 clips / 209 GB</span></div>
-          <svg class="link" viewBox="0 0 30 86" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M0 43 H12 V16 H30" fill="none" stroke="#3a3247" stroke-width="1.5"/>
-            <path d="M0 43 H12 V70 H30" fill="none" stroke="#3a3247" stroke-width="1.5"/>
-            <path class="anim-dash" d="M0 43 H12 V16 H30" fill="none" stroke="#7C5CE8" stroke-width="1.5" stroke-dasharray="4 9"/>
-            <path class="anim-dash" d="M0 43 H12 V70 H30" fill="none" stroke="#7C5CE8" stroke-width="1.5" stroke-dasharray="4 9"/>
-          </svg>
-          <div class="dests">
-            <div class="node dst"><span class="v">SSD_A</span><span class="pct" data-pct="0">0%</span>
-              <span class="track"><i data-bar="0"></i><u data-ver="0"></u></span></div>
-            <div class="node dst"><span class="v">SSD_B</span><span class="pct" data-pct="1">0%</span>
-              <span class="track"><i data-bar="1"></i><u data-ver="1"></u></span></div>
-          </div>
+        <div class="zh in"><b>INPUT</b><em></em></div>
+        <div class="inbar">
+          <span class="lbl">Next offload</span>
+          <span class="reel">A004</span>
+          <span class="arw">&rarr;</span>
+          <span class="chip">…/SSD_A/A004</span>
+          <span class="chip">…/SSD_B/A004</span>
         </div>
+
+        <div class="zh pg"><b>IN PROGRESS</b><em></em></div>
+        <div class="jobrow"><b>A003</b><span class="st2" id="jobdest">SSD_A, SSD_B</span><span class="st2" id="jobst">Copying</span></div>
+        <div class="bigbar"><i id="big"></i></div>
+        <div class="meta">
+          <span>Copied <span class="n" id="cp">0 GB</span> / 31.1 GB</span>
+          <span>Verified <span class="v" id="vf">0 GB</span></span>
+          <span class="spd"><span id="spd">0</span> MB/s</span>
+          <span class="pct2"><span id="pct">0</span>%</span>
+        </div>
+        <div class="rowhead"><span>FILE</span><span style="text-align:right">SIZE</span><span>xxHash64</span><span></span><span style="text-align:right">STATE</span></div>
         <ul class="rows" id="rows"></ul>
+        <div class="doneline">&#10003; <span>2 completed</span> <span class="ok2" id="okn">2 Jobs OK</span></div>
       </div>
     </div>
     <div class="app-status">
-      <span><span class="num" id="spd">0</span> MB/s</span>
+      <span>Journal: OK &nbsp;·&nbsp; Job History</span>
       <span id="stat">Ready</span>
     </div>
   </div>
@@ -489,6 +552,51 @@
         <p>Double-click a finished reel to browse thumbnails, play clips and inspect metadata (for formats macOS can play). Get completion alerts by chime, macOS notification — or email when you&rsquo;re away from the cart.</p></div>
       <div class="feature"><h3><span class="dot">●</span> No slowdown on RAW sequences</h3>
         <p>Thousands of tiny frames — CinemaDNG, ARRIRAW — are where most copy tools grind to a crawl. .Lab batches the commit work under the hood, keeping full verification depth while holding its speed on sequences.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="sync">
+  <div class="wrap">
+    <h2>Then keep it <span class="accent">backed up.</span></h2>
+    <p>The offload ends; the day doesn&rsquo;t. Timelines, exports, notes, stills — the project keeps growing after the cards are in. <strong style="color: var(--text)">Sync</strong> mirrors a folder to a second drive and keeps mirroring it, copying only what changed. Not just camera originals — everything you make.</p>
+    <div class="sync-grid">
+      <div class="sync-card">
+        <h3>There ten seconds after you save it</h3>
+        <p>Sync listens to the OS for changes, so nothing waits on a timer. It also waits for writing to stop before it copies, so a file still being saved never gets copied half-finished.</p>
+      </div>
+      <div class="sync-card">
+        <h3>Any number of pairs, one window</h3>
+        <p>Run A&rarr;C and B&rarr;D at once and see which is working, which is waiting, and how long until the next sweep. Close the app and reopen it — each pair catches up from where it stopped.</p>
+      </div>
+      <div class="sync-card">
+        <h3>Nothing gets deleted until you press start</h3>
+        <p>Choose &ldquo;mirror exactly&rdquo; and files missing from the source are removed from the destination too. That never begins on its own — not on launch, not on reopen. You press start.</p>
+      </div>
+    </div>
+    <div class="sync-viz" aria-hidden="true">
+      <div class="sync-pair">
+        <div class="sync-node"><b>Camera originals</b><span>/Volumes/WORK/260812</span></div>
+        <div>
+          <div class="sync-wire"><i></i></div>
+          <div class="sync-state ok">&#10003; Syncing</div>
+        </div>
+        <div class="sync-node"><b>SSD_C</b><span>/Volumes/SSD_C/260812</span></div>
+      </div>
+      <div class="sync-pair">
+        <div class="sync-node"><b>Edit project</b><span>/Volumes/EDIT/260812_edit</span></div>
+        <div>
+          <div class="sync-wire"><i></i></div>
+          <div class="sync-state">Next sweep in 12:04</div>
+        </div>
+        <div class="sync-node"><b>SSD_D</b><span>/Volumes/SSD_D/260812_edit</span></div>
+      </div>
+    </div>
+    <div class="sync-scope">
+      <p><strong style="color: var(--text)">What Sync does</strong> — copies folder to folder. Reading files back to verify them is optional here, and off by default, because Sync is built for speed.</p>
+      <p><strong style="color: var(--text)">What Sync does not have</strong> — reel names, ASC MHL, PDF reports, duplicate detection, card auto-detection. Those belong to offloading in the main window.</p>
+      <p><strong style="color: var(--text)">Offloading in the main window always reads every file back and verifies it.</strong> That part is not optional. An unverified copy is the one thing this app exists to prevent.</p>
+      <p style="color: var(--faint); font-size: 12.5px;">Sync is a Pro feature.</p>
     </div>
   </div>
 </section>
@@ -631,57 +739,76 @@
 
   /* ── ヒーロー: オフロードの進行を実際に動かす ── */
   if (app && rowsEl) {
-    var FILES = [['A001_C0021.mov', '6.1 GB'], ['A001_C0022.mov', '5.8 GB'], ['A001_C0023.mov', '7.4 GB'],
-                 ['A001_C0024.mov', '6.6 GB'], ['A001_C0025.mov', '5.2 GB']];
-    var L = {wait:'Waiting',copy:'Copying',copied:'Copied',ver:'Verifying',done:'Done',copying:'Copying',verifying:'Verifying',verified:'verified'};
+    var FILES = [['A003_C0021.mov', '6.1 GB', '8d7b5326a1f0c942'], ['A003_C0022.mov', '5.8 GB', '2f0ac91d77b3e5a0'],
+                 ['A003_C0023.mov', '7.4 GB', 'c41e6b08d9527af3'], ['A003_C0024.mov', '6.6 GB', '5a93f2e0146bd8c7'],
+                 ['A003_C0025.mov', '5.2 GB', 'e07b41c25d8fa613']];
+    var HEXCHARS = '0123456789abcdef';
+    var L = {wait:'Queued',copy:'Copying',copied:'Copied',ver:'Verifying',done:'Done',copying:'Copying',verifying:'Verifying',verified:'Verified'};
     var cells = [];
     FILES.forEach(function (f) {
       var li = document.createElement('li');
-      li.innerHTML = '<span class="fn"></span><span class="sz"></span>'
+      li.innerHTML = '<span class="fn"></span><span class="sz"></span><span class="hs"></span>'
                    + '<span class="mini"><i></i></span><span class="st st-wait"></span>';
       li.querySelector('.fn').textContent = f[0];
       li.querySelector('.sz').textContent = f[1];
       rowsEl.appendChild(li);
-      cells.push({ li: li, bar: li.querySelector('.mini i'), st: li.querySelector('.st') });
+      cells.push({ li: li, bar: li.querySelector('.mini i'), st: li.querySelector('.st'),
+                   hs: li.querySelector('.hs'), hash: f[2] });
     });
-    var bars = [document.querySelector('[data-bar="0"]'), document.querySelector('[data-bar="1"]')];
-    var vers = [document.querySelector('[data-ver="0"]'), document.querySelector('[data-ver="1"]')];
-    var pcts = [document.querySelector('[data-pct="0"]'), document.querySelector('[data-pct="1"]')];
+    var big = document.getElementById('big'), pct = document.getElementById('pct');
+    var cpEl = document.getElementById('cp'), vfEl = document.getElementById('vf');
     var spd = document.getElementById('spd'), stat = document.getElementById('stat');
+    var jobst = document.getElementById('jobst');
     var TOTAL = 13000, n = FILES.length;
     var cl = function (x) { return x < 0 ? 0 : x > 1 ? 1 : x; };
 
     function render(t) {
-      var cp = cl((t - 500) / 6300), cp2 = cl((t - 900) / 6300);
-      var vp = cl((t - 7300) / 3600);
-      bars[0].style.transform = 'scaleX(' + cp + ')';
-      bars[1].style.transform = 'scaleX(' + cp2 + ')';
-      vers[0].style.transform = 'scaleX(' + vp + ')';
-      vers[1].style.transform = 'scaleX(' + vp + ')';
-      pcts[0].textContent = Math.round(cp * 100) + '%';
-      pcts[1].textContent = Math.round(cp2 * 100) + '%';
+      var cp = cl((t - 500) / 6300);          /* コピーの進み */
+      var vp = cl((t - 1400) / 8200);         /* 照合は少し遅れて追う */
+      big.style.width = (vp * 100).toFixed(1) + '%';
+      pct.textContent = Math.round(cp * 100);
+      cpEl.textContent = (cp * 31.1).toFixed(1) + ' GB';
+      vfEl.textContent = (vp * 31.1).toFixed(1) + ' GB';
       for (var i = 0; i < n; i++) {
         var cs = 500 + i * 1150, rc = cl((t - cs) / 1700);
-        var vs = 7300 + i * 640, rv = cl((t - vs) / 820);
+        var vs = 1400 + i * 1150, rv = cl((t - vs) / 1500);
         var c = cells[i], cls = 'st st-wait', txt = L.wait, w = rc;
-        if (rv >= 1) { cls = 'st st-done'; txt = '\u2713 ' + L.done; w = 1; }
+        if (rv >= 1) { cls = 'st st-done'; txt = '\u2713 ' + L.verified; w = 1; }
         else if (rv > 0) { cls = 'st st-ver'; txt = L.ver; w = 1; }
         else if (rc >= 1) { cls = 'st st-copy'; txt = L.copied; w = 1; }
         else if (rc > 0) { cls = 'st st-copy'; txt = L.copy; }
+        // ハッシュはコピー中に桁が立ち上がり、照合が済んだら緑で確定する。
+        // 進捗バーだけでは他社と同じ絵になる。確かめた証拠が見えることが要点
+        if (rc <= 0) {
+          if (c.hs.textContent !== '\u2014') c.hs.textContent = '\u2014';
+          c.li.classList.remove('hasHash', 'okHash');
+        } else if (rv >= 1) {
+          if (c.hs.textContent !== c.hash) c.hs.textContent = c.hash;
+          c.li.classList.add('hasHash', 'okHash');
+        } else {
+          var shown = Math.round(cl(rc) * 16), out = c.hash.slice(0, shown);
+          for (var q = shown; q < 16; q++) out += HEXCHARS[(Math.floor(t / 60) + q * 7 + i * 3) & 15];
+          if (c.hs.textContent !== out) c.hs.textContent = out;
+          c.li.classList.add('hasHash');
+          c.li.classList.remove('okHash');
+        }
         c.bar.style.transform = 'scaleX(' + w + ')';
         c.bar.style.background = rv >= 1 ? 'var(--done)' : rv > 0 ? 'var(--verify)' : 'var(--copy)';
         if (c.st.className !== cls) c.st.className = cls;
         if (c.st.textContent !== txt) c.st.textContent = txt;
         c.li.classList.toggle('act', rc > 0);
       }
-      spd.textContent = (cp < 1 && cp > 0) ? (1180 + Math.round(Math.sin(t / 620) * 95)).toLocaleString() : '0';
-      var v43 = Math.round(vp * 43);
-      if (vp >= 1) stat.innerHTML = '<span class="ok">43 / 43 ' + L.verified + '</span>';
-      else if (cp2 < 1) stat.textContent = L.copying + ' ' + Math.round(cp2 * 100) + '%';
-      else stat.textContent = L.verifying + ' ' + v43 + ' / 43';
+      spd.textContent = (cp < 1 && cp > 0) ? (980 + Math.round(Math.sin(t / 620) * 85)).toLocaleString() : '0';
+      if (vp >= 1) {
+        stat.innerHTML = '<span class="ok">121 / 121 ' + L.verified + '</span>';
+        jobst.textContent = L.done;
+      } else {
+        stat.textContent = cp < 1 ? L.copying + ' ' + Math.round(cp * 100) + '%'
+                                  : L.verifying + ' ' + Math.round(vp * 121) + ' / 121';
+        jobst.textContent = cp < 1 ? L.copying : L.verifying;
+      }
     }
 
-    var t0 = null, raf = null;
     function tick(ts) { if (t0 === null) t0 = ts; render((ts - t0) % TOTAL); raf = requestAnimationFrame(tick); }
     render(12800);   // 先に「完了した画面」を描いておく。動かない環境でも空欄にならない
     if (reduce) { /* そのまま静止 */ }
