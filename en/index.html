@@ -236,6 +236,10 @@
       position: fixed; inset: 0; z-index: 90; background: var(--bg);
       display: grid; place-items: center; gap: 22px; align-content: center;
     }
+    /* ID指定の display:grid はブラウザ標準の [hidden]{display:none} に勝ってしまう。
+       これを書き忘れていたため、2回目以降の訪問(=スクリプトが早期returnする経路)で
+       スプラッシュが消えずにページ全体を覆い続けていた */
+    #splash[hidden] { display: none !important; }
     #splash .s-mark {
       width: 92px; height: 92px; border-radius: 21px; display: block;
       filter: drop-shadow(0 14px 44px rgba(124, 92, 232, .45));
