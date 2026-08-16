@@ -142,14 +142,18 @@
   /* ── ヒーローの登場アニメーション ─────────────────────────────
      読む順に少しずつ遅らせて出す。JSは使わず、CSSだけで完結させる。
      動きを減らす設定にしている人には、いきなり最終状態を見せる。 */
+  /* 透明度はアニメーションで作らない。
+     opacity:0 から始めて戻す作りは、アニメーションが走らない環境で
+     中身が永久に見えなくなる。実際にスプラッシュでその事故を起こした。
+     動かすのは位置と拡大だけにして、止まっても「動かないだけ」で済むようにする */
   @keyframes riseIn {
-    from { opacity: 0; transform: translateY(14px); }
-    to   { opacity: 1; transform: none; }
+    from { transform: translateY(14px); }
+    to   { transform: none; }
   }
   @keyframes markIn {
-    0%   { opacity: 0; transform: scale(0.86) translateY(10px); }
-    60%  { opacity: 1; transform: scale(1.04) translateY(0); }
-    100% { opacity: 1; transform: scale(1); }
+    0%   { transform: scale(0.86) translateY(10px); }
+    60%  { transform: scale(1.04) translateY(0); }
+    100% { transform: scale(1); }
   }
   header .logo,
   header h1,
