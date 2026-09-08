@@ -3,46 +3,28 @@
     <channel>
         <title>dotLab</title>
         <item>
-            <title>1.4.3</title>
-            <pubDate>Tue, 08 Sep 2026 08:50:01 +0900</pubDate>
+            <title>1.4.4</title>
+            <pubDate>Tue, 08 Sep 2026 09:56:03 +0900</pubDate>
             <sparkle:phasedRolloutInterval>172800</sparkle:phasedRolloutInterval>
-            <sparkle:version>317</sparkle:version>
-            <sparkle:shortVersionString>1.4.3</sparkle:shortVersionString>
+            <sparkle:version>320</sparkle:version>
+            <sparkle:shortVersionString>1.4.4</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <description><![CDATA[<h2>.Lab 1.4.3</h2>
-<p>不具合の修正が中心です。実際の撮影で見つかったものを直しました。追加した機能が2つあります。</p>
+            <description><![CDATA[<h2>.Lab 1.4.4</h2>
+<p>1.4.3 で入れた挙動を1点変更しました。それ以外の変更はありません。</p>
 
 <h3>Sync(同期)</h3>
 <p>この節の1項目は、<b>Sync だけ</b>の変更です。</p>
 <ul>
-  <li><b>コピー先に残った書きかけファイルが、片付かないままになっていました。</b>コピーが中断されると <code>.partial</code> という一時ファイルが残ることがありますが、これを削除の対象からも差分の対象からも外していたため、<b>画面には「差分なし」と出たまま、消えずに残り続けていました</b>。実際に 223MB の残骸が報告されています。<br>
-  いまは、<b>「完全に一致させる」がオフでも片付けます</b>。これは撮影データではなく .Lab 自身が残した一時ファイルだからです。ただし、いま書き込んでいる最中のものは消しません(5分間ふれられていないものだけが対象です)。片付けたものはログに残ります</li>
-</ul>
-
-<h3>カードの自動認識</h3>
-<ul>
-  <li><b>Sony VENICE・BURANO のカードを認識できるようになりました。</b>これまでは <code>XDROOT</code> というフォルダ名を探していましたが、これらのカードはボリューム名と同じ名前のフォルダを使うため、<b>挿しても通知すら出ずに無視されていました</b>。フォルダ名ではなく中身(<code>Clip</code> フォルダと <code>MEDIAPRO.xml</code> の組み合わせ)で判別するようにしたので、名前が違っても認識します。従来の <code>XDROOT</code> 形式もこれまでどおり認識します</li>
-  <li><b>カードを挿したままアプリを起動した場合にも、認識するようになりました。</b>これまでは「新しく接続されたドライブ」だけを見ていたため、起動時にすでに挿さっているカードは対象外でした。<b>ただし、起動時に自動でコピーを始めることはしません</b>(「カードを挿す」と「アプリを開く」は別の操作なので、開いただけで始まるのは行き過ぎだと考えました)。コピー元に設定してお知らせするところまでです</li>
-  <li>認識したカードの表示から、製品ライン名を外しました。同じフォルダ構造を複数の機種が使うため、特定の名前を出すと別の機種で正しくなくなります</li>
-</ul>
-
-<h3>メインウィンドウでの取り込み</h3>
-<ul>
-  <li><b>取り込みの実行中にプロジェクト名を変更すると、そのジョブだけが古い名前のプロジェクトに分かれてしまう問題を直しました。</b>実行中のジョブが、後半の処理(チェーンコピーやフォルダ監視の差分)でプロジェクトを<b>名前で</b>引き直していたため、名前を変えた後に古い名前のプロジェクトが作り直されていました</li>
-  <li><b>リールの書き出しに、サイドバーからも辿り着けるようにしました。</b>サイドバーのリールを右クリックすると、リールを開く・ASC MHL の書き出し・レポートPDF の書き出しが選べます。1.4.1 で完了リールの一覧を畳んだため、そこからしか辿れない状態になっていました</li>
-</ul>
-
-<h3>追加した機能</h3>
-<ul>
-  <li><b>リールを別のプロジェクトへ移せるようになりました。</b>サイドバーのリールを右クリック →「プロジェクトへ移動」。<b>変わるのは記録上の所属だけで、コピー先のファイルは元の場所から動きません。</b>移動先に同じ名前の Bin が無い場合、その分類からは外れます</li>
-  <li><b>コピー先を記憶し、アプリを再起動しても復元するようになりました。</b>プロジェクトごとに覚えるので、プロジェクトを切り替えると、そのプロジェクトのコピー先に入れ替わります。<br>
-  <b>前回と同じドライブだと確認できたときだけ復元します。</b>同じ名前で別のドライブが接続されている場合は、空欄のままにします(<code>/Volumes/SSD_A</code> が今日も同じディスクとは限らないためです)。ドライブが接続されていない場合も空欄になります</li>
+  <li><b>コピー先に残った書きかけファイル(<code>.partial</code>)の片付けを、「完全に一致させる」を選んでいるときだけに変更しました。</b><br>
+  1.4.3 では、この設定に関わらず片付ける動作にしていました。<code>.partial</code> は撮影データではなく .Lab 自身が残した一時ファイルなので構わないだろう、という判断でしたが、<b>「コピー先に残す」を選んでいる方にとっては、何であれ勝手に消えるのは設定と食い違います</b>。設定は約束なので、片付けの都合より優先します。<br>
+  「完全に一致させる」を選んでいる場合の動作は 1.4.3 と同じです(5分間ふれられていない <code>.partial</code> だけを片付け、書き込み中のものには触れません)。<br>
+  「コピー先に残す」を選んでいて残骸が気になる場合は、Finder で削除していただいて問題ありません。中身は書きかけの断片です</li>
 </ul>
 
 <h3>安全側の作りは変えていません</h3>
 <p>コピー元は読み取り専用でしか開かない、上書きはしない、<b>メインウィンドウでの取り込みでは必ず読み戻して照合する</b> — これらは今回も一切変えていません。</p>
 ]]></description>
-            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/v1.4.3/dotLab-1.4.3.dmg" length="5112181" type="application/octet-stream" sparkle:edSignature="jGpO4EshIzRke331jhWWxMSuFE5sGnSSeq83dQMaOV43qsFj7x1pCbxuezKpBQcipRAwGlX2W+Yfkx5XVt5QAg=="/>
+            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/v1.4.4/dotLab-1.4.4.dmg" length="5112421" type="application/octet-stream" sparkle:edSignature="sUF7ZY0STU8uFjYOFXPJQ+VzF2Pv9AZV9MoshsUwl7V4WadMFJ6peSAbF2232HUFr8lVq24/IkeLc7YClQT1CA=="/>
         </item>
     </channel>
 </rss>
