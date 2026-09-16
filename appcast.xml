@@ -3,48 +3,27 @@
     <channel>
         <title>dotLab</title>
         <item>
-            <title>1.5.0</title>
-            <pubDate>Sun, 13 Sep 2026 09:15:14 +0900</pubDate>
+            <title>1.5.1</title>
+            <pubDate>Wed, 16 Sep 2026 15:33:37 +0900</pubDate>
             <sparkle:phasedRolloutInterval>172800</sparkle:phasedRolloutInterval>
-            <sparkle:version>333</sparkle:version>
-            <sparkle:shortVersionString>1.5.0</sparkle:shortVersionString>
+            <sparkle:version>338</sparkle:version>
+            <sparkle:shortVersionString>1.5.1</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <description><![CDATA[<h2>.Lab 1.5.0</h2>
-<p>Codex HDE(ARRIRAW の可逆圧縮)に対応しました。あわせて ALEXA 35 のカードが認識されていなかった不具合を直しています。</p>
+            <description><![CDATA[<h2>.Lab 1.5.1</h2>
+<p>Sync(同期)が止まる不具合の修正です。ほかの変更はありません。</p>
 
-<h3>メインウィンドウでの取り込み: HDE</h3>
-<p>この節は、<b>メインウィンドウでの取り込み</b>で、<b>Codex の仮想ボリューム(名前の末尾が <code>_hde</code>)をコピー元に選んだとき</b>の説明です。物理側のボリュームをコピー元にした場合は、これまでどおり非圧縮の ARRIRAW が取り込まれます。</p>
+<h3>メインウィンドウでの取り込みと Sync(同期)にまたがる不具合</h3>
 <ul>
-  <li><b>Codex Device Manager で HDE を有効にすると現れる仮想ボリューム(<code>〜_hde</code>)をコピー元にできます</b>。取り込まれるのは HDE で圧縮された MXF です(実測で元の 57〜60%)。ALE などカードの付属ファイルも一緒に入ります</li>
-  <li><b>この仮想ボリュームは Finder ではコピーできません</b>(Codex の仕様で、ファイルが 0 バイトに見えるため、Finder は空のファイルを作って終わります)。.Lab は届いたデータを最後まで読む作りなので、そのまま取り込めます</li>
-  <li><b>取り込み前に表示されるサイズは見込みです</b>。HDE は読み終わるまで大きさが決まらないため、Codex が出す見込み値で表示します。見込みは実際より多めに出ます(実測: 見込み 97.5 GB → 実際 75.7 GB)。空き容量が見込みを下回る場合は、止めずに確認を出します。途中で空きが尽きた場合は、その宛先を止めて書きかけ(<code>.partial</code>)を片付けます。完了したファイルはそのまま残ります</li>
-  <li><b>照合は、圧縮後のデータに対して行います</b>。コピー先に書いた圧縮後のファイルを読み戻し、コピー元から受け取ったデータと一致するかを確かめます。カード上の元の ARRIRAW と突き合わせているわけではありません</li>
-  <li><b>ソース再読(パラノイア)は、この取り込みでは行いません</b>。同じファイルをもう一度読んでも 2 回目はカードに届かない(圧縮結果が OS のキャッシュから返る)ことを実測で確認したため、読み直しても根拠が増えません。設定でパラノイアをオンにしていても、この取り込みでは働きません。ジョブの表示にその旨を出します</li>
-  <li>コピー元の種別は <b>ARRI (HDE)</b> と表示されます。ジョブの記録にも HDE で取り込んだことが残ります</li>
-  <li>設定に「元 ARRIRAW のハッシュも記録する」が増えていますが、<b>既定はオフで、通常は不要です</b>。後日 HDE から ARRIRAW に戻したものと突き合わせるための材料ですが、その時点でカードは手元に無く、食い違いが分かっても何も回復しません。確かめたい場合は HDE ではなく ARRIRAW のまま保存してください</li>
-</ul>
-
-<h3>Sync(同期)と Watch Folder</h3>
-<p>この節の 1 項目は、<b>Sync と Watch Folder</b> の説明です。</p>
-<ul>
-  <li><b>Codex の仮想ボリューム(<code>〜_hde</code>)は、Sync と Watch Folder のコピー元にできません</b>。サイズが読み終わるまで決まらないため、「大きさが同じなら変更なし」という差分の判断が成り立たないためです。選ぶとその旨を表示して受け付けません。HDE はメインウィンドウの取り込みで使ってください</li>
-</ul>
-
-<h3>カードの認識</h3>
-<ul>
-  <li><b>ALEXA 35 のカードが認識されていなかったのを直しました</b>。クリップ名(例: <code>X_0001C001_…</code>)の区切りをコード側が間違えており、挿しても通知が出ず、種別もリール名も付いていませんでした。HDE 対応より前からの不具合です</li>
-</ul>
-
-<h3>外部ツールとの連携</h3>
-<ul>
-  <li><code>status --job &lt;ID&gt; --json</code> の各ファイルに <code>originalHash</code> / <code>originalSize</code> が増えました。上記の設定をオンにした HDE 取り込みでのみ値が入り、それ以外は null です。既存の項目は変えていません</li>
-  <li>コマンドラインの進捗表示が、HDE 取り込みで最後まで 100% にならなかったのを直しました(分母が見込みサイズのままでした)</li>
+  <li><b>取り込み中にカードが抜けて(またはアンマウントされて)ジョブがエラー終了すると、「ほかの作業中は待つ」設定の Sync が、そのあと永久に待ち続けていました。</b>取り込みを再開して完了しても Sync は動かず、アプリを再起動するまで直りませんでした。<br>
+  原因は、エラーや停止で終わったジョブが「このドライブを使用中」という印を外さずに終わっていたことです。Sync はその印を見て見送り続けていました。どの終わり方でも印を外すようにしました。<br>
+  影響するのは、<b>Sync の「ほかの作業中は待つ」をオンにしていて、同じドライブを使う取り込みがエラーや停止で終わった</b>場合だけです。取り込み自体の結果(コピー済みデータ・照合)には影響ありません</li>
+  <li>エラーや停止で終わったジョブについて、ログに終了の行が残らず、実働時間も記録されていませんでした。あわせて直しています</li>
 </ul>
 
 <h3>安全側の作りは変えていません</h3>
-<p>コピー元は読み取り専用でしか開かない、上書きはしない、<code>.partial</code> 以外は削除しない、<b>メインウィンドウでの取り込みでは必ずコピー先を読み戻して照合する</b> — これらは HDE の取り込みでも同じです。変わるのは上に書いた「照合の相手が圧縮後のデータになる」ことと「ソース再読を行わない」ことの 2 点だけです。</p>
+<p>コピー元は読み取り専用でしか開かない、上書きはしない、<code>.partial</code> 以外は削除しない、<b>メインウィンドウでの取り込みでは必ずコピー先を読み戻して照合する</b> — これらは今回も一切変えていません。</p>
 ]]></description>
-            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/v1.5.0/dotLab-1.5.0.dmg" length="5271042" type="application/octet-stream" sparkle:edSignature="eg6oTOKqITg6JlAkMDPMr0GRbl6vHyBcK+Fy0cyLg5SMq2DWwGM3pz+KSHsdbKBE+8gF5z/hZVFDFCVxwPTSBw=="/>
+            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/v1.5.1/dotLab-1.5.1.dmg" length="5270866" type="application/octet-stream" sparkle:edSignature="yel2dmL80rAgC9HZZg8Y0WAXovyHNxw5jYegMm8wf7w5XtpK9UFrYF3eZa8UoWlX7vRWCLbTE7J39zv6kVruCw=="/>
         </item>
     </channel>
 </rss>
