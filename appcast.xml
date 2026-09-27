@@ -3,29 +3,26 @@
     <channel>
         <title>dotLab</title>
         <item>
-            <title>1.5.2</title>
-            <pubDate>Sun, 27 Sep 2026 23:31:15 +0900</pubDate>
-            <sparkle:version>346</sparkle:version>
-            <sparkle:shortVersionString>1.5.2</sparkle:shortVersionString>
+            <title>1.5.1</title>
+            <pubDate>Mon, 28 Sep 2026 00:04:39 +0900</pubDate>
+            <sparkle:version>338</sparkle:version>
+            <sparkle:shortVersionString>1.5.1</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <description><![CDATA[<h2>.Lab 1.5.2</h2>
-<p>不具合の修正です。<b>Sync で差分消去(「完全に一致させる」)を使っている方は、すぐに更新してください。</b></p>
+            <description><![CDATA[<h2>.Lab 1.5.1</h2>
+<p>Sync(同期)が止まる不具合の修正です。ほかの変更はありません。</p>
 
-<h3>Sync(同期)</h3>
+<h3>メインウィンドウでの取り込みと Sync(同期)にまたがる不具合</h3>
 <ul>
-  <li><b>コピー元のドライブが一瞬でも切断されると、コピー先のファイルが削除されることがありました。</b>コピー元の中身を実際より少なく読み取り、「削除された」と判断していたためです。コピー元のデータは無事ですが、コピー先が失われ、次の巡回で全て再コピーになります。影響するのは差分消去をオンにしている場合のみです</li>
-  <li>コピー先のファイルを削除したときに、記録へ残すようにしました。これまで記録していたのは書きかけファイル(<code>.partial</code>)の削除だけでした</li>
-</ul>
-
-<h3>メインウィンドウでの取り込み</h3>
-<ul>
-  <li>コピー元のフォルダを読む途中で失敗した場合に、読めたところまでで「完了」となる可能性がありました。Sync の不具合と同じ原因で、あわせて直しています</li>
+  <li><b>取り込み中にカードが抜けて(またはアンマウントされて)ジョブがエラー終了すると、「ほかの作業中は待つ」設定の Sync が、そのあと永久に待ち続けていました。</b>取り込みを再開して完了しても Sync は動かず、アプリを再起動するまで直りませんでした。<br>
+  原因は、エラーや停止で終わったジョブが「このドライブを使用中」という印を外さずに終わっていたことです。Sync はその印を見て見送り続けていました。どの終わり方でも印を外すようにしました。<br>
+  影響するのは、<b>Sync の「ほかの作業中は待つ」をオンにしていて、同じドライブを使う取り込みがエラーや停止で終わった</b>場合だけです。取り込み自体の結果(コピー済みデータ・照合)には影響ありません</li>
+  <li>エラーや停止で終わったジョブについて、ログに終了の行が残らず、実働時間も記録されていませんでした。あわせて直しています</li>
 </ul>
 
 <h3>安全側の作りは変えていません</h3>
 <p>コピー元は読み取り専用でしか開かない、上書きはしない、<code>.partial</code> 以外は削除しない、<b>メインウィンドウでの取り込みでは必ずコピー先を読み戻して照合する</b> — これらは今回も一切変えていません。</p>
 ]]></description>
-            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/v1.5.2/dotLab-1.5.2.dmg" length="5303524" type="application/octet-stream" sparkle:edSignature="kREgLSSkzClCO5Bfh6PETZnYAhmux+8McWYK14lfZRsQ4FQM4EmJ/nrtOWy7jYw6s/DLsJxd1lyQuSZpI98tCw=="/>
+            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/v1.5.1/dotLab-1.5.1.dmg" length="5270866" type="application/octet-stream" sparkle:edSignature="yel2dmL80rAgC9HZZg8Y0WAXovyHNxw5jYegMm8wf7w5XtpK9UFrYF3eZa8UoWlX7vRWCLbTE7J39zv6kVruCw=="/>
         </item>
     </channel>
 </rss>
