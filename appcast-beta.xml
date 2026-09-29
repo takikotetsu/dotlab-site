@@ -3,29 +3,24 @@
     <channel>
         <title>dotLab</title>
         <item>
-            <title>1.5.3</title>
-            <pubDate>Mon, 28 Sep 2026 00:34:36 +0900</pubDate>
-            <sparkle:version>349</sparkle:version>
-            <sparkle:shortVersionString>1.5.3</sparkle:shortVersionString>
+            <title>1.5.4</title>
+            <pubDate>Tue, 29 Sep 2026 14:05:51 +0900</pubDate>
+            <sparkle:version>350</sparkle:version>
+            <sparkle:shortVersionString>1.5.4</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <description><![CDATA[<h2>.Lab 1.5.3</h2>
-<p>不具合の修正です。<b>Sync で差分消去(「完全に一致させる」)を使っている方は、すぐに更新してください。</b></p>
-
-<h3>Sync(同期)</h3>
-<ul>
-  <li><b>コピー元のドライブが一瞬でも切断されると、コピー先のファイルが削除されることがありました。</b>コピー元の中身を実際より少なく読み取り、「削除された」と判断していたためです。コピー元のデータは無事ですが、コピー先が失われ、次の巡回で全て再コピーになります。影響するのは差分消去をオンにしている場合のみです</li>
-  <li>コピー先のファイルを削除したときに、記録へ残すようにしました。これまで記録していたのは書きかけファイル(<code>.partial</code>)の削除だけでした</li>
-</ul>
+            <description><![CDATA[<h2>.Lab 1.5.4</h2>
+<p>1.5.3 で追加した警告に誤りがあったため、取り下げます。ほかの変更はありません。</p>
 
 <h3>メインウィンドウでの取り込み</h3>
 <ul>
-  <li>コピー元のフォルダを読む途中で失敗した場合に、読めたところまでで「完了」となる可能性がありました。Sync の不具合と同じ原因で、あわせて直しています</li>
+  <li><b>「カードの使用量に対し、見えているファイルの合計が足りません」という警告が、正常なカードにも表示されていました。</b>読み取り専用のカード(ARRI の Codex ドライブなど)は空き容量を 0 と報告するため、使用量を正しく計算できていませんでした。実際には問題がなくても、大きな不足が出ているように表示されます。<br>
+  この警告は表示しないようにしました。取り込みの動作そのものには影響せず、<b>コピーと照合は 1.5.3 と同じ</b>です</li>
 </ul>
 
 <h3>安全側の作りは変えていません</h3>
 <p>コピー元は読み取り専用でしか開かない、上書きはしない、<code>.partial</code> 以外は削除しない、<b>メインウィンドウでの取り込みでは必ずコピー先を読み戻して照合する</b> — これらは今回も一切変えていません。</p>
 ]]></description>
-            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/v1.5.3/dotLab-1.5.3.dmg" length="5312765" type="application/octet-stream" sparkle:edSignature="sMu3tVMrSlNKp4re7GjK9ZddkDyi9iecFgWHBWrK5QMKpILpTfUPaMoSYW2X6uzLgp2DRhsJ9oTHErs1wLaNCg=="/>
+            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/v1.5.4/dotLab-1.5.4.dmg" length="5312045" type="application/octet-stream" sparkle:edSignature="dpbboRWS9u7ctvzS0HvjjNAuuFphgOXdl/WDMKQK6DDN15P502Veaa3qV+d8kFxezWvWBB2UF67p/OfqilXvDw=="/>
         </item>
     </channel>
 </rss>
