@@ -3,24 +3,24 @@
     <channel>
         <title>dotLab</title>
         <item>
-            <title>1.5.4</title>
-            <pubDate>Tue, 29 Sep 2026 14:05:51 +0900</pubDate>
-            <sparkle:version>350</sparkle:version>
-            <sparkle:shortVersionString>1.5.4</sparkle:shortVersionString>
+            <title>1.5.5</title>
+            <pubDate>Wed, 30 Sep 2026 18:10:30 +0900</pubDate>
+            <sparkle:version>351</sparkle:version>
+            <sparkle:shortVersionString>1.5.5</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <description><![CDATA[<h2>.Lab 1.5.4</h2>
-<p>1.5.3 で追加した警告に誤りがあったため、取り下げます。ほかの変更はありません。</p>
+            <description><![CDATA[<h2>.Lab 1.5.5</h2>
+<p>表示言語の修正です。ほかの変更はありません。</p>
 
-<h3>メインウィンドウでの取り込み</h3>
+<h3>表示言語</h3>
 <ul>
-  <li><b>「カードの使用量に対し、見えているファイルの合計が足りません」という警告が、正常なカードにも表示されていました。</b>読み取り専用のカード(ARRI の Codex ドライブなど)は空き容量を 0 と報告するため、使用量を正しく計算できていませんでした。実際には問題がなくても、大きな不足が出ているように表示されます。<br>
-  この警告は表示しないようにしました。取り込みの動作そのものには影響せず、<b>コピーと照合は 1.5.3 と同じ</b>です</li>
+  <li><b>日本語以外の環境で、アプリのメニューバーとフォルダ選択ダイアログが日本語で表示されていました。</b>.Lab 本体の画面は英語でも、macOS が用意する部分(「ファイル」「編集」などのメニュー、フォルダを選ぶダイアログの「キャンセル」「OK」など)が日本語のままになっていました。<br>
+  対応言語の指定が不完全で、macOS が言語を選べず日本語に固定されていたためです。英語と日本語のどちらも正しく選ばれるようにしました。日本語環境での表示は変わりません</li>
 </ul>
 
 <h3>安全側の作りは変えていません</h3>
 <p>コピー元は読み取り専用でしか開かない、上書きはしない、<code>.partial</code> 以外は削除しない、<b>メインウィンドウでの取り込みでは必ずコピー先を読み戻して照合する</b> — これらは今回も一切変えていません。</p>
 ]]></description>
-            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/v1.5.4/dotLab-1.5.4.dmg" length="5312045" type="application/octet-stream" sparkle:edSignature="dpbboRWS9u7ctvzS0HvjjNAuuFphgOXdl/WDMKQK6DDN15P502Veaa3qV+d8kFxezWvWBB2UF67p/OfqilXvDw=="/>
+            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/v1.5.5/dotLab-1.5.5.dmg" length="5313029" type="application/octet-stream" sparkle:edSignature="FfrB2mLT6and80XNd6xOyU0hMSNj52HqMQ6URdlp6+fEIURHc1GHxKUsMQHGwHNbG9nAULuj9ZEqdDI8HXD7AA=="/>
         </item>
     </channel>
 </rss>
