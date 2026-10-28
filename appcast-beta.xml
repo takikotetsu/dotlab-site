@@ -3,24 +3,16 @@
     <channel>
         <title>dotLab</title>
         <item>
-            <title>1.5.5</title>
-            <pubDate>Wed, 30 Sep 2026 18:10:30 +0900</pubDate>
-            <sparkle:version>351</sparkle:version>
-            <sparkle:shortVersionString>1.5.5</sparkle:shortVersionString>
+            <title>1.5.6</title>
+            <pubDate>Wed, 28 Oct 2026 14:46:47 +0900</pubDate>
+            <sparkle:phasedRolloutInterval>172800</sparkle:phasedRolloutInterval>
+            <sparkle:version>364</sparkle:version>
+            <sparkle:shortVersionString>1.5.6</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <description><![CDATA[<h2>.Lab 1.5.5</h2>
-<p>表示言語の修正です。ほかの変更はありません。</p>
-
-<h3>表示言語</h3>
-<ul>
-  <li><b>日本語以外の環境で、アプリのメニューバーとフォルダ選択ダイアログが日本語で表示されていました。</b>.Lab 本体の画面は英語でも、macOS が用意する部分(「ファイル」「編集」などのメニュー、フォルダを選ぶダイアログの「キャンセル」「OK」など)が日本語のままになっていました。<br>
-  対応言語の指定が不完全で、macOS が言語を選べず日本語に固定されていたためです。英語と日本語のどちらも正しく選ばれるようにしました。日本語環境での表示は変わりません</li>
-</ul>
-
-<h3>安全側の作りは変えていません</h3>
-<p>コピー元は読み取り専用でしか開かない、上書きはしない、<code>.partial</code> 以外は削除しない、<b>メインウィンドウでの取り込みでは必ずコピー先を読み戻して照合する</b> — これらは今回も一切変えていません。</p>
+            <description><![CDATA[<h2>.Lab 1.5.6</h2>
+<p>機能性の向上および軽微なバグを修正しました。</p>
 ]]></description>
-            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/v1.5.5/dotLab-1.5.5.dmg" length="5313029" type="application/octet-stream" sparkle:edSignature="FfrB2mLT6and80XNd6xOyU0hMSNj52HqMQ6URdlp6+fEIURHc1GHxKUsMQHGwHNbG9nAULuj9ZEqdDI8HXD7AA=="/>
+            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/v1.5.6/dotLab-1.5.6.dmg" length="5444052" type="application/octet-stream" sparkle:edSignature="b9BWQ8yz8KOJiCG6Y2BBkqr4o59BJfVBXCOr/zzID+Qa1+l1ATU38GHG2HrEVsj24xYFP69+EmUXj1idxTAfBQ=="/>
         </item>
     </channel>
 </rss>
