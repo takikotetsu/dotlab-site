@@ -3,18 +3,16 @@
     <channel>
         <title>dotLab</title>
         <item>
-            <title>1.5.7</title>
-            <pubDate>Wed, 28 Oct 2026 18:13:47 +0900</pubDate>
-            <sparkle:version>365</sparkle:version>
-            <sparkle:shortVersionString>1.5.7</sparkle:shortVersionString>
+            <title>1.5.8</title>
+            <pubDate>Wed, 04 Nov 2026 20:59:19 +0900</pubDate>
+            <sparkle:phasedRolloutInterval>172800</sparkle:phasedRolloutInterval>
+            <sparkle:version>369</sparkle:version>
+            <sparkle:shortVersionString>1.5.8</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <description><![CDATA[<h2>.Lab 1.5.7</h2>
-<p>1.5.6 で入った不具合の修正です。</p>
-<ul>
-  <li><b>Sync で、コピー先の空き容量が十分あるのに「容量不足」と表示され、同期が止まることがありました。</b>exFAT のドライブで空き容量を正しく読めていなかったためです。1.5.6 でのみ発生します</li>
-</ul>
+            <description><![CDATA[<h2>.Lab 1.5.8</h2>
+<p>軽微なバグを修正しました。</p>
 ]]></description>
-            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/v1.5.7/dotLab-1.5.7.dmg" length="5444134" type="application/octet-stream" sparkle:edSignature="1oFycOywx2xZ7mo7EyWKJq3G2mPOqqs9qdc9w3h1A/fOdVETDKjsaUHnua8Ge2qM1c2a+PgHtIlifE1Z8YGTAA=="/>
+            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/v1.5.8/dotLab-1.5.8.dmg" length="5446674" type="application/octet-stream" sparkle:edSignature="8Timl5T7mFefGuREJDbyQHiJTmr3+h0Euh3lyIRAyhApcqYwhMgEcvam0TvmlR2GifqPPyl5yrNt2FrLd0AVAQ=="/>
         </item>
     </channel>
 </rss>
