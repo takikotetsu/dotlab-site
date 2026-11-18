@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Release notes | .Lab</title><style>
+:root { --violet:#7C5CE8; --bg:#0e0e12; --text:#f2f2f5; --sub:#9a9aa5; --border:#26262e; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--text);
+       font-family:-apple-system,'Hiragino Sans',sans-serif; line-height:1.9; }
+.wrap { max-width:760px; margin:0 auto; padding:64px 24px 96px; }
+h1 { font-size:24px; margin-bottom:10px; }
+.lead { color:var(--sub); font-size:14px; margin-bottom:40px; }
+a { color:var(--violet); text-decoration:none; }
+a:hover { text-decoration:underline; }
+.back { display:inline-block; margin-bottom:28px; font-size:13px; }
+.rel { border-top:1px solid var(--border); padding:32px 0 8px; }
+.ver { display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:14px; }
+.ver h2 { font-size:19px; }
+.ver .date { color:#62626e; font-size:13px; }
+.ver .anchor { color:#3a3a46; font-size:12px; }
+.rel h3 { font-size:15px; color:var(--violet); margin:24px 0 8px; }
+.rel p { font-size:14px; margin:8px 0; }
+.rel ul { margin:8px 0 8px 20px; }
+.rel li { font-size:14px; margin:8px 0; }
+.rel code { background:#1a1a22; border-radius:4px; padding:1px 5px; font-size:13px; }
+.note { color:#62626e; font-size:12px; margin-top:48px;
+        border-top:1px solid var(--border); padding-top:24px; }
+</style></head><body><div class="wrap">
+<a class="back" href="/en/">← .Lab</a>
+<h1>Release notes</h1>
+<p class="lead">Every .Lab release, newest first.</p>
+<div class="rel" id="1.5.8">
+<div class="ver"><h2>.Lab 1.5.8</h2>
+<span class="date">2026-11-04</span>
+<a class="anchor" href="#1.5.8">#</a></div>
+<p>Two Sync fixes.</p>
+
+<h3>Sync</h3>
+<ul>
+  <li><b>Files that already existed at the destination were recorded as "verified" without being checked against the source.</b> Sync used the record plus the file's presence to decide, and skipped it from then on. A name does not guarantee the contents, so that was not a basis for saying a file was done. The size at the destination is now compared against the source before anything is marked verified</li>
+  <li><b>"First copy complete" was shown even when files had failed.</b> It now states how many could not be copied and that they will be retried on the next pass</li>
+</ul>
+</div>
+<div class="rel" id="1.5.7">
+<div class="ver"><h2>.Lab 1.5.7</h2>
+<span class="date">2026-10-28</span>
+<a class="anchor" href="#1.5.7">#</a></div>
+<p>Fixes a fault introduced in 1.5.6.</p>
+<ul>
+  <li><b>Sync could report "not enough space" and stop, with plenty of space free at the destination.</b> Free space was not being read correctly on exFAT drives. 1.5.6 only</li>
+</ul>
+</div>
+<div class="rel" id="1.5.6">
+<div class="ver"><h2>.Lab 1.5.6</h2>
+<span class="date">2026-10-28</span>
+<a class="anchor" href="#1.5.6">#</a></div>
+<p>The reel name field has been rebuilt, and Sync no longer stalls silently.</p>
+
+<h3>Offloading in the main window: the reel name</h3>
+<ul>
+  <li><b>The reel name is now a row of slots.</b> Instead of typing <code>Day01/ALEXA35/A001</code> into one field, you get separate boxes side by side. Separators can no longer be typed — the point is that <b>you can see where the levels break</b></li>
+  <li><b>You can add a slot anywhere between the existing ones.</b> Each separator position is itself the add button. Adding only at the end would make it impossible to insert a level before something you already typed</li>
+  <li><b>The leading slots offer the names you have already used on this project.</b> They come from <b>the record of copies actually made</b>, not from anything .Lab invents. A name you have never used does not appear — so when the day rolls over to <code>Day02</code> you have to type it, and that is exactly where you notice. Suggestions are listed newest first, with the date each was last used</li>
+  <li><b>Applying the reel name read from the card no longer wipes the slots before it.</b> It used to replace the whole field, so <code>Day01/ALEXA35/A001</code> became just <code>A002</code> and the copy landed directly at the root of the destination</li>
+  <li><b>ASC MHL is now written even when the reel name contains levels.</b> And a reel name that would point outside the destination stops the job before it starts</li>
+</ul>
+
+<h3>Sync</h3>
+<ul>
+  <li><b>A stalled destination is no longer hidden.</b> 87 files that would not fit on a full drive were shown as "no differences"</li>
+  <li><b>If it stopped because of space, it now says so by name.</b></li>
+  <li><b>A pass without enough free space writes nothing and is skipped</b>, instead of writing part of the way and failing</li>
+</ul>
+
+<h3>Elsewhere</h3>
+<ul>
+  <li><b>Completed jobs show a breakdown of their contents.</b> With more than one destination, the breakdown is carried on the total as well</li>
+  <li><b>Clicking a project name shows the breakdown for the whole project.</b></li>
+  <li><b>Fixed ALEXA ProRes cards (<code>.mov</code>) not being detected automatically.</b></li>
+</ul>
+</div>
+<div class="rel" id="1.5.5">
+<div class="ver"><h2>.Lab 1.5.5</h2>
+<span class="date">2026-09-30</span>
+<a class="anchor" href="#1.5.5">#</a></div>
+<p>A display language fix. Nothing else has changed.</p>
+
+<h3>Display language</h3>
+<ul>
+  <li><b>Outside Japanese systems, the menu bar and the folder-selection dialog appeared in Japanese.</b> .Lab's own screens were in English, but the parts macOS provides — File, Edit and so on, and Cancel / OK in the folder picker — stayed Japanese.<br>
+  The list of supported languages was incomplete, so macOS could not choose and fell back to Japanese. English and Japanese are both selected correctly now. Nothing changes on a Japanese system</li>
+</ul>
+
+<h3>The safe-side rules are unchanged</h3>
+<p>The source is only ever opened read-only, nothing is overwritten, nothing but <code>.partial</code> is deleted, and <b>offloading in the main window always reads the destination back and verifies</b> — none of this has changed.</p>
+</div>
+<div class="rel" id="1.5.4">
+<div class="ver"><h2>.Lab 1.5.4</h2>
+<span class="date">2026-09-29</span>
+<a class="anchor" href="#1.5.4">#</a></div>
+<p>Withdraws a warning added in 1.5.3, which was wrong. Nothing else has changed.</p>
+
+<h3>Offloading in the main window</h3>
+<ul>
+  <li><b>"The visible files don't add up to the space used on this card" was shown for perfectly healthy cards.</b> Read-only cards (such as ARRI's Codex drives) report zero free space, so the used space could not be calculated and a large shortfall appeared where there was none.<br>
+  The warning has been removed. It never affected the offload itself — <b>copying and verification are the same as in 1.5.3</b></li>
+</ul>
+
+<h3>The safe-side rules are unchanged</h3>
+<p>The source is only ever opened read-only, nothing is overwritten, nothing but <code>.partial</code> is deleted, and <b>offloading in the main window always reads the destination back and verifies</b> — none of this has changed.</p>
+</div>
+<div class="rel" id="1.5.3">
+<div class="ver"><h2>.Lab 1.5.3</h2>
+<span class="date">2026-09-28</span>
+<a class="anchor" href="#1.5.3">#</a></div>
+<p>Fixes. <b>If you use Sync with "make an exact match", please update now.</b></p>
+
+<h3>Sync</h3>
+<ul>
+  <li><b>If the source drive dropped out even for an instant, files could be deleted at the destination.</b> .Lab read the source as holding far less than it did and concluded the missing files had been deleted. Your source data was never at risk, but the destination was lost and the next pass re-copied everything. This only affected pairs with "make an exact match" turned on</li>
+  <li>Deleting a file at the destination is now written to the log. Until now the only deletions recorded were of half-written files (<code>.partial</code>)</li>
+</ul>
+
+<h3>Offloading in the main window</h3>
+<ul>
+  <li>If reading the source folder failed partway through, the offload could be reported as "complete" with only the part that was read. Same cause as the Sync fault, fixed together</li>
+</ul>
+
+<h3>The safe-side rules are unchanged</h3>
+<p>The source is only ever opened read-only, nothing is overwritten, nothing but <code>.partial</code> is deleted, and <b>offloading in the main window always reads the destination back and verifies</b> — none of this has changed.</p>
+</div>
+<div class="rel" id="1.5.1">
+<div class="ver"><h2>.Lab 1.5.1</h2>
+<span class="date">2026-09-15</span>
+<a class="anchor" href="#1.5.1">#</a></div>
+<p>Fixes Sync getting stuck. Nothing else.</p>
+
+<h3>A fault spanning offloading and Sync</h3>
+<ul>
+  <li><b>If a card was removed (or unmounted) mid-offload and the job ended in an error, a Sync pair set to "wait while other work is running" waited forever afterwards.</b> Resuming and completing the offload didn't help; only restarting .Lab did.<br>
+  The cause: a job that ended in an error or was stopped never cleared its "this drive is in use" mark. Sync kept seeing the mark and standing aside. The mark is now cleared however the job ends.<br>
+  This only affected you if <b>Sync's "wait while other work is running" was on and an offload using the same drive ended in an error or was stopped</b>. Offload results — copied data and verification — were never affected</li>
+  <li>Jobs that ended in an error or were stopped left no closing line in the log and no recorded working time. Fixed at the same time</li>
+</ul>
+
+<h3>The safe-side rules are unchanged</h3>
+<p>The source is only ever opened read-only, nothing is overwritten, nothing but <code>.partial</code> is deleted, and <b>offloading in the main window always reads the destination back and verifies</b> — none of this has changed.</p>
+</div>
+<div class="rel" id="1.5.0">
+<div class="ver"><h2>.Lab 1.5.0</h2>
+<span class="date">2026-09-13</span>
+<a class="anchor" href="#1.5.0">#</a></div>
+<p>Adds support for Codex HDE (lossless compressed ARRIRAW), and fixes ALEXA 35 cards not being detected.</p>
+
+<h3>Offloading in the main window: HDE</h3>
+<p>This section describes <b>offloading in the main window</b> with <b>a Codex virtual volume (name ending in <code>_hde</code>) as the source</b>. Choosing the physical volume instead still gives you uncompressed ARRIRAW, as before.</p>
+<ul>
+  <li><b>The virtual volume that appears when HDE is enabled in Codex Device Manager (<code>…_hde</code>) can be used as a source.</b> What you get is HDE-compressed MXF (measured at 57–60% of the original), together with the card's companion files such as ALE</li>
+  <li><b>That virtual volume cannot be copied in the Finder.</b> By Codex's design the files appear to be 0 bytes, so the Finder creates empty files and stops. .Lab reads until the data ends, so it offloads correctly</li>
+  <li><b>The size shown before offloading is an estimate.</b> HDE's size is not settled until the read finishes, so Codex's estimate is displayed. It runs high (measured: 97.5 GB estimated → 75.7 GB actual). If the free space is below the estimate you are asked to confirm rather than stopped. If space does run out, that destination is stopped and its <code>.partial</code> files are cleaned up; completed files stay</li>
+  <li><b>Verification is against the compressed data.</b> The compressed file written to the destination is read back and compared with what was received from the source. It is not compared against the original ARRIRAW on the card</li>
+  <li><b>Source re-read (paranoid mode) does not run for these offloads.</b> Reading the same file twice was measured never to reach the card a second time — the compressed result comes back from the OS cache — so a re-read adds no evidence. Even with paranoid mode on in settings it does not run here, and the job says so</li>
+  <li>The source type is shown as <b>ARRI (HDE)</b>, and the job record notes that it was offloaded via HDE</li>
+  <li>Settings gain "also record the original ARRIRAW hash", but <b>it is off by default and normally unnecessary.</b> It exists to compare against ARRIRAW restored from HDE later, but by then the card is gone, so a mismatch recovers nothing. If you want that certainty, keep the ARRIRAW rather than HDE</li>
+</ul>
+
+<h3>Sync and Watch Folder</h3>
+<p>The item in this section describes <b>Sync and Watch Folder</b>.</p>
+<ul>
+  <li><b>A Codex virtual volume (<code>…_hde</code>) cannot be used as a source for Sync or Watch Folder.</b> Its size is not settled until the read finishes, so "same size means unchanged" — the basis of the difference check — does not hold. Selecting one is refused with that explanation. Use HDE for offloading in the main window</li>
+</ul>
+
+<h3>Card detection</h3>
+<ul>
+  <li><b>Fixed ALEXA 35 cards not being detected.</b> The clip name separator (e.g. <code>X_0001C001_…</code>) was parsed wrongly, so inserting a card produced no notification, no type and no reel name. This predates HDE support</li>
+</ul>
+
+<h3>Working with other tools</h3>
+<ul>
+  <li><code>status --job &lt;ID&gt; --json</code> gains <code>originalHash</code> / <code>originalSize</code> per file. They are filled in only for HDE offloads with the setting above turned on, and null otherwise. Existing fields are unchanged</li>
+  <li>Fixed the command line progress never reaching 100% on HDE offloads (the denominator stayed at the estimated size)</li>
+</ul>
+
+<h3>The safe-side rules are unchanged</h3>
+<p>The source is only ever opened read-only, nothing is overwritten, nothing but <code>.partial</code> is deleted, and <b>offloading in the main window always reads the destination back and verifies</b> — all of this holds for HDE too. The only differences are the two stated above: verification is against the compressed data, and the source is not re-read.</p>
+</div>
+<div class="rel" id="1.4.4">
+<div class="ver"><h2>.Lab 1.4.4</h2>
+<span class="date">2026-09-08</span>
+<a class="anchor" href="#1.4.4">#</a></div>
+<p>One behaviour introduced in 1.4.3 is changed back. Nothing else.</p>
+
+<h3>Sync</h3>
+<p>The item in this section is <b>Sync only</b>.</p>
+<ul>
+  <li><b>Cleaning up half-written files (<code>.partial</code>) at the destination now happens only when "make an exact match" is selected.</b><br>
+  1.4.3 cleaned them up regardless of that setting, on the grounds that a <code>.partial</code> is .Lab's own temporary file rather than your footage. But <b>if you chose "keep files at the destination", anything disappearing on its own contradicts what you chose.</b> A setting is a promise, and it outranks our tidiness.<br>
+  With "make an exact match" selected the behaviour is the same as 1.4.3 (only <code>.partial</code> files untouched for five minutes, never one being written).<br>
+  If you keep files at the destination and the leftovers bother you, deleting them in the Finder is perfectly safe — they are fragments of an interrupted write</li>
+</ul>
+
+<h3>The safe-side rules are unchanged</h3>
+<p>The source is only ever opened read-only, nothing is overwritten, and <b>offloading in the main window always reads back and verifies</b> — none of this has changed.</p>
+</div>
+<div class="rel" id="1.4.3">
+<div class="ver"><h2>.Lab 1.4.3</h2>
+<span class="date">2026-09-08</span>
+<a class="anchor" href="#1.4.3">#</a></div>
+<p>Mostly fixes, found on real shoots, plus two new features.</p>
+
+<h3>Sync</h3>
+<p>The item in this section is <b>Sync only</b>.</p>
+<ul>
+  <li><b>Half-written files left at the destination were never cleaned up.</b> An interrupted copy can leave a <code>.partial</code> file behind. These were excluded both from deletion and from the difference count, so <b>the screen said "no differences" while they sat there permanently</b> — 223 MB of leftovers was reported in the field.<br>
+  They are now cleaned up <b>even when "make an exact match" is off</b>, because a <code>.partial</code> is not your footage, it is .Lab's own temporary file. Files currently being written are not touched (only ones untouched for five minutes qualify). Anything cleaned up is written to the log</li>
+</ul>
+
+<h3>Card detection</h3>
+<ul>
+  <li><b>Sony VENICE and BURANO cards are now detected.</b> .Lab looked for a folder named <code>XDROOT</code>, but these cards use a folder named after the volume, so <b>inserting one produced no notification at all</b>. Detection now looks at the contents (a <code>Clip</code> folder together with <code>MEDIAPRO.xml</code>) rather than the folder name, so the name no longer matters. The older <code>XDROOT</code> layout is still detected</li>
+  <li><b>A card already inserted when the app launches is now detected too.</b> .Lab only watched for newly connected drives, so anything already mounted was ignored. <b>It will not start copying on launch</b> — inserting a card and opening an app are two different actions, and starting on the second one goes too far. It sets the source and tells you</li>
+  <li>Product line names were removed from the detection message. Several models share one folder layout, so naming one model makes the message wrong on another</li>
+</ul>
+
+<h3>Offloading in the main window</h3>
+<ul>
+  <li><b>Fixed a running job splitting off into a project under the old name when you rename the project mid-offload.</b> The later stages (chained copies, watch-folder differences) looked the project up <b>by name</b>, which recreated the old one after the rename</li>
+  <li><b>Reel exports are reachable from the sidebar.</b> Right-click a reel for open, export ASC MHL, and export the PDF report. 1.4.1 folded away the completed-reel list, which was the only route to them</li>
+</ul>
+
+<h3>New features</h3>
+<ul>
+  <li><b>Reels can be moved to another project.</b> Right-click a reel in the sidebar → Move to project. <b>Only the record changes; the copied files stay exactly where they are.</b> If the destination project has no bin of the same name, the reel leaves that classification</li>
+  <li><b>Destinations are remembered and restored across restarts.</b> They are stored per project, so switching projects switches the destination with it.<br>
+  <b>A destination is only restored when .Lab can confirm it is the same drive as last time.</b> If a different drive with the same name is connected, the field is left empty — <code>/Volumes/SSD_A</code> is not necessarily the same disk today. It is also left empty if the drive isn't connected</li>
+</ul>
+
+<h3>The safe-side rules are unchanged</h3>
+<p>The source is only ever opened read-only, nothing is overwritten, and <b>offloading in the main window always reads back and verifies</b> — none of this has changed.</p>
+</div>
+<div class="rel" id="1.4.2">
+<div class="ver"><h2>.Lab 1.4.2</h2>
+<span class="date">2026-08-27</span>
+<a class="anchor" href="#1.4.2">#</a></div>
+<p>Sync fixes, all of them found on real shoots. <b>Nothing here changes offloading in the main window.</b></p>
+
+<h3>Sync</h3>
+<p>The three items in this section are <b>Sync only</b>.</p>
+<ul>
+  <li><b>Fixed a pair stopping dead after a failed copy.</b> If even one file failed during the first copy, the pair never entered its watch loop and never synced again. On screen it looked like "the sync hasn't finished but no copying is happening", and only restarting .Lab brought it back. <b>It now keeps watching after a failure and retries the failed files on the next pass.</b> It does not pretend to have succeeded: it states how many files could not be copied and that they will be retried</li>
+  <li><b>"Wait while other work is running" was not applied to the first copy.</b> The setting only existed in the watch loop, and Sync starts with a first copy every time it launches — so in practice it never waited. Sync would read from a drive an offload was writing to, and cause copy failures. The first copy now waits as well</li>
+  <li><b>Deciding a file is already copied now includes the size at the destination.</b> It used to check only that a file was <i>there</i>. A name does not guarantee the contents, so that was not enough to go on</li>
+</ul>
+
+<h3>When the source is slow to read</h3>
+<ul>
+  <li><b>No longer assumes the media was physically pulled.</b> A read that didn't return within 15 seconds was treated as a removed card and stopped the job. In practice the drive was still connected and simply busy with other work. .Lab now checks whether the drive is still visible before deciding which of the two it is</li>
+  <li><b>The read timeout is now 90 seconds, up from 15.</b> This timeout exists to recognise a read that will never return, not to give up on a slow drive. Reading a large file from an external drive could take longer than 15 seconds</li>
+</ul>
+
+<h3>Offloading in the main window</h3>
+<ul>
+  <li><b>You are told when a card may already have been offloaded.</b> If a reel in the same project matches the card exactly in file count and total size, a notice appears on the source field. <b>It does not stop you</b> — re-offloading is sometimes exactly what you want. Until now this was only apparent after pressing Offload</li>
+</ul>
+
+<h3>The safe-side rules are unchanged</h3>
+<p>The source is only ever opened read-only, nothing is overwritten, nothing but <code>.partial</code> is deleted, and <b>offloading in the main window always reads back and verifies</b> — none of this has changed.</p>
+</div>
+<div class="rel" id="1.4.1">
+<div class="ver"><h2>.Lab 1.4.1</h2>
+<span class="date">2026-08-16</span>
+<a class="anchor" href="#1.4.1">#</a></div>
+<p>Screen layout, and fixes where the display disagreed with the facts. No new features.</p>
+
+<h3>Offloading in the main window</h3>
+<ul>
+  <li><b>The hash used for verification is now shown per file.</b> Under the "xxHash64" heading there used to be only a progress bar; now the actual values (e.g. <code>8d7b5326a1f0c942</code>) are listed, turning green once verified. They can be selected and copied, so you can paste them into another tool and compare</li>
+  <li><b>The window is split into Input, Running and Done.</b> Input fields and progress looked alike, so the reel field appeared to be there twice. Input is now a band with a purple rule on the left; progress is a card</li>
+  <li><b>The input fields fold to a single line while copying</b>, and keep showing which folder the next offload goes to. Cards can still be dropped on the folded form</li>
+  <li>A running job that appeared twice on screen now appears once</li>
+  <li><b>Elapsed time is now the time actually spent.</b> It used to be end minus start, so a job paused overnight read "27 hours". Paused time is excluded. <b>Jobs completed before this version are unchanged</b> (the working time wasn't recorded)</li>
+</ul>
+
+<h3>Sync</h3>
+<p>The three items in this section are <b>Sync only</b>. Offloading in the main window is unaffected.</p>
+<ul>
+  <li><b>Files still being written (<code>.partial</code>) are no longer copied.</b> Sync used to grab them and fail, every pass</li>
+  <li><b>Added the "while other work is running" setting.</b> Choose whether Sync stands aside while an offload is using the same drive. The default is to wait. Competing for one drive slows the offload visibly (measured: 275 MB/s → 164 MB/s), so waiting is the default</li>
+  <li><b>Sync jobs no longer appear in the job history.</b> Sync is work that never finishes, so every stop was listed as "interrupted" and buried the real offload failures. The records are still kept and can be followed from the support information</li>
+</ul>
+
+<h3>Working with other tools</h3>
+<ul>
+  <li><b>A command line tool now ships inside the app</b>, at <code>/Applications/dotLab.app/Contents/MacOS/offload-cli</code></li>
+  <li><b>Add <code>--json</code> for machine-readable output.</b> <code>list --json</code> gives the job list; <code>status --job &lt;ID&gt; --json</code> gives one job in detail (each file's relative path, size, xxHash64, per-destination state and failure reason). The output carries a schema number, and we will not change its shape quietly</li>
+  <li>If all you need is hashes, ASC MHL v2 is still written to the <code>ascmhl</code> folder at the destination, as before</li>
+</ul>
+
+<h3>Demo mode</h3>
+<ul>
+  <li><b>Fixed the speed limit not working.</b> When the app was renamed from Offloader to dotLab, the check for demo mode kept looking for the old name, so neither the limit nor the virtual drive allocation did anything</li>
+  <li>Copy speed (10 / 40 / 120 MB/s) and clip count (18 / 60 / 150) can be chosen, with an estimate per clip</li>
+  <li><b>Fixed demo data being deleted while still in use.</b> A queued job's source could disappear, so the moment its turn came it failed with "no files to copy". Data something still points at is now left alone</li>
+  <li>Settings show how much space the demo area uses, with a delete button. Demo destinations are not removed automatically</li>
+</ul>
+
+<h3>The safe-side rules are unchanged</h3>
+<p>The source is only ever opened read-only, nothing is overwritten, nothing but <code>.partial</code> is deleted, and <b>offloading in the main window always reads back and verifies</b> — none of this has changed.</p>
+</div>
+<div class="rel" id="1.4.0">
+<div class="ver"><h2>.Lab 1.4.0</h2>
+<span class="date">2026-08-13</span>
+<a class="anchor" href="#1.4.0">#</a></div>
+<p>Adds <b>Sync</b> — keeps a second drive continuously mirrored with the project you are working on (Pro).</p>
+
+<h3>What Sync does</h3>
+<p>Everything in this section describes <b>Sync only</b>.</p>
+<ul>
+  <li><b>Detects changes by itself</b>: it listens to the system and syncs 10 seconds after writing stops. Nothing has to re-count the folder over and over, so the load is negligible</li>
+  <li><b>Later passes start instantly</b>: verified files are recorded, so anything unchanged is skipped without being read</li>
+  <li><b>As many pairs as you like</b>: internal SSD_A → external SSD_A, internal SSD_B → external SSD_B, all visible in one window</li>
+  <li><b>Verification is optional here</b>: off by default (size and modification date decide). Turn it on and copied files are read back and hash-checked. Even with it off, the size of every copied file is always checked</li>
+  <li><b>You choose what happens to files deleted at the source</b>: keep them at the destination, or delete them too. If deletion is selected, it is stated before the pair starts</li>
+  <li><b>It never starts on its own</b>: opening the window does nothing. You press start</li>
+</ul>
+<p>Sync is <b>for backing up work in progress</b>. Offloading from cards stays in the main window. <b>Offloading in the main window</b> has reel names, reports, MHL and duplicate detection, and is always verified. <b>Sync has none of those.</b></p>
+
+<h3>Other improvements</h3>
+<ul>
+  <li><b>Where verification can be turned off, the written size is now always checked.</b> If it doesn't match, the partial file is discarded and reported, and never given its final name. Verification can only be turned off in <b>chained copies</b> and <b>Sync</b>; <b>offloading from a card is always verified</b> (there is no setting for it)</li>
+  <li>Files that are still being written when .Lab reaches them are handled more clearly: an error during offload, as before; deferred to the next pass during Sync</li>
+  <li>Test builds now report a different version number from the public release, so support reports can't be confused between the two</li>
+</ul>
+</div>
+<p class="note">日本語版はこちら: <a href="/release-notes/">dotlab.kotetsu.work/release-notes/</a><br>These are the same notes shown in the app&#x27;s update dialog. Releases before 1.4.0 are not listed, and notes for them exist only in Japanese.</p>
+</div></body></html>
