@@ -3,16 +3,24 @@
     <channel>
         <title>dotLab</title>
         <item>
-            <title>1.5.8</title>
-            <pubDate>Wed, 04 Nov 2026 20:59:19 +0900</pubDate>
+            <title>1.5.9</title>
+            <pubDate>Fri, 20 Nov 2026 07:30:38 +0900</pubDate>
+            <sparkle:fullReleaseNotesLink>https://dotlab.kotetsu.work/release-notes/</sparkle:fullReleaseNotesLink>
             <sparkle:phasedRolloutInterval>172800</sparkle:phasedRolloutInterval>
-            <sparkle:version>369</sparkle:version>
-            <sparkle:shortVersionString>1.5.8</sparkle:shortVersionString>
+            <sparkle:version>373</sparkle:version>
+            <sparkle:shortVersionString>1.5.9</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <description><![CDATA[<h2>.Lab 1.5.8</h2>
-<p>軽微なバグを修正しました。</p>
+            <description><![CDATA[<h2>.Lab 1.5.9</h2>
+<p>英語表示のときに、レポート PDF へ日本語が混ざっていたのを直しました。</p>
+
+<h3>レポート PDF</h3>
+<ul>
+  <li><b>英語表示にしていても、レポートの一部が日本語のままでした。</b>「エラー 0 件」、連番素材の「コマ」「欠番」が、言語の設定を見ずに日本語で出ていました</li>
+  <li><b>再生確認の注意書きを、表示言語の順に出すようにしました。</b>これまでは日本語を大きく、英語を小さく添える形で固定でした。プロジェクト全体のレポートでは、1ページ目に<b>日本語しか出していません</b>でした。<br>
+  <b>どちらの言語でも、日本語と英語の両方を載せることは変えていません。</b>順序と大きさだけを入れ替えています</li>
+</ul>
 ]]></description>
-            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/v1.5.8/dotLab-1.5.8.dmg" length="5446674" type="application/octet-stream" sparkle:edSignature="8Timl5T7mFefGuREJDbyQHiJTmr3+h0Euh3lyIRAyhApcqYwhMgEcvam0TvmlR2GifqPPyl5yrNt2FrLd0AVAQ=="/>
+            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/v1.5.9/dotLab-1.5.9.dmg" length="5646278" type="application/octet-stream" sparkle:edSignature="j6Xd9eQeODkrKGtG4Tv2GYQEN3jKmk0ofBSE9/6uf0I+IboGp0BXQ+7w41wfUeQKxT2RXniJ6Jai+QF/eaWOBA=="/>
         </item>
     </channel>
 </rss>
