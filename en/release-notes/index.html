@@ -28,6 +28,40 @@ a:hover { text-decoration:underline; }
 <a class="back" href="/en/">← .Lab</a>
 <h1>Release notes</h1>
 <p class="lead">Every .Lab release, newest first.</p>
+<div class="rel" id="1.5.10">
+<div class="ver"><h2>.Lab 1.5.10</h2>
+<span class="date">2026-11-26</span>
+<a class="anchor" href="#1.5.10">#</a></div>
+<p>Sync gets a Compare window. This release also fixes the report, adds missing help chapters, and makes a few things easier to read.</p>
+
+<h3>Compare window (new)</h3>
+<ul>
+  <li><b>Source and destination side by side.</b> Open it from the Compare button on a Sync pair. It replaces lining up two Finder info windows</li>
+  <li><b>It compares sizes only. It does not look at content.</b> You get item counts, totals and folder counts, plus the names of files missing at the destination, files whose size differs, and files only at the destination</li>
+  <li><b>It only reads. Nothing is written</b></li>
+  <li>It keeps counting while the window is open. It waits as long as the last pass took, so large folders are checked less often. The Auto checkbox in the footer stops it</li>
+  <li>The lists of differences start collapsed. Click a heading to open one</li>
+</ul>
+
+<h3>Display</h3>
+<ul>
+  <li><b>The zero no longer has a slash through it.</b> At small sizes, and in dimmed text, it was hard to tell from an 8</li>
+  <li><b>The REELS sidebar now shows only the last part of the reel name.</b> With folder levels in the name, the part that matters was cut off even at full width. Hover a row for the full path. <b>The job list, reports, logs and MHL keep the full path as before</b></li>
+  <li><b>In Job History, a reel name with folder levels wrapped onto three lines and broke the row height.</b> It is kept to one line now, shortened in the middle so the end stays visible. Hover for the full path</li>
+</ul>
+
+<h3>PDF report</h3>
+<ul>
+  <li><b>The playback-check notice is now printed in the report's language only.</b> 1.5.9 printed <b>both</b> Japanese and English, so Japanese was still on the page in an English report. Printing a language the reader cannot read serves no purpose, so only one is printed now</li>
+  <li><b>Fixed the notice breaking mid-sentence.</b> "(e.g. " was being treated as the end of a sentence</li>
+</ul>
+
+<h3>Help</h3>
+<ul>
+  <li><b>Added chapters for Chain copy and Sync.</b> Neither had a single line of documentation</li>
+  <li>The English help had no "Exports and records" chapter (PDF report, MHL, bins). It is there now</li>
+</ul>
+</div>
 <div class="rel" id="1.5.9">
 <div class="ver"><h2>.Lab 1.5.9</h2>
 <span class="date">2026-11-20</span>
