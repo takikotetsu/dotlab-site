@@ -3,35 +3,21 @@
     <channel>
         <title>dotLab</title>
         <item>
-            <title>1.5.11</title>
-            <pubDate>Fri, 27 Nov 2026 20:59:54 +0900</pubDate>
+            <title>1.5.12</title>
+            <pubDate>Fri, 27 Nov 2026 21:21:01 +0900</pubDate>
             <sparkle:fullReleaseNotesLink>https://dotlab.kotetsu.work/release-notes/</sparkle:fullReleaseNotesLink>
             <sparkle:phasedRolloutInterval>172800</sparkle:phasedRolloutInterval>
-            <sparkle:version>381</sparkle:version>
-            <sparkle:shortVersionString>1.5.11</sparkle:shortVersionString>
+            <sparkle:version>383</sparkle:version>
+            <sparkle:shortVersionString>1.5.12</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <description><![CDATA[<h2>.Lab 1.5.11</h2>
-<p>画面の読みやすさだけの更新です。薄い文字を明るくし、リール名が切れていた箇所を直しました。</p>
+            <description><![CDATA[<h2>.Lab 1.5.12</h2>
+<p>メインウィンドウで、ウィンドウを狭めたときにボタンの文字が崩れていたのを直しました。</p>
 
-<h3>文字の濃さ</h3>
 <ul>
-  <li><b>薄い文字（小さなラベルや補助の数字）を明るくしました。</b>小さい字に使うには薄すぎました。メインウィンドウ・Sync・比較ウィンドウのすべてに効きます</li>
-</ul>
-
-<h3>リール名が切れていた箇所</h3>
-<p>以下はいずれも、リール名に階層（<code>CARNEM/DIA_04/S006</code> のような形）を入れている場合の話です。</p>
-<ul>
-  <li><b>メインウィンドウの「進行中」の一覧で、リール名が途中で切れていました。</b>名前の欄を広げ、それでも入りきらないときは<b>先頭</b>を省いて末尾のリール名を残します。行にマウスを乗せるとパス全体が出ます</li>
-  <li><b>Job History も欄が狭く、階層を入れると必ず省略されていました。</b>欄を広げています。プロジェクト名にもマウスで全体が出るようにしました</li>
-  <li><b>選んだジョブの見出しが、ウィンドウを狭めると2行に折り返していました。</b>1行に収めます</li>
-</ul>
-
-<h3>カードの容量</h3>
-<ul>
-  <li><b>取り込むカードの総容量を、はっきり読める明るさにしました。</b>どれくらい時間がかかるかの見当をつける数字なので、クリップ数と同じ濃さだと探しにくいためです。メインウィンドウの Source の「◯ clips / ◯ GB」と、コピー中の「Copied ◯ / ◯」の両方を変えています</li>
+  <li><b>「フォルダ監視」「修復コピー」「キューに追加」「取り込み開始」のボタンで、文字が1文字ずつ縦に並ぶことがありました。</b>ウィンドウの幅が足りないときに、ボタンの文字が折り返していたためです。折り返さないようにしました</li>
 </ul>
 ]]></description>
-            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/v1.5.11/dotLab-1.5.11.dmg" length="5710057" type="application/octet-stream" sparkle:edSignature="HiUlnQ+m3opVCY5Izw5/PlqBMX8zjM8bTR+GLvjIRNrYjkBs9zdXgbqI5CYYV9TtNZNxh+3KBkni08BAZ3vtCg=="/>
+            <enclosure url="https://github.com/takikotetsu/dotlab-site/releases/download/v1.5.12/dotLab-1.5.12.dmg" length="5714532" type="application/octet-stream" sparkle:edSignature="Z9B2Anwlx9p0Up7ntjMgRINZ5HyPmWZaF+wjwopZx1pd+ePUkJQTKh5hR5e2djRDTwWT23FNg/KppmxLdUfnAg=="/>
         </item>
     </channel>
 </rss>
