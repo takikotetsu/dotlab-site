@@ -28,6 +28,30 @@ a:hover { text-decoration:underline; }
 <a class="back" href="/en/">← .Lab</a>
 <h1>Release notes</h1>
 <p class="lead">Every .Lab release, newest first.</p>
+<div class="rel" id="1.5.11">
+<div class="ver"><h2>.Lab 1.5.11</h2>
+<span class="date">2026-11-27</span>
+<a class="anchor" href="#1.5.11">#</a></div>
+<p>A readability release. Dimmed text is brighter, and reel names that were being cut off now fit.</p>
+
+<h3>Text contrast</h3>
+<ul>
+  <li><b>Dimmed text (small labels and secondary figures) is brighter.</b> It was too dim for text that small. This applies to the main window, Sync and the Compare window</li>
+</ul>
+
+<h3>Reel names that were cut off</h3>
+<p>All of the following apply when the reel name contains folder levels, such as <code>CARNEM/DIA_04/S006</code>.</p>
+<ul>
+  <li><b>In the main window's In progress list, the reel name was cut off.</b> The column is wider, and when a name still does not fit, the <b>beginning</b> is dropped so the reel name at the end stays readable. Hover the row for the full path</li>
+  <li><b>Job History had the same problem:</b> the column was too narrow, so any name with folder levels was always shortened. It is wider now. The project name shows in full on hover as well</li>
+  <li><b>The heading of the selected job wrapped onto two lines</b> when the window was narrow. It is kept to one line</li>
+</ul>
+
+<h3>Card size</h3>
+<ul>
+  <li><b>The total size of the card being offloaded is now clearly readable.</b> It is the figure that tells you how long the job will take, and at the same weight as the clip count it was easy to miss. This covers both "7 clips / 9.3 GB" under Source and "Copied … / …" during the copy, in the main window</li>
+</ul>
+</div>
 <div class="rel" id="1.5.10">
 <div class="ver"><h2>.Lab 1.5.10</h2>
 <span class="date">2026-11-26</span>
